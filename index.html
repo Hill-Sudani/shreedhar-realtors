@@ -1,811 +1,1958 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Shreedhar Group — Trust Forever | Vastral's Most Trusted Developer</title>
-<meta name="description" content="Shreedhar Group — Vastral's most trusted real estate developer. 20+ years of landmark residential projects across Ahmedabad.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --charcoal:#2c2c2c;--charcoal2:#3d3d3d;--dark:#1a1a1a;
-  --red:#c0392b;--red2:#a93226;--red3:#e74c3c;
-  --cream:#f7f4ef;--cream2:#ede8df;
-  --warm:#c9a96e;--warm2:#b8944f;
-  --white:#ffffff;--txt:#2c2c2c;--txt2:#777;--txt3:#aaa;
-  --border:rgba(44,44,44,0.08);
-  --ease:cubic-bezier(.22,1,.36,1);--ease2:cubic-bezier(.16,1,.3,1);
-}
-html{scroll-behavior:smooth;overflow-x:hidden;}
-body{font-family:'Inter',sans-serif;font-weight:300;background:var(--cream);color:var(--charcoal);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-*{cursor:default !important;}
-a,button,.pcard,.wa-float{cursor:pointer !important;}
-input,textarea,select{cursor:text !important;}
-::selection{background:var(--red);color:var(--white);}
-::-webkit-scrollbar{width:4px;}
-::-webkit-scrollbar-track{background:var(--cream);}
-::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreedhar Group — Trust Forever | Ahmedabad's Most Trusted Developer</title>
+  <meta name="description"
+    content="Shreedhar Group — Ahmedabad's most trusted real estate developer. 20+ years of landmark residential projects across Ahmedabad.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* ── SCROLL PROGRESS ── */
-.scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--red);z-index:1000;width:0;transition:width 0.1s linear;}
+    :root {
+      --charcoal: #2c2c2c;
+      --charcoal2: #3d3d3d;
+      --dark: #1a1a1a;
+      --red: #c0392b;
+      --red2: #a93226;
+      --red3: #e74c3c;
+      --cream: #f7f4ef;
+      --cream2: #ede8df;
+      --warm: #c9a96e;
+      --warm2: #b8944f;
+      --white: #ffffff;
+      --txt: #2c2c2c;
+      --txt2: #777;
+      --txt3: #aaa;
+      --border: rgba(44, 44, 44, 0.08);
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --ease2: cubic-bezier(.16, 1, .3, 1);
+    }
 
-/* ── PRELOADER ── */
-.preloader{position:fixed;inset:0;z-index:9999;background:var(--cream);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;transition:opacity 0.7s var(--ease),visibility 0.7s;}
-.preloader.done{opacity:0;visibility:hidden;pointer-events:none;}
-.pre-logo{opacity:0;animation:preFade 0.6s 0.2s var(--ease) forwards;}
-.pre-name{font-size:0.68rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--charcoal);opacity:0;animation:preFade 0.6s 0.5s var(--ease) forwards;}
-.pre-bar{width:72px;height:1px;background:var(--cream2);margin-top:0.3rem;overflow:hidden;opacity:0;animation:preFade 0.4s 0.6s var(--ease) forwards;}
-.pre-bar-fill{width:0;height:100%;background:var(--red);animation:preLoad 1.6s 0.8s var(--ease) forwards;}
-@keyframes preFade{to{opacity:1;}}
-@keyframes preLoad{to{width:100%;}}
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 3rem;transition:all 0.5s var(--ease);}
-nav.scrolled{background:rgba(247,244,239,0.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:0.9rem 3rem;box-shadow:0 1px 0 var(--border);}
-.nav-brand{display:flex;align-items:center;gap:0.7rem;text-decoration:none;}
-.nav-logo-icon{width:36px;height:36px;flex-shrink:0;}
-.nav-logo-text{display:flex;flex-direction:column;}
-.nav-logo-name{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--charcoal);letter-spacing:0.04em;line-height:1;}
-.nav-logo-tag{font-size:0.42rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);font-weight:500;margin-top:1px;}
-.nav-right{display:flex;align-items:center;gap:2rem;}
-.nav-link{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:400;color:var(--charcoal);text-decoration:none;transition:color 0.3s;position:relative;}
-.nav-link::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform 0.3s var(--ease);}
-.nav-link:hover{color:var(--red);}
-.nav-link:hover::after{transform:scaleX(1);}
-.nav-cta{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;padding:0.55rem 1.3rem;background:var(--red);color:var(--white);text-decoration:none;border-radius:2px;transition:all 0.3s var(--ease);}
-.nav-cta:hover{background:var(--red2);transform:translateY(-1px);}
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-/* ── HERO ── */
-.hero{min-height:100vh;padding:7rem 3rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;overflow:hidden;background:var(--cream);}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 60% 50%,rgba(192,57,43,0.04) 0%,transparent 70%);pointer-events:none;}
-.hero-left{position:relative;z-index:1;}
-.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;color:var(--red);margin-bottom:1.6rem;}
-.hero-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--red);animation:blink 2s ease-in-out infinite;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5.5vw,4.2rem);font-weight:400;line-height:1.1;color:var(--charcoal);margin-bottom:1.4rem;overflow:hidden;}
-.ht-line{display:block;overflow:hidden;}
-.ht-inner{display:block;transform:translateY(100%);animation:slideUp 0.9s var(--ease) forwards;}
-.ht-line:nth-child(2) .ht-inner{animation-delay:0.1s;}
-.ht-line:nth-child(3) .ht-inner{animation-delay:0.2s;}
-.hero-title em{font-style:italic;color:var(--red);}
-@keyframes slideUp{to{transform:translateY(0);}}
-.hero-sub{font-size:0.88rem;line-height:1.85;color:var(--txt2);max-width:420px;margin-bottom:2.2rem;opacity:0;animation:fadeUp 0.8s 0.5s var(--ease) forwards;}
-.hero-ctas{display:flex;gap:0.8rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.7s var(--ease) forwards;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
-.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;padding:0.85rem 1.8rem;background:var(--red);color:var(--white);text-decoration:none;border-radius:2px;transition:all 0.35s var(--ease);}
-.btn-primary:hover{background:var(--red2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(192,57,43,0.3);}
-.btn-secondary{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:400;padding:0.85rem 1.8rem;border:1px solid rgba(44,44,44,0.2);color:var(--charcoal);text-decoration:none;border-radius:2px;transition:all 0.3s var(--ease);}
-.btn-secondary:hover{border-color:var(--red);color:var(--red);}
+    * {
+      cursor: default !important;
+    }
 
-/* hero right — 3D card */
-.hero-right{position:relative;opacity:0;animation:fadeUp 1s 0.4s var(--ease) forwards;}
-.hero-3d-wrap{perspective:1200px;width:100%;}
-.hero-card-3d{
-  position:relative;border-radius:4px;overflow:hidden;
-  transform:rotateY(-8deg) rotateX(4deg);
-  transform-style:preserve-3d;
-  box-shadow:32px 32px 80px rgba(44,44,44,0.2),0 0 0 1px rgba(44,44,44,0.05);
-  transition:transform 0.6s var(--ease),box-shadow 0.6s var(--ease);
-}
-.hero-3d-wrap:hover .hero-card-3d{transform:rotateY(-2deg) rotateX(1deg);box-shadow:16px 16px 60px rgba(44,44,44,0.15);}
-.hero-image{width:100%;height:480px;object-fit:cover;display:block;}
-.hero-image-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,26,0.85) 0%,transparent 50%);}
-.hero-image-badge{
-  position:absolute;bottom:1.5rem;left:1.5rem;
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.15);
-  padding:0.8rem 1.1rem;border-radius:3px;
-}
-.hib-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:500;color:var(--white);line-height:1;}
-.hib-text{font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-top:2px;}
-/* shine effect on card */
-.hero-card-3d::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(255,255,255,0.08) 0%,transparent 50%,rgba(0,0,0,0.05) 100%);
-  pointer-events:none;z-index:2;
-}
-.hero-scroll{position:absolute;bottom:2rem;left:3rem;display:flex;align-items:center;gap:0.8rem;opacity:0;animation:fadeUp 1s 1.2s var(--ease) forwards;}
-.scroll-line{width:1px;height:36px;background:var(--red);animation:scrlp 2s ease-in-out infinite;}
-@keyframes scrlp{0%,100%{transform:scaleY(1);}50%{transform:scaleY(0.4);}}
-.hero-scroll span{font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--txt3);writing-mode:horizontal-tb;}
+    a,
+    button,
+    .pcard,
+    .wa-float {
+      cursor: pointer !important;
+    }
 
-/* ── MARQUEE ── */
-.marquee{background:var(--dark);overflow:hidden;padding:0.9rem 0;border-top:2px solid var(--red);}
-.marquee-track{display:flex;width:max-content;animation:mq 35s linear infinite;}
-.marquee-track span{white-space:nowrap;padding:0 1.5rem;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);font-weight:300;}
-.marquee-track .dot{color:var(--red);padding:0 0.5rem;}
+    input,
+    textarea,
+    select {
+      cursor: text !important;
+    }
 
-/* ── SECTION SHARED ── */
-.sec-eye{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--red);font-weight:500;margin-bottom:0.5rem;}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.75s var(--ease),transform 0.75s var(--ease);}
-.reveal.vis{opacity:1;transform:translateY(0);}
-.reveal-d1{transition-delay:0.1s;}.reveal-d2{transition-delay:0.2s;}.reveal-d3{transition-delay:0.3s;}.reveal-d4{transition-delay:0.4s;}
+    ::selection {
+      background: var(--red);
+      color: var(--white);
+    }
 
-/* ── ABOUT ── */
-.about{padding:7rem 3rem;background:var(--white);}
-.about-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:center;}
-.about-left-label{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;font-weight:500;}
-.about-num{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;line-height:1;color:var(--charcoal);margin-bottom:0.3rem;}
-.about-num span{font-size:1.5rem;color:var(--red);}
-.about-num-label{font-size:0.7rem;color:var(--txt2);letter-spacing:0.05em;}
-.about-divider{width:40px;height:1px;background:var(--red);margin:2rem 0;}
-.about-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:300;font-style:italic;line-height:1.6;color:var(--charcoal);}
-.about-text em{color:var(--red);font-style:italic;}
-.about-credit{font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--txt3);margin-top:1.5rem;font-weight:400;}
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
 
-/* ── IMG DIVIDER ── */
-.img-divider{height:50vh;position:relative;overflow:hidden;}
-.img-divider-bg{position:absolute;inset:-15%;background-size:cover;background-position:center;transition:transform 0.1s linear;}
-.img-divider-overlay{position:absolute;inset:0;background:rgba(26,26,26,0.6);}
-.img-divider-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
-.img-divider-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--white);margin-bottom:0.5rem;}
-.img-divider-content h2 em{font-style:italic;color:var(--warm);}
-.img-divider-content p{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);}
-.img-divider.in-view .img-divider-content h2{animation:fadeUp 0.8s var(--ease) both;}
+    ::-webkit-scrollbar-track {
+      background: var(--cream);
+    }
 
-/* ── PROJECTS — FIXED GRID ── */
-.projects{padding:6rem 3rem;background:var(--cream);}
-.projects-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;}
-.projects-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:400;line-height:1.2;}
-.projects-header h2 em{font-style:italic;color:var(--red);}
-.projects-count{font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--txt3);}
+    ::-webkit-scrollbar-thumb {
+      background: var(--red);
+      border-radius: 2px;
+    }
 
-/* Filter tabs */
-.proj-filters{display:flex;gap:0.5rem;margin-bottom:2.5rem;flex-wrap:wrap;}
-.proj-filter{font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;padding:0.45rem 1rem;border:1px solid var(--border);color:var(--txt2);background:transparent;border-radius:2px;transition:all 0.25s;cursor:pointer !important;}
-.proj-filter.active,.proj-filter:hover{background:var(--red);color:var(--white);border-color:var(--red);}
+    /* ── SCROLL PROGRESS ── */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: var(--red);
+      z-index: 1000;
+      width: 0;
+      transition: width 0.1s linear;
+    }
 
-/* Grid — 3 col, all visible */
-.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+    /* ── PRELOADER ── */
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      transition: opacity 0.7s var(--ease), visibility 0.7s;
+    }
 
-/* 3D project card */
-.pcard{
-  position:relative;border-radius:3px;overflow:hidden;
-  background:var(--white);
-  box-shadow:0 2px 12px rgba(44,44,44,0.06);
-  transition:transform 0.5s var(--ease),box-shadow 0.5s var(--ease);
-  transform-style:preserve-3d;
-  perspective:800px;
-}
-.pcard:hover{
-  transform:translateY(-8px) rotateX(2deg);
-  box-shadow:0 20px 48px rgba(44,44,44,0.14);
-}
-.pcard-img{position:relative;height:260px;overflow:hidden;}
-.pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s var(--ease);}
-.pcard:hover .pcard-img img{transform:scale(1.06);}
-.pcard-tag{position:absolute;top:1rem;left:1rem;font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:500;padding:0.3rem 0.7rem;background:var(--red);color:var(--white);border-radius:2px;}
-.pcard-bottom{position:absolute;bottom:0;left:0;right:0;padding:1.2rem;background:linear-gradient(to top,rgba(26,26,26,0.92),transparent);}
-.pcard-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--white);}
-.pcard-loc{font-size:0.55rem;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-top:2px;}
-.pcard-body{padding:1rem 1.2rem 1.2rem;}
-.pcard-chips{display:flex;gap:0.4rem;flex-wrap:wrap;}
-.pcard-chip{font-size:0.5rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.28rem 0.6rem;border:1px solid var(--border);color:var(--txt2);border-radius:1px;}
-/* shine overlay on hover */
-.pcard::before{
-  content:'';position:absolute;inset:0;z-index:2;
-  background:linear-gradient(135deg,rgba(255,255,255,0.06) 0%,transparent 60%);
-  opacity:0;transition:opacity 0.4s;pointer-events:none;
-}
-.pcard:hover::before{opacity:1;}
+    .preloader.done {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
 
-/* ── NUMBERS ── */
-.numbers{padding:6rem 3rem;background:var(--dark);}
-.numbers-inner{max-width:960px;margin:0 auto;}
-.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(255,255,255,0.06);}
-.num-card{padding:2.5rem 2rem;border-right:1px solid rgba(255,255,255,0.06);opacity:0;transform:translateY(16px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease);}
-.num-card:last-child{border-right:none;}
-.num-card.vis{opacity:1;transform:translateY(0);}
-.num-card:nth-child(2).vis{transition-delay:0.1s;}
-.num-card:nth-child(3).vis{transition-delay:0.2s;}
-.num-card:nth-child(4).vis{transition-delay:0.3s;}
-.num-val{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:400;color:var(--white);line-height:1;margin-bottom:0.5rem;}
-.num-val .red{color:var(--red);}
-.num-label{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);line-height:1.6;}
-.num-tagline{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2vw,1.5rem);font-weight:300;font-style:italic;text-align:center;color:rgba(255,255,255,0.3);margin-top:3rem;opacity:0;transition:opacity 1s var(--ease) 0.4s;}
-.num-tagline.vis{opacity:1;}
-.num-tagline em{font-style:italic;color:var(--red);}
+    .pre-logo {
+      width: 120px;
+      height: auto;
+      opacity: 0;
+      animation: preFade 0.6s 0.2s var(--ease) forwards;
+    }
 
-/* ── TESTIMONIAL ── */
-.tband{padding:6rem 3rem;background:var(--white);text-align:center;}
-.tband-inner{max-width:700px;margin:0 auto;}
-.tband-mark{font-family:'Cormorant Garamond',serif;font-size:5rem;color:var(--red);opacity:0.15;line-height:0.8;margin-bottom:1rem;}
-.tband-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.5vw,1.85rem);font-weight:300;font-style:italic;line-height:1.7;color:var(--charcoal);margin-bottom:1.5rem;}
-.tband-author{font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--txt3);font-weight:400;}
+    .pre-name {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      opacity: 0;
+      animation: preFade 0.6s 0.5s var(--ease) forwards;
+    }
 
-/* ── CONTACT ── */
-.contact{padding:6rem 3rem;background:var(--cream);}
-.contact-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
-.contact-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:300;line-height:1.2;margin-bottom:1rem;}
-.contact-left h2 em{font-style:italic;font-weight:400;color:var(--red);}
-.contact-left>p{font-size:0.83rem;font-weight:300;color:var(--txt2);line-height:1.85;margin-bottom:2rem;}
-.cd-row{display:flex;flex-direction:column;gap:1.5rem;}
-.cd-label{font-size:0.46rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:0.22rem;font-weight:500;}
-.cd-val{font-size:0.82rem;color:var(--charcoal);font-weight:300;line-height:1.6;}
-/* WhatsApp inline link */
-.wa-link{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.2rem;padding:0.7rem 1.4rem;background:#25D366;color:white;font-size:0.62rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:3px;transition:all 0.3s var(--ease);}
-.wa-link:hover{background:#1ebe5d;transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,0.3);}
-.wa-link svg{width:14px;height:14px;fill:white;flex-shrink:0;}
-.contact-form{display:flex;flex-direction:column;gap:1rem;}
-.cf-group{display:flex;flex-direction:column;gap:0.3rem;}
-.cf-label{font-size:0.46rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--txt2);font-weight:400;}
-.cf-input,.cf-textarea{font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:300;padding:0.7rem 0;border:none;border-bottom:1px solid rgba(44,44,44,0.12);background:transparent;color:var(--charcoal);outline:none;transition:border-color 0.3s;}
-.cf-input:focus,.cf-textarea:focus{border-color:var(--red);}
-.cf-input::placeholder,.cf-textarea::placeholder{color:var(--txt3);font-weight:200;}
-.cf-textarea{min-height:80px;resize:vertical;}
-.cf-btn{font-family:'Inter',sans-serif;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.9rem 2rem;font-weight:500;margin-top:0.5rem;background:var(--red);color:var(--white);border:none;border-radius:2px;transition:all 0.3s var(--ease);align-self:flex-start;}
-.cf-btn:hover{background:var(--red2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(192,57,43,0.3);}
+    .pre-bar {
+      width: 72px;
+      height: 1px;
+      background: var(--cream2);
+      margin-top: 0.3rem;
+      overflow: hidden;
+      opacity: 0;
+      animation: preFade 0.4s 0.6s var(--ease) forwards;
+    }
 
-/* ── FOOTER ── */
-footer{padding:2.5rem 3rem;background:var(--dark);color:rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:space-between;}
-.f-brand{display:flex;align-items:center;gap:0.5rem;}
-.f-brand-icon{width:22px;height:22px;opacity:0.35;}
-.f-brand-text{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,0.35);}
-.f-copy{font-size:0.5rem;font-weight:300;letter-spacing:0.05em;}
-.f-links{display:flex;gap:1.5rem;}
-.f-links a{font-size:0.48rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:300;color:rgba(255,255,255,0.2);text-decoration:none;transition:color 0.3s;}
-.f-links a:hover{color:var(--red3);}
+    .pre-bar-fill {
+      width: 0;
+      height: 100%;
+      background: var(--red);
+      animation: preLoad 1.6s 0.8s var(--ease) forwards;
+    }
 
-/* ── WHATSAPP FLOATING BUTTON ── */
-.wa-float{
-  position:fixed;bottom:2rem;right:2rem;z-index:400;
-  width:52px;height:52px;border-radius:50%;
-  background:#25D366;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 20px rgba(37,211,102,0.45);
-  text-decoration:none;
-  transition:all 0.3s var(--ease);
-  opacity:0;transform:translateY(16px) scale(0.8);
-  animation:waIn 0.5s 2.5s var(--ease) forwards;
-}
-.wa-float:hover{background:#1ebe5d;transform:translateY(-3px) scale(1.08);box-shadow:0 8px 28px rgba(37,211,102,0.55);}
-.wa-float svg{width:26px;height:26px;fill:white;}
-@keyframes waIn{to{opacity:1;transform:translateY(0) scale(1);}}
-/* WhatsApp tooltip */
-.wa-float::before{
-  content:'Chat with us';
-  position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);
-  background:var(--dark);color:white;
-  font-size:0.58rem;letter-spacing:0.08em;white-space:nowrap;
-  padding:0.4rem 0.8rem;border-radius:3px;
-  opacity:0;pointer-events:none;transition:opacity 0.2s;
-}
-.wa-float:hover::before{opacity:1;}
-
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  nav{padding:1rem 1.5rem;}
-  nav.scrolled{padding:0.7rem 1.5rem;}
-  .nav-link{display:none;}
-  .hero{grid-template-columns:1fr;padding:5rem 1.5rem 2rem;gap:2rem;}
-  .hero-right{max-width:400px;}
-  .hero-scroll{left:1.5rem;}
-  .about{padding:5rem 1.5rem;}
-  .about-inner{grid-template-columns:1fr;gap:2rem;}
-  .projects{padding:4rem 1.5rem;}
-  .projects-grid{grid-template-columns:repeat(2,1fr);}
-  .numbers{padding:4rem 1.5rem;}
-  .numbers-grid{grid-template-columns:repeat(2,1fr);}
-  .num-card{border-bottom:1px solid rgba(255,255,255,0.06);}
-  .num-card:nth-child(2){border-right:none;}
-  .contact{padding:4rem 1.5rem;}
-  .contact-inner{grid-template-columns:1fr;gap:2rem;}
-  footer{flex-direction:column;gap:1rem;text-align:center;padding:2rem 1.5rem;}
-  .f-links{justify-content:center;}
-}
-@media(max-width:600px){
-  .projects-grid{grid-template-columns:1fr;}
-}
-</style>
-</head>
-<body>
-
-<!-- SCROLL PROGRESS -->
-<div class="scroll-progress" id="scrollProg"></div>
-
-<!-- PRELOADER -->
-<div class="preloader" id="preloader">
-  <svg class="pre-logo" width="44" height="44" viewBox="0 0 60 60">
-    <path d="M30 8L12 22v28h16V36h4v14h16V22L30 8z" fill="#2c2c2c"/>
-    <path d="M30 8L12 22l3 2L30 13l15 11 3-2L30 8z" fill="#c0392b"/>
-    <rect x="24" y="26" width="5" height="6" rx="0.5" fill="#f7f4ef"/>
-    <rect x="31" y="26" width="5" height="6" rx="0.5" fill="#f7f4ef"/>
-  </svg>
-  <div class="pre-name">Shreedhar Group</div>
-  <div class="pre-bar"><div class="pre-bar-fill"></div></div>
-</div>
-
-<!-- WHATSAPP FLOAT -->
-<a class="wa-float" href="https://wa.me/919924818400?text=Hello%20Shreedhar%20Group%2C%20I%27m%20interested%20in%20your%20projects." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
-
-<!-- NAV -->
-<nav id="mainNav">
-  <a class="nav-brand" href="#">
-    <svg class="nav-logo-icon" viewBox="0 0 60 60">
-      <path d="M30 8L12 22v28h16V36h4v14h16V22L30 8z" fill="#2c2c2c"/>
-      <path d="M30 8L12 22l3 2L30 13l15 11 3-2L30 8z" fill="#c0392b"/>
-      <rect x="24" y="26" width="5" height="6" rx="0.5" fill="#f7f4ef"/>
-      <rect x="31" y="26" width="5" height="6" rx="0.5" fill="#f7f4ef"/>
-    </svg>
-    <div class="nav-logo-text">
-      <span class="nav-logo-name">Shreedhar Group</span>
-      <span class="nav-logo-tag">Trust Forever</span>
-    </div>
-  </a>
-  <div class="nav-right">
-    <a href="#about" class="nav-link">About</a>
-    <a href="#projects" class="nav-link">Projects</a>
-    <a href="#contact" class="nav-link">Contact</a>
-    <a href="#contact" class="nav-cta">Enquire</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-left">
-    <div class="hero-badge">
-      <div class="hero-badge-dot"></div>
-      <span>Vastral's Most Trusted Developer</span>
-    </div>
-    <h1 class="hero-title">
-      <span class="ht-line"><span class="ht-inner">Building Homes,</span></span>
-      <span class="ht-line"><span class="ht-inner">Crafting <em>Trust</em></span></span>
-      <span class="ht-line"><span class="ht-inner">Since 2002.</span></span>
-    </h1>
-    <p class="hero-sub">Shreedhar Group has delivered 10+ landmark residential projects across Vastral & Ahmedabad — earning the trust of 500+ families over two decades.</p>
-    <div class="hero-ctas">
-      <a href="#projects" class="btn-primary">View Projects →</a>
-      <a href="#contact" class="btn-secondary">Get in Touch</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-3d-wrap" id="hero3d">
-      <div class="hero-card-3d" id="heroCard">
-        <img src="images/shreedhar-sky.png" alt="Shreedhar Sky — Premium Apartments" class="hero-image">
-        <div class="hero-image-overlay"></div>
-        <div class="hero-image-badge">
-          <div class="hib-num">20+</div>
-          <div class="hib-text">Years of Trust</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll to explore</span>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee">
-  <div class="marquee-track">
-    <span>Shreedhar Sky</span><span class="dot">●</span>
-    <span>Shreedhar Luxuria</span><span class="dot">●</span>
-    <span>Shreedhar Glory</span><span class="dot">●</span>
-    <span>Shreedhar Vihar</span><span class="dot">●</span>
-    <span>Shreedhar Villa</span><span class="dot">●</span>
-    <span>Shreedhar Palace</span><span class="dot">●</span>
-    <span>Shreedhar Family</span><span class="dot">●</span>
-    <span>Shreedhar Sparsh</span><span class="dot">●</span>
-    <span>Vastral · Ahmedabad</span><span class="dot">●</span>
-    <span>Trust Forever</span><span class="dot">●</span>
-    <span>Shreedhar Sky</span><span class="dot">●</span>
-    <span>Shreedhar Luxuria</span><span class="dot">●</span>
-    <span>Shreedhar Glory</span><span class="dot">●</span>
-    <span>Shreedhar Vihar</span><span class="dot">●</span>
-    <span>Shreedhar Villa</span><span class="dot">●</span>
-    <span>Shreedhar Palace</span><span class="dot">●</span>
-    <span>Shreedhar Family</span><span class="dot">●</span>
-    <span>Shreedhar Sparsh</span><span class="dot">●</span>
-    <span>Vastral · Ahmedabad</span><span class="dot">●</span>
-    <span>Trust Forever</span><span class="dot">●</span>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-inner">
-    <div class="reveal">
-      <div class="about-left-label">Est. 2002</div>
-      <div class="about-num">20<span>+</span></div>
-      <div class="about-num-label">Years Building Trust</div>
-      <div class="about-divider"></div>
-      <div class="about-num" style="font-size:3rem;">500<span>+</span></div>
-      <div class="about-num-label">Happy Families</div>
-    </div>
-    <div>
-      <p class="sec-eye reveal">About Us</p>
-      <p class="about-text reveal reveal-d1">
-        For over two decades, <em>Shreedhar Group</em> has been the name that Vastral trusts. We don't just construct buildings — we build communities, craft homes, and deliver promises. With 10+ landmark projects, we are Vastral's most <em>trusted</em> developer.
-      </p>
-      <p class="about-credit reveal reveal-d2">— Trust Forever · Shreedhar Group, Vastral, Ahmedabad</p>
-    </div>
-  </div>
-</section>
-
-<!-- IMAGE DIVIDER 1 -->
-<section class="img-divider" id="imgDiv1">
-  <div class="img-divider-bg" style="background-image:url('images/shreedhar-luxuria.png')"></div>
-  <div class="img-divider-overlay"></div>
-  <div class="img-divider-content">
-    <h2>Architecture that <em>endures</em></h2>
-    <p>Designed to stand the test of time</p>
-  </div>
-</section>
-
-<!-- PROJECTS — FULL GRID -->
-<section class="projects" id="projects">
-  <div class="projects-header reveal">
-    <div>
-      <p class="sec-eye">Our Portfolio</p>
-      <h2>Select <em>Projects</em></h2>
-    </div>
-    <div class="projects-count">06 Projects</div>
-  </div>
-
-  <!-- Filter tabs -->
-  <div class="proj-filters reveal">
-    <button class="proj-filter active" data-filter="all">All</button>
-    <button class="proj-filter" data-filter="apartments">Apartments</button>
-    <button class="proj-filter" data-filter="villas">Villas</button>
-    <button class="proj-filter" data-filter="completed">Completed</button>
-  </div>
-
-  <div class="projects-grid">
-
-    <div class="pcard reveal" data-cat="apartments completed">
-      <div class="pcard-img">
-        <img src="images/shreedhar-sky.png" alt="Shreedhar Sky" loading="lazy">
-        <div class="pcard-tag">Vastral Landmark</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Sky</div>
-          <div class="pcard-loc">S.P. Ring Road, Vastral</div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">Apartments</span>
-          <span class="pcard-chip">Shops</span>
-          <span class="pcard-chip">Vastral</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pcard reveal reveal-d1" data-cat="apartments">
-      <div class="pcard-img">
-        <img src="images/shreedhar-luxuria.png" alt="Shreedhar Luxuria" loading="lazy">
-        <div class="pcard-tag">3 BHK Premium</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Luxuria</div>
-          <div class="pcard-loc">Vastral, Ahmedabad</div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">3 BHK</span>
-          <span class="pcard-chip">Luxury</span>
-          <span class="pcard-chip">Ongoing</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pcard reveal reveal-d2" data-cat="apartments completed">
-      <div class="pcard-img">
-        <img src="images/shreedhar-glory.png" alt="Shreedhar Glory" loading="lazy">
-        <div class="pcard-tag">Premium Living</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Glory</div>
-          <div class="pcard-loc">Gornel, Ahmedabad</div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">Apartments</span>
-          <span class="pcard-chip">Modern</span>
-          <span class="pcard-chip">Vastral</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pcard reveal reveal-d1" data-cat="apartments completed">
-      <div class="pcard-img">
-        <img src="images/shreedhar-vihar.png" alt="Shreedhar Vihar" loading="lazy">
-        <div class="pcard-tag">Township</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Vihar</div>
-          <div class="pcard-loc">Vastral, Ahmedabad</div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">2/3 BHK</span>
-          <span class="pcard-chip">Gated</span>
-          <span class="pcard-chip">Community</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pcard reveal reveal-d2" data-cat="villas completed">
-      <div class="pcard-img">
-        <img src="images/shreedhar-villa-hero.png" alt="Shreedhar Villa" loading="lazy">
-        <div class="pcard-tag">5 BHK Villas</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Villa</div>
-          <div class="pcard-loc">New Nikol, Ahmedabad</div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">5 BHK</span>
-          <span class="pcard-chip">Villa</span>
-          <span class="pcard-chip">Nikol</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pcard reveal reveal-d3" data-cat="villas completed">
-      <div class="pcard-img">
-        <img src="images/shreedhar-palace-hero.png" alt="Shreedhar Palace" loading="lazy">
-        <div class="pcard-tag">4 BHK Bungalows</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Palace</div>
-          <div class="pcard-loc">New Nikol, Ahmedabad</div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">4 BHK</span>
-          <span class="pcard-chip">Bungalow</span>
-          <span class="pcard-chip">Premium</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- NUMBERS -->
-<section class="numbers" id="numbers">
-  <div class="numbers-inner">
-    <div class="numbers-grid" id="numGrid">
-      <div class="num-card">
-        <div class="num-val" data-count="10" data-suffix="+">0</div>
-        <div class="num-label">Landmark<br>Projects</div>
-      </div>
-      <div class="num-card">
-        <div class="num-val" data-count="500" data-suffix="+">0</div>
-        <div class="num-label">Happy<br>Families</div>
-      </div>
-      <div class="num-card">
-        <div class="num-val" data-count="20" data-suffix="+">0</div>
-        <div class="num-label">Years in<br>Vastral</div>
-      </div>
-      <div class="num-card">
-        <div class="num-val"><span class="red">RERA</span></div>
-        <div class="num-label">Certified<br>Projects</div>
-      </div>
-    </div>
-    <p class="num-tagline" id="numTag">Every brick placed with <em>trust</em>. Every home, a <em>promise</em> kept.</p>
-  </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section class="tband">
-  <div class="tband-inner reveal">
-    <div class="tband-mark">"</div>
-    <p class="tband-quote">"Shreedhar Group didn't just build our home — they built our trust. From the first visit to the day we moved in, every promise was kept."</p>
-    <p class="tband-author">— A Shreedhar Family Homeowner · Vastral, Ahmedabad</p>
-  </div>
-</section>
-
-<!-- IMAGE DIVIDER 2 -->
-<section class="img-divider" id="imgDiv2">
-  <div class="img-divider-bg" style="background-image:url('images/shreedhar-palace-hero.png')"></div>
-  <div class="img-divider-overlay"></div>
-  <div class="img-divider-content">
-    <h2>Vastral's most <em>trusted</em> name</h2>
-    <p>Trust Forever · Since 2002</p>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="contact-inner">
-    <div class="contact-left reveal">
-      <p class="sec-eye">Get in Touch</p>
-      <h2>Let's build your<br><em>dream home</em></h2>
-      <p>Whether you're looking for your first home or investing in your future — Shreedhar Group has been Vastral's trusted partner for over two decades.</p>
-      <div class="cd-row">
-        <div class="cd-item">
-          <div class="cd-label">Phone</div>
-          <div class="cd-val">+91 99248 18400 · +91 95121 66161</div>
-        </div>
-        <div class="cd-item">
-          <div class="cd-label">Office</div>
-          <div class="cd-val">Vastral, Ahmedabad — 382418, Gujarat</div>
-        </div>
-        <div class="cd-item">
-          <div class="cd-label">Instagram</div>
-          <div class="cd-val"><a href="https://www.instagram.com/shreedhar_group_/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">@shreedhar_group_</a></div>
-        </div>
-      </div>
-      <a class="wa-link" href="https://wa.me/919924818400?text=Hello%20Shreedhar%20Group%2C%20I%27m%20interested%20in%20your%20projects." target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Chat on WhatsApp
-      </a>
-    </div>
-    <div class="contact-right reveal reveal-d2">
-      <form class="contact-form" onsubmit="submitForm(event)">
-        <div class="cf-group">
-          <label class="cf-label">Full Name</label>
-          <input class="cf-input" type="text" placeholder="Your name" required>
-        </div>
-        <div class="cf-group">
-          <label class="cf-label">Phone Number</label>
-          <input class="cf-input" type="tel" placeholder="+91 XXXXX XXXXX" required>
-        </div>
-        <div class="cf-group">
-          <label class="cf-label">Interested In</label>
-          <input class="cf-input" type="text" placeholder="e.g. Shreedhar Luxuria — 3 BHK">
-        </div>
-        <div class="cf-group">
-          <label class="cf-label">Message</label>
-          <textarea class="cf-textarea" placeholder="Tell us about your requirements..."></textarea>
-        </div>
-        <button class="cf-btn" type="submit" id="cfBtn">Book a Site Visit →</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="f-brand">
-    <svg class="f-brand-icon" viewBox="0 0 60 60">
-      <path d="M30 8L12 22v28h16V36h4v14h16V22L30 8z" fill="currentColor"/>
-      <path d="M30 8L12 22l3 2L30 13l15 11 3-2L30 8z" fill="#c0392b"/>
-    </svg>
-    <span class="f-brand-text">Shreedhar Group</span>
-  </div>
-  <div class="f-copy">© 2025 Shreedhar Group · Trust Forever · All rights reserved.</div>
-  <div class="f-links">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <a href="https://www.instagram.com/shreedhar_group_/" target="_blank">Instagram</a>
-  </div>
-</footer>
-
-<script>
-/* ═══ PRELOADER ═══ */
-window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('preloader').classList.add('done'),2300);});
-
-/* ═══ SCROLL PROGRESS ═══ */
-const prog=document.getElementById('scrollProg');
-window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-window.innerHeight;prog.style.width=(scrollY/h*100)+'%';},{passive:true});
-
-/* ═══ NAV ═══ */
-const nav=document.getElementById('mainNav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>50);},{passive:true});
-
-/* ═══ 3D HERO CARD — mouse tilt ═══ */
-const wrap=document.getElementById('hero3d');
-const card=document.getElementById('heroCard');
-if(wrap&&card){
-  wrap.addEventListener('mousemove',e=>{
-    const r=wrap.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-0.5;
-    const y=(e.clientY-r.top)/r.height-0.5;
-    card.style.transform=`rotateY(${x*18}deg) rotateX(${-y*10}deg)`;
-    card.style.boxShadow=`${-x*40}px ${-y*20}px 80px rgba(44,44,44,0.22)`;
-  });
-  wrap.addEventListener('mouseleave',()=>{
-    card.style.transform='rotateY(-8deg) rotateX(4deg)';
-    card.style.boxShadow='32px 32px 80px rgba(44,44,44,0.2)';
-  });
-}
-
-/* ═══ IMAGE DIVIDER PARALLAX ═══ */
-document.querySelectorAll('.img-divider').forEach(el=>{
-  const bg=el.querySelector('.img-divider-bg');
-  new IntersectionObserver(entries=>{entries.forEach(e=>el.classList.toggle('in-view',e.isIntersecting));},{threshold:0.2}).observe(el);
-  window.addEventListener('scroll',()=>{
-    const rect=el.getBoundingClientRect();
-    const offset=(rect.top+rect.height/2-window.innerHeight/2)*0.1;
-    bg.style.transform=`translateY(${offset}px)`;
-  },{passive:true});
-});
-
-/* ═══ HERO PARALLAX ═══ */
-const heroInner=document.querySelector('.hero-left');
-window.addEventListener('scroll',()=>{
-  if(scrollY<window.innerHeight){
-    const p=scrollY/window.innerHeight;
-    heroInner.style.transform=`translateY(${scrollY*0.12}px)`;
-    heroInner.style.opacity=1-p*1.1;
-  }
-},{passive:true});
-
-/* ═══ NUMBERS COUNTER ═══ */
-const numGrid=document.getElementById('numGrid');
-const numTag=document.getElementById('numTag');
-let counted=false;
-new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      numGrid.querySelectorAll('.num-card').forEach(c=>c.classList.add('vis'));
-      numTag.classList.add('vis');
-      if(!counted){
-        counted=true;
-        numGrid.querySelectorAll('.num-val[data-count]').forEach(el=>{
-          const end=parseInt(el.dataset.count),suffix=el.dataset.suffix||'';
-          let v=0;const dur=2000,fps=60,inc=end/(dur/1000*fps);
-          const t=setInterval(()=>{v=Math.min(v+inc,end);el.textContent=Math.round(v)+suffix;if(v>=end)clearInterval(t);},1000/fps);
-        });
+    @keyframes preFade {
+      to {
+        opacity: 1;
       }
     }
-  });
-},{threshold:0.25}).observe(numGrid);
 
-/* ═══ SCROLL REVEAL ═══ */
-const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+    @keyframes preLoad {
+      to {
+        width: 100%;
+      }
+    }
 
-/* ═══ PROJECT FILTER ═══ */
-document.querySelectorAll('.proj-filter').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.proj-filter').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f=btn.dataset.filter;
-    document.querySelectorAll('.pcard').forEach(card=>{
-      const cats=card.dataset.cat||'';
-      const show=f==='all'||cats.includes(f);
-      card.style.opacity=show?'1':'0.25';
-      card.style.transform=show?'':'scale(0.96)';
-      card.style.pointerEvents=show?'auto':'none';
-      card.style.transition='opacity 0.4s, transform 0.4s';
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 3rem;
+      transition: all 0.5s var(--ease);
+    }
+
+    nav.scrolled {
+      background: rgba(247, 244, 239, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 0.9rem 3rem;
+      box-shadow: 0 1px 0 var(--border);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      height: 32px;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .nav-logo-tag {
+      font-size: 0.42rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 500;
+      margin-top: 1px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--charcoal);
+      text-decoration: none;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s var(--ease);
+    }
+
+    .nav-link:hover {
+      color: var(--red);
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.55rem 1.3rem;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s var(--ease);
+    }
+
+    .nav-cta:hover {
+      background: var(--red2);
+      transform: translateY(-1px);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      padding: 7rem 3rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 60% 50%, rgba(192, 57, 43, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-left {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--red);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-badge-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--red);
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 1.4rem;
+      overflow: hidden;
+    }
+
+    .ht-line {
+      display: block;
+      overflow: hidden;
+    }
+
+    .ht-inner {
+      display: block;
+      transform: translateY(100%);
+      animation: slideUp 0.9s var(--ease) forwards;
+    }
+
+    .ht-line:nth-child(2) .ht-inner {
+      animation-delay: 0.1s;
+    }
+
+    .ht-line:nth-child(3) .ht-inner {
+      animation-delay: 0.2s;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .hero-sub {
+      font-size: 0.88rem;
+      line-height: 1.85;
+      color: var(--txt2);
+      max-width: 420px;
+      margin-bottom: 2.2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.5s var(--ease) forwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.7s var(--ease) forwards;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.85rem 1.8rem;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.35s var(--ease);
+    }
+
+    .btn-primary:hover {
+      background: var(--red2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(192, 57, 43, 0.3);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 400;
+      padding: 0.85rem 1.8rem;
+      border: 1px solid rgba(44, 44, 44, 0.2);
+      color: var(--charcoal);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s var(--ease);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    /* hero right — 3D card */
+    .hero-right {
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 1s 0.4s var(--ease) forwards;
+    }
+
+    .hero-3d-wrap {
+      perspective: 1200px;
+      width: 100%;
+    }
+
+    .hero-card-3d {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      transform: rotateY(-8deg) rotateX(4deg);
+      transform-style: preserve-3d;
+      box-shadow: 32px 32px 80px rgba(44, 44, 44, 0.2), 0 0 0 1px rgba(44, 44, 44, 0.05);
+      transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
+    }
+
+    .hero-3d-wrap:hover .hero-card-3d {
+      transform: rotateY(-2deg) rotateX(1deg);
+      box-shadow: 16px 16px 60px rgba(44, 44, 44, 0.15);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 26, 26, 0.85) 0%, transparent 50%);
+    }
+
+    .hero-image-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.8rem 1.1rem;
+      border-radius: 3px;
+    }
+
+    .hib-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .hib-text {
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 2px;
+    }
+
+    /* shine effect on card */
+    .hero-card-3d::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      opacity: 0;
+      animation: fadeUp 1s 1.2s var(--ease) forwards;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 36px;
+      background: var(--red);
+      animation: scrlp 2s ease-in-out infinite;
+    }
+
+    @keyframes scrlp {
+
+      0%,
+      100% {
+        transform: scaleY(1);
+      }
+
+      50% {
+        transform: scaleY(0.4);
+      }
+    }
+
+    .hero-scroll span {
+      font-size: 0.52rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      writing-mode: horizontal-tb;
+    }
+
+    /* ── MARQUEE ── */
+    .marquee {
+      background: var(--dark);
+      overflow: hidden;
+      padding: 0.9rem 0;
+      border-top: 2px solid var(--red);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: mq 35s linear infinite;
+    }
+
+    @keyframes mq {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .marquee-track span {
+      white-space: nowrap;
+      padding: 0 1.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 300;
+    }
+
+    .marquee-track .dot {
+      color: var(--red);
+      padding: 0 0.5rem;
+    }
+
+    /* ── SECTION SHARED ── */
+    .sec-eye {
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
+    }
+
+    .reveal.vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-d2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-d3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-d4 {
+      transition-delay: 0.4s;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      padding: 7rem 3rem;
+      background: var(--white);
+    }
+
+    .about-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-left-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .about-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--charcoal);
+      margin-bottom: 0.3rem;
+    }
+
+    .about-num span {
+      font-size: 1.5rem;
+      color: var(--red);
+    }
+
+    .about-num-label {
+      font-size: 0.7rem;
+      color: var(--txt2);
+      letter-spacing: 0.05em;
+    }
+
+    .about-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--red);
+      margin: 2rem 0;
+    }
+
+    .about-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--charcoal);
+    }
+
+    .about-text em {
+      color: var(--red);
+      font-style: italic;
+    }
+
+    .about-credit {
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-top: 1.5rem;
+      font-weight: 400;
+    }
+
+    /* ── IMG DIVIDER ── */
+    .img-divider {
+      height: 50vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .img-divider-bg {
+      position: absolute;
+      inset: -15%;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.1s linear;
+    }
+
+    .img-divider-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 26, 26, 0.6);
+    }
+
+    .img-divider-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .img-divider-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .img-divider-content h2 em {
+      font-style: italic;
+      color: var(--warm);
+    }
+
+    .img-divider-content p {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .img-divider.in-view .img-divider-content h2 {
+      animation: fadeUp 0.8s var(--ease) both;
+    }
+
+    /* ── PROJECTS — FIXED GRID ── */
+    .projects {
+      padding: 6rem 3rem;
+      background: var(--cream);
+    }
+
+    .projects-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+    }
+
+    .projects-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .projects-header h2 em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    .projects-count {
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
+
+    /* Filter tabs */
+    .proj-filters {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .proj-filter {
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border);
+      color: var(--txt2);
+      background: transparent;
+      border-radius: 2px;
+      transition: all 0.25s;
+      cursor: pointer !important;
+    }
+
+    .proj-filter.active,
+    .proj-filter:hover {
+      background: var(--red);
+      color: var(--white);
+      border-color: var(--red);
+    }
+
+    /* Grid — 3 col, all visible */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* 3D project card */
+    .pcard {
+      position: relative;
+      border-radius: 3px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(44, 44, 44, 0.06);
+      transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+      transform-style: preserve-3d;
+      perspective: 800px;
+    }
+
+    .pcard:hover {
+      transform: translateY(-8px) rotateX(2deg);
+      box-shadow: 0 20px 48px rgba(44, 44, 44, 0.14);
+    }
+
+    .pcard-img {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+    }
+
+    .pcard-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s var(--ease);
+    }
+
+    .pcard:hover .pcard-img img {
+      transform: scale(1.06);
+    }
+
+    .pcard-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.52rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.3rem 0.7rem;
+      background: var(--red);
+      color: var(--white);
+      border-radius: 2px;
+    }
+
+    .pcard-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.2rem;
+      background: linear-gradient(to top, rgba(26, 26, 26, 0.92), transparent);
+    }
+
+    .pcard-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--white);
+    }
+
+    .pcard-loc {
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 2px;
+    }
+
+    .pcard-body {
+      padding: 1rem 1.2rem 1.2rem;
+    }
+
+    .pcard-chips {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .pcard-chip {
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.6rem;
+      border: 1px solid var(--border);
+      color: var(--txt2);
+      border-radius: 1px;
+    }
+
+    /* shine overlay on hover */
+    .pcard::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+    }
+
+    .pcard:hover::before {
+      opacity: 1;
+    }
+
+    /* ── NUMBERS ── */
+    .numbers {
+      padding: 6rem 3rem;
+      background: var(--dark);
+    }
+
+    .numbers-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .num-card {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+    }
+
+    .num-card:last-child {
+      border-right: none;
+    }
+
+    .num-card.vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .num-card:nth-child(2).vis {
+      transition-delay: 0.1s;
+    }
+
+    .num-card:nth-child(3).vis {
+      transition-delay: 0.2s;
+    }
+
+    .num-card:nth-child(4).vis {
+      transition-delay: 0.3s;
+    }
+
+    .num-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .num-val .red {
+      color: var(--red);
+    }
+
+    .num-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      line-height: 1.6;
+    }
+
+    .num-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 300;
+      font-style: italic;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.3);
+      margin-top: 3rem;
+      opacity: 0;
+      transition: opacity 1s var(--ease) 0.4s;
+    }
+
+    .num-tagline.vis {
+      opacity: 1;
+    }
+
+    .num-tagline em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    /* ── TESTIMONIAL ── */
+    .tband {
+      padding: 6rem 3rem;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .tband-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .tband-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      color: var(--red);
+      opacity: 0.15;
+      line-height: 0.8;
+      margin-bottom: 1rem;
+    }
+
+    .tband-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+
+    .tband-author {
+      font-size: 0.52rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      font-weight: 400;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      padding: 6rem 3rem;
+      background: var(--cream);
+    }
+
+    .contact-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .contact-left h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+
+    .contact-left>p {
+      font-size: 0.83rem;
+      font-weight: 300;
+      color: var(--txt2);
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .cd-row {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .cd-label {
+      font-size: 0.46rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.22rem;
+      font-weight: 500;
+    }
+
+    .cd-val {
+      font-size: 0.82rem;
+      color: var(--charcoal);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* WhatsApp inline link */
+    .wa-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+      padding: 0.7rem 1.4rem;
+      background: #25D366;
+      color: white;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: all 0.3s var(--ease);
+    }
+
+    .wa-link:hover {
+      background: #1ebe5d;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    .wa-link svg {
+      width: 14px;
+      height: 14px;
+      fill: white;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cf-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .cf-label {
+      font-size: 0.46rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--txt2);
+      font-weight: 400;
+    }
+
+    .cf-input,
+    .cf-textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 300;
+      padding: 0.7rem 0;
+      border: none;
+      border-bottom: 1px solid rgba(44, 44, 44, 0.12);
+      background: transparent;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .cf-input:focus,
+    .cf-textarea:focus {
+      border-color: var(--red);
+    }
+
+    .cf-input::placeholder,
+    .cf-textarea::placeholder {
+      color: var(--txt3);
+      font-weight: 200;
+    }
+
+    .cf-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .cf-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      border-radius: 2px;
+      transition: all 0.3s var(--ease);
+      align-self: flex-start;
+    }
+
+    .cf-btn:hover {
+      background: var(--red2);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(192, 57, 43, 0.3);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem 3rem;
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .f-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .f-brand-icon {
+      width: 22px;
+      height: 22px;
+      opacity: 0.35;
+    }
+
+    .f-brand-text {
+      font-size: 0.52rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .f-copy {
+      font-size: 0.5rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    .f-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .f-links a {
+      font-size: 0.48rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .f-links a:hover {
+      color: var(--red3);
+    }
+
+    /* ── WHATSAPP FLOATING BUTTON ── */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 400;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+      text-decoration: none;
+      transition: all 0.3s var(--ease);
+      opacity: 0;
+      transform: translateY(16px) scale(0.8);
+      animation: waIn 0.5s 2.5s var(--ease) forwards;
+    }
+
+    .wa-float:hover {
+      background: #1ebe5d;
+      transform: translateY(-3px) scale(1.08);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
+    }
+
+    .wa-float svg {
+      width: 26px;
+      height: 26px;
+      fill: white;
+    }
+
+    @keyframes waIn {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* WhatsApp tooltip */
+    .wa-float::before {
+      content: 'Chat with us';
+      position: absolute;
+      right: calc(100% + 10px);
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--dark);
+      color: white;
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .wa-float:hover::before {
+      opacity: 1;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      nav.scrolled {
+        padding: 0.7rem 1.5rem;
+      }
+
+      .nav-link {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 5rem 1.5rem 2rem;
+        gap: 2rem;
+      }
+
+      .hero-right {
+        max-width: 400px;
+      }
+
+      .hero-scroll {
+        left: 1.5rem;
+      }
+
+      .about {
+        padding: 5rem 1.5rem;
+      }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .projects {
+        padding: 4rem 1.5rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .numbers {
+        padding: 4rem 1.5rem;
+      }
+
+      .numbers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .num-card {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .num-card:nth-child(2) {
+        border-right: none;
+      }
+
+      .contact {
+        padding: 4rem 1.5rem;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+
+      .f-links {
+        justify-content: center;
+      }
+    }
+
+    @media(max-width:600px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProg"></div>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <img class="pre-logo" src="images/logo.PNG" alt="Shreedhar Group Logo">
+    <div class="pre-name">Shreedhar Group</div>
+    <div class="pre-bar">
+      <div class="pre-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- WHATSAPP FLOAT -->
+  <a class="wa-float"
+    href="https://wa.me/919924818400?text=Hello%20Shreedhar%20Group%2C%20I%27m%20interested%20in%20your%20projects."
+    target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- NAV -->
+  <nav id="mainNav">
+    <a class="nav-brand" href="#">
+      <img class="nav-logo-icon" src="images/logo.PNG" alt="Shreedhar Group Logo">
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Shreedhar Group</span>
+        <span class="nav-logo-tag">Trust Forever</span>
+      </div>
+    </a>
+    <div class="nav-right">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#contact" class="nav-cta">Enquire</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>Ahmedabad's Most Trusted Developer</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="ht-line"><span class="ht-inner">Building Homes,</span></span>
+        <span class="ht-line"><span class="ht-inner">Crafting <em>Trust</em></span></span>
+        <span class="ht-line"><span class="ht-inner">Since 2002.</span></span>
+      </h1>
+      <p class="hero-sub">Shreedhar Group has delivered 10+ landmark residential projects across Ahmedabad —
+        earning the trust of 10000+ families over two decades.</p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-primary">View Projects →</a>
+        <a href="#contact" class="btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-3d-wrap" id="hero3d">
+        <div class="hero-card-3d" id="heroCard">
+          <img src="images/shreedhar-sky.png" alt="Shreedhar Sky — Premium Apartments" class="hero-image">
+          <div class="hero-image-overlay"></div>
+          <div class="hero-image-badge">
+            <div class="hib-num">20+</div>
+            <div class="hib-text">Years of Trust</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Shreedhar Sky</span><span class="dot">●</span>
+      <span>Shreedhar Luxuria</span><span class="dot">●</span>
+      <span>Shreedhar Greens</span><span class="dot">●</span>
+      <span>Shreedhar Vihar</span><span class="dot">●</span>
+      <span>Shreedhar Royal</span><span class="dot">●</span>
+      <span>Shreedhar Sparsh</span><span class="dot">●</span>
+      <span>Shreedhar Family</span><span class="dot">●</span>
+      <span>Ahmedabad</span><span class="dot">●</span>
+      <span>Trust Forever</span><span class="dot">●</span>
+      <span>Shreedhar Sky</span><span class="dot">●</span>
+      <span>Shreedhar Luxuria</span><span class="dot">●</span>
+      <span>Shreedhar Greens</span><span class="dot">●</span>
+      <span>Shreedhar Vihar</span><span class="dot">●</span>
+      <span>Shreedhar Royal</span><span class="dot">●</span>
+      <span>Shreedhar Sparsh</span><span class="dot">●</span>
+      <span>Shreedhar Family</span><span class="dot">●</span>
+      <span>Ahmedabad</span><span class="dot">●</span>
+      <span>Trust Forever</span><span class="dot">●</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="reveal">
+        <div class="about-left-label">Est. 2002</div>
+        <div class="about-num">20<span>+</span></div>
+        <div class="about-num-label">Years Building Trust</div>
+        <div class="about-divider"></div>
+        <div class="about-num" style="font-size:3rem;">10000<span>+</span></div>
+        <div class="about-num-label">Happy Families</div>
+      </div>
+      <div>
+        <p class="sec-eye reveal">About Us</p>
+        <p class="about-text reveal reveal-d1">
+          For over two decades, <em>Shreedhar Group</em> has been the name that Ahmedabad trusts. We don't just construct
+          buildings — we build communities, craft homes, and deliver promises. With 10+ landmark projects, we are
+          Ahmedabad's most <em>trusted</em> developer.
+        </p>
+        <p class="about-credit reveal reveal-d2">— Trust Forever · Shreedhar Group, Ahmedabad</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE DIVIDER 1 -->
+  <section class="img-divider" id="imgDiv1">
+    <div class="img-divider-bg" style="background-image:url('images/shreedhar-luxuria.png')"></div>
+    <div class="img-divider-overlay"></div>
+    <div class="img-divider-content">
+      <h2>Architecture that <em>endures</em></h2>
+      <p>Designed to stand the test of time</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS — FULL GRID -->
+  <section class="projects" id="projects">
+    <div class="projects-header reveal">
+      <div>
+        <p class="sec-eye">Our Portfolio</p>
+        <h2>Select <em>Projects</em></h2>
+      </div>
+      <div class="projects-count">06 Projects</div>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="proj-filters reveal">
+      <button class="proj-filter active" data-filter="all">All</button>
+      <button class="proj-filter" data-filter="apartments">Apartments</button>
+      <button class="proj-filter" data-filter="villas">Villas</button>
+      <button class="proj-filter" data-filter="completed">Completed</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="pcard reveal" data-cat="apartments completed">
+        <div class="pcard-img">
+          <img src="images/shreedhar-sky.png" alt="Shreedhar Sky" loading="lazy">
+          <div class="pcard-tag">Vastral Landmark</div>
+          <div class="pcard-bottom">
+            <div class="pcard-name">Shreedhar Sky</div>
+            <div class="pcard-loc">S.P. Ring Road, Vastral</div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-chips">
+            <span class="pcard-chip">Apartments</span>
+            <span class="pcard-chip">Shops</span>
+            <span class="pcard-chip">Vastral</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard reveal reveal-d1" data-cat="apartments">
+        <div class="pcard-img">
+          <img src="images/shreedhar-luxuria.png" alt="Shreedhar Luxuria" loading="lazy">
+          <div class="pcard-tag">3 BHK Premium</div>
+          <div class="pcard-bottom">
+            <div class="pcard-name">Shreedhar Luxuria</div>
+            <div class="pcard-loc">Vastral, Ahmedabad</div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-chips">
+            <span class="pcard-chip">3 BHK</span>
+            <span class="pcard-chip">Luxury</span>
+            <span class="pcard-chip">Ongoing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard reveal reveal-d2" data-cat="apartments completed">
+        <div class="pcard-img">
+          <img src="images/shreedhar-greens.png" alt="Shreedhar Greens" loading="lazy">
+          <div class="pcard-tag">Premium Living</div>
+          <div class="pcard-bottom">
+            <div class="pcard-name">Shreedhar Greens</div>
+            <div class="pcard-loc">Gornel, Ahmedabad</div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-chips">
+            <span class="pcard-chip">Apartments</span>
+            <span class="pcard-chip">Modern</span>
+            <span class="pcard-chip">Vastral</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard reveal reveal-d1" data-cat="apartments completed">
+        <div class="pcard-img">
+          <img src="images/shreedhar-vihar.png" alt="Shreedhar Vihar" loading="lazy">
+          <div class="pcard-tag">Township</div>
+          <div class="pcard-bottom">
+            <div class="pcard-name">Shreedhar Vihar</div>
+            <div class="pcard-loc">Vastral, Ahmedabad</div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-chips">
+            <span class="pcard-chip">2/3 BHK</span>
+            <span class="pcard-chip">Gated</span>
+            <span class="pcard-chip">Community</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard reveal reveal-d2" data-cat="villas completed">
+        <div class="pcard-img">
+          <img src="images/shreedhar-royal.png" alt="Shreedhar Royal" loading="lazy">
+          <div class="pcard-tag">Premium Living</div>
+          <div class="pcard-bottom">
+            <div class="pcard-name">Shreedhar Royal</div>
+            <div class="pcard-loc">Ahmedabad</div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-chips">
+            <span class="pcard-chip">5 BHK</span>
+            <span class="pcard-chip">Villa</span>
+            <span class="pcard-chip">Nikol</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard reveal reveal-d3" data-cat="villas completed">
+        <div class="pcard-img">
+          <img src="images/shreedhar-sparsh.png" alt="Shreedhar Sparsh" loading="lazy">
+          <div class="pcard-tag">Premium Spaces</div>
+          <div class="pcard-bottom">
+            <div class="pcard-name">Shreedhar Sparsh</div>
+            <div class="pcard-loc">Ahmedabad</div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-chips">
+            <span class="pcard-chip">4 BHK</span>
+            <span class="pcard-chip">Bungalow</span>
+            <span class="pcard-chip">Premium</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="numbers" id="numbers">
+    <div class="numbers-inner">
+      <div class="numbers-grid" id="numGrid">
+        <div class="num-card">
+          <div class="num-val" data-count="10" data-suffix="+">0</div>
+          <div class="num-label">Landmark<br>Projects</div>
+        </div>
+        <div class="num-card">
+          <div class="num-val" data-count="10000" data-suffix="+">0</div>
+          <div class="num-label">Happy<br>Families</div>
+        </div>
+        <div class="num-card">
+          <div class="num-val" data-count="20" data-suffix="+">0</div>
+          <div class="num-label">Years of<br>Developing the City</div>
+        </div>
+        <div class="num-card">
+          <div class="num-val"><span class="red">RERA</span></div>
+          <div class="num-label">Certified<br>Projects</div>
+        </div>
+      </div>
+      <p class="num-tagline" id="numTag">Every brick placed with <em>trust</em>. Every home, a <em>promise</em> kept.
+      </p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="tband">
+    <div class="tband-inner reveal">
+      <div class="tband-mark">"</div>
+      <p class="tband-quote">"Shreedhar Group didn't just build our home — they built our trust. From the first visit to
+        the day we moved in, every promise was kept."</p>
+      <p class="tband-author">— A Shreedhar Family Homeowner · Vastral, Ahmedabad</p>
+    </div>
+  </section>
+
+  <!-- IMAGE DIVIDER 2 -->
+  <section class="img-divider" id="imgDiv2">
+    <div class="img-divider-bg" style="background-image:url('images/shreedhar-sparsh.png')"></div>
+    <div class="img-divider-overlay"></div>
+    <div class="img-divider-content">
+      <h2>Ahmedabad's most <em>trusted</em> name</h2>
+      <p>Trust Forever · Since 2002</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left reveal">
+        <p class="sec-eye">Get in Touch</p>
+        <h2>Let's build your<br><em>dream home</em></h2>
+        <p>Whether you're looking for your first home or investing in your future — Shreedhar Group has been Ahmedabad's
+          trusted partner for over two decades.</p>
+        <div class="cd-row">
+          <div class="cd-item">
+            <div class="cd-label">Phone</div>
+            <div class="cd-val">+91 99248 18400 · +91 95121 66161</div>
+          </div>
+          <div class="cd-item">
+            <div class="cd-label">Office</div>
+            <div class="cd-val">Vastral, Ahmedabad — 382418, Gujarat</div>
+          </div>
+          <div class="cd-item">
+            <div class="cd-label">Instagram</div>
+            <div class="cd-val"><a href="https://www.instagram.com/shreedhar_group_/" target="_blank" rel="noopener"
+                style="color:inherit;text-decoration:none;">@shreedhar_group_</a></div>
+          </div>
+        </div>
+        <a class="wa-link"
+          href="https://wa.me/919924818400?text=Hello%20Shreedhar%20Group%2C%20I%27m%20interested%20in%20your%20projects."
+          target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div class="contact-right reveal reveal-d2">
+        <form class="contact-form" onsubmit="submitForm(event)">
+          <div class="cf-group">
+            <label class="cf-label">Full Name</label>
+            <input class="cf-input" type="text" placeholder="Your name" required>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">Phone Number</label>
+            <input class="cf-input" type="tel" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">Interested In</label>
+            <input class="cf-input" type="text" placeholder="e.g. Shreedhar Luxuria — 3 BHK">
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">Message</label>
+            <textarea class="cf-textarea" placeholder="Tell us about your requirements..."></textarea>
+          </div>
+          <button class="cf-btn" type="submit" id="cfBtn">Book a Site Visit →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="f-brand">
+      <img class="f-brand-icon" src="images/logo.PNG" alt="Shreedhar Group"
+        style="height:22px;width:auto;opacity:0.6;">
+      <span class="f-brand-text">Shreedhar Group</span>
+    </div>
+    <div class="f-copy">© 2025 Shreedhar Group · Trust Forever · All rights reserved.</div>
+    <div class="f-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.instagram.com/shreedhar_group_/" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+  <script>
+    /* ═══ PRELOADER ═══ */
+    window.addEventListener('load', () => { setTimeout(() => document.getElementById('preloader').classList.add('done'), 2300); });
+
+    /* ═══ SCROLL PROGRESS ═══ */
+    const prog = document.getElementById('scrollProg');
+    window.addEventListener('scroll', () => { const h = document.documentElement.scrollHeight - window.innerHeight; prog.style.width = (scrollY / h * 100) + '%'; }, { passive: true });
+
+    /* ═══ NAV ═══ */
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', scrollY > 50); }, { passive: true });
+
+    /* ═══ 3D HERO CARD — mouse tilt ═══ */
+    const wrap = document.getElementById('hero3d');
+    const card = document.getElementById('heroCard');
+    if (wrap && card) {
+      wrap.addEventListener('mousemove', e => {
+        const r = wrap.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `rotateY(${x * 18}deg) rotateX(${-y * 10}deg)`;
+        card.style.boxShadow = `${-x * 40}px ${-y * 20}px 80px rgba(44,44,44,0.22)`;
+      });
+      wrap.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateY(-8deg) rotateX(4deg)';
+        card.style.boxShadow = '32px 32px 80px rgba(44,44,44,0.2)';
+      });
+    }
+
+    /* ═══ IMAGE DIVIDER PARALLAX ═══ */
+    document.querySelectorAll('.img-divider').forEach(el => {
+      const bg = el.querySelector('.img-divider-bg');
+      new IntersectionObserver(entries => { entries.forEach(e => el.classList.toggle('in-view', e.isIntersecting)); }, { threshold: 0.2 }).observe(el);
+      window.addEventListener('scroll', () => {
+        const rect = el.getBoundingClientRect();
+        const offset = (rect.top + rect.height / 2 - window.innerHeight / 2) * 0.1;
+        bg.style.transform = `translateY(${offset}px)`;
+      }, { passive: true });
     });
-  });
-});
 
-/* ═══ 3D TILT ON ALL PROJECT CARDS ═══ */
-document.querySelectorAll('.pcard').forEach(card=>{
-  card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-0.5;
-    const y=(e.clientY-r.top)/r.height-0.5;
-    card.style.transform=`translateY(-8px) rotateX(${-y*6}deg) rotateY(${x*8}deg)`;
-  });
-  card.addEventListener('mouseleave',()=>{card.style.transform='';});
-});
+    /* ═══ HERO PARALLAX ═══ */
+    const heroInner = document.querySelector('.hero-left');
+    window.addEventListener('scroll', () => {
+      if (scrollY < window.innerHeight) {
+        const p = scrollY / window.innerHeight;
+        heroInner.style.transform = `translateY(${scrollY * 0.12}px)`;
+        heroInner.style.opacity = 1 - p * 1.1;
+      }
+    }, { passive: true });
 
-/* ═══ SMOOTH ANCHORS ═══ */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
+    /* ═══ NUMBERS COUNTER ═══ */
+    const numGrid = document.getElementById('numGrid');
+    const numTag = document.getElementById('numTag');
+    let counted = false;
+    new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          numGrid.querySelectorAll('.num-card').forEach(c => c.classList.add('vis'));
+          numTag.classList.add('vis');
+          if (!counted) {
+            counted = true;
+            numGrid.querySelectorAll('.num-val[data-count]').forEach(el => {
+              const end = parseInt(el.dataset.count), suffix = el.dataset.suffix || '';
+              let v = 0; const dur = 2000, fps = 60, inc = end / (dur / 1000 * fps);
+              const t = setInterval(() => { v = Math.min(v + inc, end); el.textContent = Math.round(v) + suffix; if (v >= end) clearInterval(t); }, 1000 / fps);
+            });
+          }
+        }
+      });
+    }, { threshold: 0.25 }).observe(numGrid);
 
-/* ═══ FORM SUBMIT ═══ */
-function submitForm(e){
-  e.preventDefault();
-  const btn=document.getElementById('cfBtn');
-  btn.textContent='Sending…';btn.disabled=true;
-  setTimeout(()=>{
-    btn.textContent='Request Sent ✓';btn.style.background='#27ae60';
-    setTimeout(()=>{btn.textContent='Book a Site Visit →';btn.style.background='';btn.disabled=false;e.target.reset();},3500);
-  },1200);
-}
-</script>
+    /* ═══ SCROLL REVEAL ═══ */
+    const revObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); }); }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+    /* ═══ PROJECT FILTER ═══ */
+    document.querySelectorAll('.proj-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.proj-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        document.querySelectorAll('.pcard').forEach(card => {
+          const cats = card.dataset.cat || '';
+          const show = f === 'all' || cats.includes(f);
+          card.style.opacity = show ? '1' : '0.25';
+          card.style.transform = show ? '' : 'scale(0.96)';
+          card.style.pointerEvents = show ? 'auto' : 'none';
+          card.style.transition = 'opacity 0.4s, transform 0.4s';
+        });
+      });
+    });
+
+    /* ═══ 3D TILT ON ALL PROJECT CARDS ═══ */
+    document.querySelectorAll('.pcard').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `translateY(-8px) rotateX(${-y * 6}deg) rotateY(${x * 8}deg)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+
+    /* ═══ SMOOTH ANCHORS ═══ */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    /* ═══ FORM SUBMIT ═══ */
+    function submitForm(e) {
+      e.preventDefault();
+      const btn = document.getElementById('cfBtn');
+      btn.textContent = 'Sending…'; btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Request Sent ✓'; btn.style.background = '#27ae60';
+        setTimeout(() => { btn.textContent = 'Book a Site Visit →'; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 3500);
+      }, 1200);
+    }
+  </script>
 </body>
+
 </html>
