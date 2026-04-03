@@ -2334,11 +2334,11 @@
         <form class="contact-form" onsubmit="submitForm(event)">
           <div class="cf-group">
             <label class="cf-label">Full Name</label>
-            <input class="cf-input" type="text" placeholder="Your name" required>
+            <input class="cf-input" type="text" name="from_name" placeholder="Your name" required>
           </div>
           <div class="cf-group">
             <label class="cf-label">Phone Number</label>
-            <input class="cf-input" type="tel" placeholder="+91 XXXXX XXXXX" required>
+            <input class="cf-input" type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
           </div>
           <div class="cf-group">
             <label class="cf-label">Email Address</label>
@@ -2346,7 +2346,7 @@
           </div>
           <div class="cf-group">
             <label class="cf-label">Interested In</label>
-            <select class="cf-input" style="cursor:pointer!important">
+            <select class="cf-input" name="project_name" style="cursor:pointer!important">
               <option value="">Select a project...</option>
               <option>Shreedhar Vihar — 2 BHK</option>
               <option>Shreedhar Glory — 2 BHK Premium</option>
@@ -2358,7 +2358,7 @@
           </div>
           <div class="cf-group">
             <label class="cf-label">Message</label>
-            <textarea class="cf-textarea" placeholder="Tell us about your requirements..."></textarea>
+            <textarea class="cf-textarea" name="message" placeholder="Tell us about your requirements..."></textarea>
           </div>
           <button class="cf-btn" type="submit" id="cfBtn">Book a Site Visit →</button>
         </form>
