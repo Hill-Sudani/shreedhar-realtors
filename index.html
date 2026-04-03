@@ -5,12 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shreedhar Group — Trust Forever | Vastral's Most Trusted Developer Since 1992</title>
-  <meta name="description" content="Shreedhar Group — Vastral, Ahmedabad's most trusted real estate developer since 1992. 45+ projects, 5000+ residential flats, 1000+ commercial spaces, 500+ bungalows.">
+  <meta name="description"
+    content="Shreedhar Group — Vastral, Ahmedabad's most trusted real estate developer since 1992. 45+ projects, 5000+ residential flats, 1000+ commercial spaces, 500+ bungalows.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --charcoal: #2c2c2c;
@@ -27,12 +36,15 @@
       --txt: #2c2c2c;
       --txt2: #777;
       --txt3: #aaa;
-      --border: rgba(44,44,44,0.08);
-      --ease: cubic-bezier(.22,1,.36,1);
-      --ease2: cubic-bezier(.16,1,.3,1);
+      --border: rgba(44, 44, 44, 0.08);
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --ease2: cubic-bezier(.16, 1, .3, 1);
     }
 
-    html { scroll-behavior: smooth; overflow-x: hidden; }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -43,510 +55,1617 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    * { cursor: default !important; }
-    a, button, .pcard, .wa-float { cursor: pointer !important; }
-    input, textarea, select { cursor: text !important; }
+    * {
+      cursor: default !important;
+    }
 
-    ::selection { background: var(--red); color: var(--white); }
+    a,
+    button,
+    .pcard,
+    .wa-float {
+      cursor: pointer !important;
+    }
 
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--cream); }
-    ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+    input,
+    textarea,
+    select {
+      cursor: text !important;
+    }
+
+    ::selection {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--cream);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--red);
+      border-radius: 2px;
+    }
 
     /* ── SCROLL PROGRESS ── */
     .scroll-progress {
-      position: fixed; top: 0; left: 0; height: 2px;
-      background: var(--red); z-index: 1000; width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: var(--red);
+      z-index: 1000;
+      width: 0;
       transition: width 0.1s linear;
     }
 
     /* ── PRELOADER ── */
     .preloader {
-      position: fixed; inset: 0; z-index: 9999;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
       background: var(--cream);
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
       transition: opacity 0.7s var(--ease), visibility 0.7s;
     }
-    .preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
-    .pre-logo { width: 120px; height: auto; opacity: 0; animation: preFade 0.6s 0.2s var(--ease) forwards; }
+
+    .preloader.done {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .pre-logo {
+      width: 120px;
+      height: auto;
+      opacity: 0;
+      animation: preFade 0.6s 0.2s var(--ease) forwards;
+    }
+
     .pre-name {
-      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.28em;
-      text-transform: uppercase; color: var(--charcoal);
-      opacity: 0; animation: preFade 0.6s 0.5s var(--ease) forwards;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      opacity: 0;
+      animation: preFade 0.6s 0.5s var(--ease) forwards;
     }
+
     .pre-bar {
-      width: 120px; height: 3px; background: var(--cream2);
-      margin-top: 0.5rem; overflow: hidden; border-radius: 2px;
-      opacity: 0; animation: preFade 0.4s 0.6s var(--ease) forwards;
+      width: 120px;
+      height: 3px;
+      background: var(--cream2);
+      margin-top: 0.5rem;
+      overflow: hidden;
+      border-radius: 2px;
+      opacity: 0;
+      animation: preFade 0.4s 0.6s var(--ease) forwards;
     }
-    .pre-bar-fill { width: 0; height: 100%; background: var(--red); border-radius: 2px; animation: preLoad 1.8s 0.8s var(--ease) forwards; }
-    @keyframes preFade { to { opacity: 1; } }
-    @keyframes preLoad { to { width: 100%; } }
+
+    .pre-bar-fill {
+      width: 0;
+      height: 100%;
+      background: var(--red);
+      border-radius: 2px;
+      animation: preLoad 1.8s 0.8s var(--ease) forwards;
+    }
+
+    @keyframes preFade {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes preLoad {
+      to {
+        width: 100%;
+      }
+    }
 
     /* ── NAV ── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-      display: flex; align-items: center; justify-content: space-between;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 1.4rem 3rem;
       transition: all 0.5s var(--ease);
     }
+
     nav.scrolled {
-      background: rgba(247,244,239,0.94);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      background: rgba(247, 244, 239, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       padding: 0.9rem 3rem;
       box-shadow: 0 1px 0 var(--border);
     }
-    .nav-brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
-    .nav-logo-icon { height: 32px; width: auto; flex-shrink: 0; }
-    .nav-logo-text { display: flex; flex-direction: column; }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      height: 32px;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
     .nav-logo-name {
-      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
-      font-weight: 500; color: var(--charcoal); letter-spacing: 0.04em; line-height: 1;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+      line-height: 1;
     }
+
     .nav-logo-tag {
-      font-size: 0.42rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--red); font-weight: 500; margin-top: 1px;
+      font-size: 0.42rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 500;
+      margin-top: 1px;
     }
-    .nav-right { display: flex; align-items: center; gap: 2rem; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
     .nav-link {
-      font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
-      font-weight: 400; color: var(--charcoal); text-decoration: none;
-      transition: color 0.3s; position: relative;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--charcoal);
+      text-decoration: none;
+      transition: color 0.3s;
+      position: relative;
     }
+
     .nav-link::after {
-      content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
-      height: 1px; background: var(--red);
-      transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease);
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s var(--ease);
     }
-    .nav-link:hover { color: var(--red); }
-    .nav-link:hover::after { transform: scaleX(1); }
+
+    .nav-link:hover {
+      color: var(--red);
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
     .nav-cta {
-      font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
-      font-weight: 500; padding: 0.55rem 1.3rem;
-      background: var(--red); color: var(--white); text-decoration: none;
-      border-radius: 2px; transition: all 0.3s var(--ease);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.55rem 1.3rem;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s var(--ease);
     }
-    .nav-cta:hover { background: var(--red2); transform: translateY(-1px); }
+
+    .nav-cta:hover {
+      background: var(--red2);
+      transform: translateY(-1px);
+    }
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh; padding: 7rem 3rem 3rem;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: center;
-      position: relative; overflow: hidden; background: var(--cream);
+      min-height: 100vh;
+      padding: 7rem 3rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
     }
+
     .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 60% at 60% 50%, rgba(192,57,43,0.04) 0%, transparent 70%);
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 60% 50%, rgba(192, 57, 43, 0.04) 0%, transparent 70%);
       pointer-events: none;
     }
-    .hero-left { position: relative; z-index: 1; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
-      font-weight: 500; color: var(--red); margin-bottom: 1.6rem;
+
+    .hero-left {
+      position: relative;
+      z-index: 1;
     }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--red);
+      margin-bottom: 1.6rem;
+    }
+
     .hero-badge-dot {
-      width: 5px; height: 5px; border-radius: 50%; background: var(--red);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--red);
       animation: blink 2s ease-in-out infinite;
     }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.3
+      }
+    }
+
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.8rem, 5.5vw, 4.2rem);
-      font-weight: 400; line-height: 1.1; color: var(--charcoal);
-      margin-bottom: 1.4rem; overflow: hidden;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 1.4rem;
+      overflow: hidden;
     }
-    .ht-line { display: block; overflow: hidden; }
-    .ht-inner { display: block; transform: translateY(100%); animation: slideUp 0.9s var(--ease) forwards; }
-    .ht-line:nth-child(2) .ht-inner { animation-delay: 0.1s; }
-    .ht-line:nth-child(3) .ht-inner { animation-delay: 0.2s; }
-    .hero-title em { font-style: italic; color: var(--red); }
-    @keyframes slideUp { to { transform: translateY(0); } }
+
+    .ht-line {
+      display: block;
+      overflow: hidden;
+    }
+
+    .ht-inner {
+      display: block;
+      transform: translateY(100%);
+      animation: slideUp 0.9s var(--ease) forwards;
+    }
+
+    .ht-line:nth-child(2) .ht-inner {
+      animation-delay: 0.1s;
+    }
+
+    .ht-line:nth-child(3) .ht-inner {
+      animation-delay: 0.2s;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+      }
+    }
+
     .hero-sub {
-      font-size: 0.88rem; line-height: 1.85; color: var(--txt2);
-      max-width: 420px; margin-bottom: 2.2rem;
-      opacity: 0; animation: fadeUp 0.8s 0.5s var(--ease) forwards;
+      font-size: 0.88rem;
+      line-height: 1.85;
+      color: var(--txt2);
+      max-width: 420px;
+      margin-bottom: 2.2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.5s var(--ease) forwards;
     }
+
     .hero-ctas {
-      display: flex; gap: 0.8rem; flex-wrap: wrap;
-      opacity: 0; animation: fadeUp 0.8s 0.7s var(--ease) forwards;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.7s var(--ease) forwards;
     }
-    @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
     .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
-      font-weight: 500; padding: 0.85rem 1.8rem;
-      background: var(--red); color: var(--white);
-      text-decoration: none; border-radius: 2px; transition: all 0.35s var(--ease);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.85rem 1.8rem;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.35s var(--ease);
     }
-    .btn-primary:hover { background: var(--red2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(192,57,43,0.3); }
+
+    .btn-primary:hover {
+      background: var(--red2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(192, 57, 43, 0.3);
+    }
+
     .btn-secondary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
-      font-weight: 400; padding: 0.85rem 1.8rem;
-      border: 1px solid rgba(44,44,44,0.2); color: var(--charcoal);
-      text-decoration: none; border-radius: 2px; transition: all 0.3s var(--ease);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 400;
+      padding: 0.85rem 1.8rem;
+      border: 1px solid rgba(44, 44, 44, 0.2);
+      color: var(--charcoal);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s var(--ease);
     }
-    .btn-secondary:hover { border-color: var(--red); color: var(--red); }
-    .hero-right { position: relative; opacity: 0; animation: fadeUp 1s 0.4s var(--ease) forwards; }
-    .hero-3d-wrap { perspective: 1200px; width: 100%; }
+
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .hero-right {
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 1s 0.4s var(--ease) forwards;
+    }
+
+    .hero-3d-wrap {
+      perspective: 1200px;
+      width: 100%;
+    }
+
     .hero-card-3d {
-      position: relative; border-radius: 4px; overflow: hidden;
-      transform: rotateY(-8deg) rotateX(4deg); transform-style: preserve-3d;
-      box-shadow: 32px 32px 80px rgba(44,44,44,0.2), 0 0 0 1px rgba(44,44,44,0.05);
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      transform: rotateY(-8deg) rotateX(4deg);
+      transform-style: preserve-3d;
+      box-shadow: 32px 32px 80px rgba(44, 44, 44, 0.2), 0 0 0 1px rgba(44, 44, 44, 0.05);
       transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
     }
-    .hero-3d-wrap:hover .hero-card-3d { transform: rotateY(-2deg) rotateX(1deg); box-shadow: 16px 16px 60px rgba(44,44,44,0.15); }
-    .hero-image { width: 100%; height: 480px; object-fit: cover; display: block; }
-    .hero-image-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,26,0.85) 0%, transparent 50%); }
+
+    .hero-3d-wrap:hover .hero-card-3d {
+      transform: rotateY(-2deg) rotateX(1deg);
+      box-shadow: 16px 16px 60px rgba(44, 44, 44, 0.15);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 26, 26, 0.85) 0%, transparent 50%);
+    }
+
     .hero-image-badge {
-      position: absolute; bottom: 1.5rem; left: 1.5rem;
-      background: rgba(255,255,255,0.08); backdrop-filter: blur(12px);
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.15);
-      padding: 0.8rem 1.1rem; border-radius: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.8rem 1.1rem;
+      border-radius: 3px;
     }
-    .hib-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 500; color: var(--white); line-height: 1; }
-    .hib-text { font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 2px; }
+
+    .hib-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .hib-text {
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 2px;
+    }
+
     .hero-card-3d::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 50%, rgba(0,0,0,0.05) 100%);
-      pointer-events: none; z-index: 2;
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
+      pointer-events: none;
+      z-index: 2;
     }
+
     .hero-scroll {
-      position: absolute; bottom: 2rem; left: 3rem;
-      display: flex; align-items: center; gap: 0.8rem;
-      opacity: 0; animation: fadeUp 1s 1.2s var(--ease) forwards;
+      position: absolute;
+      bottom: 2rem;
+      left: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      opacity: 0;
+      animation: fadeUp 1s 1.2s var(--ease) forwards;
     }
-    .scroll-line { width: 1px; height: 36px; background: var(--red); animation: scrlp 2s ease-in-out infinite; }
-    @keyframes scrlp { 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(0.4)} }
-    .hero-scroll span { font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--txt3); }
+
+    .scroll-line {
+      width: 1px;
+      height: 36px;
+      background: var(--red);
+      animation: scrlp 2s ease-in-out infinite;
+    }
+
+    @keyframes scrlp {
+
+      0%,
+      100% {
+        transform: scaleY(1)
+      }
+
+      50% {
+        transform: scaleY(0.4)
+      }
+    }
+
+    .hero-scroll span {
+      font-size: 0.52rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
 
     /* ── MARQUEE ── */
-    .marquee { background: var(--dark); overflow: hidden; padding: 0.9rem 0; border-top: 2px solid var(--red); }
-    .marquee-track { display: flex; width: max-content; animation: mq 35s linear infinite; }
-    @keyframes mq { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-    .marquee-track span { white-space: nowrap; padding: 0 1.5rem; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); font-weight: 300; }
-    .marquee-track .dot { color: var(--red); padding: 0 0.5rem; }
+    .marquee {
+      background: var(--dark);
+      overflow: hidden;
+      padding: 0.9rem 0;
+      border-top: 2px solid var(--red);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: mq 35s linear infinite;
+    }
+
+    @keyframes mq {
+      0% {
+        transform: translateX(0)
+      }
+
+      100% {
+        transform: translateX(-50%)
+      }
+    }
+
+    .marquee-track span {
+      white-space: nowrap;
+      padding: 0 1.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 300;
+    }
+
+    .marquee-track .dot {
+      color: var(--red);
+      padding: 0 0.5rem;
+    }
 
     /* ── SECTION SHARED ── */
-    .sec-eye { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 0.5rem; }
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
-    .reveal.vis { opacity: 1; transform: translateY(0); }
-    .reveal-d1 { transition-delay: 0.1s; }
-    .reveal-d2 { transition-delay: 0.2s; }
-    .reveal-d3 { transition-delay: 0.3s; }
-    .reveal-d4 { transition-delay: 0.4s; }
+    .sec-eye {
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
+    }
+
+    .reveal.vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-d2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-d3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-d4 {
+      transition-delay: 0.4s;
+    }
 
     /* ── ABOUT ── */
-    .about { padding: 7rem 3rem; background: var(--white); }
-    .about-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; }
-    .about-left-label { font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 1rem; font-weight: 500; }
-    .about-num { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300; line-height: 1; color: var(--charcoal); margin-bottom: 0.3rem; }
-    .about-num span { font-size: 1.5rem; color: var(--red); }
-    .about-num-label { font-size: 0.7rem; color: var(--txt2); letter-spacing: 0.05em; }
-    .about-divider { width: 40px; height: 1px; background: var(--red); margin: 2rem 0; }
-    .about-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 2.5vw, 1.85rem); font-weight: 300; font-style: italic; line-height: 1.6; color: var(--charcoal); }
-    .about-text em { color: var(--red); font-style: italic; }
-    .about-credit { font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--txt3); margin-top: 1.5rem; font-weight: 400; }
+    .about {
+      padding: 7rem 3rem;
+      background: var(--white);
+    }
+
+    .about-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-left-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .about-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--charcoal);
+      margin-bottom: 0.3rem;
+    }
+
+    .about-num span {
+      font-size: 1.5rem;
+      color: var(--red);
+    }
+
+    .about-num-label {
+      font-size: 0.7rem;
+      color: var(--txt2);
+      letter-spacing: 0.05em;
+    }
+
+    .about-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--red);
+      margin: 2rem 0;
+    }
+
+    .about-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--charcoal);
+    }
+
+    .about-text em {
+      color: var(--red);
+      font-style: italic;
+    }
+
+    .about-credit {
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-top: 1.5rem;
+      font-weight: 400;
+    }
 
     /* ── IMG DIVIDER ── */
-    .img-divider { height: 50vh; position: relative; overflow: hidden; }
-    .img-divider-bg { position: absolute; inset: -15%; background-size: cover; background-position: center; transition: transform 0.1s linear; }
-    .img-divider-overlay { position: absolute; inset: 0; background: rgba(26,26,26,0.6); }
-    .img-divider-content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-    .img-divider-content h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 300; color: var(--white); margin-bottom: 0.5rem; }
-    .img-divider-content h2 em { font-style: italic; color: var(--warm); }
-    .img-divider-content p { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
-    .img-divider.in-view .img-divider-content h2 { animation: fadeUp 0.8s var(--ease) both; }
+    .img-divider {
+      height: 50vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .img-divider-bg {
+      position: absolute;
+      inset: -15%;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.1s linear;
+    }
+
+    .img-divider-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 26, 26, 0.6);
+    }
+
+    .img-divider-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .img-divider-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .img-divider-content h2 em {
+      font-style: italic;
+      color: var(--warm);
+    }
+
+    .img-divider-content p {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .img-divider.in-view .img-divider-content h2 {
+      animation: fadeUp 0.8s var(--ease) both;
+    }
 
     /* ── PROJECTS ── */
-    .projects { padding: 6rem 3rem; background: var(--cream); }
-    .projects-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
-    .projects-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,3.5vw,2.8rem); font-weight: 400; line-height: 1.2; }
-    .projects-header h2 em { font-style: italic; color: var(--red); }
-    .projects-count { font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--txt3); }
+    .projects {
+      padding: 6rem 3rem;
+      background: var(--cream);
+    }
+
+    .projects-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+    }
+
+    .projects-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .projects-header h2 em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    .projects-count {
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
 
     /* Filter tabs */
-    .proj-filters { display: flex; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
-    .proj-filter {
-      font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
-      font-weight: 500; padding: 0.45rem 1rem;
-      border: 1px solid var(--border); color: var(--txt2);
-      background: transparent; border-radius: 2px; transition: all 0.25s; cursor: pointer !important;
+    .proj-filters {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
     }
-    .proj-filter.active, .proj-filter:hover { background: var(--red); color: var(--white); border-color: var(--red); }
+
+    .proj-filter {
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border);
+      color: var(--txt2);
+      background: transparent;
+      border-radius: 2px;
+      transition: all 0.25s;
+      cursor: pointer !important;
+    }
+
+    .proj-filter.active,
+    .proj-filter:hover {
+      background: var(--red);
+      color: var(--white);
+      border-color: var(--red);
+    }
 
     /* Grid — 3 col */
-    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
 
     /* 3D project card */
     .pcard {
-      position: relative; border-radius: 3px; overflow: hidden;
-      background: var(--white); box-shadow: 0 2px 12px rgba(44,44,44,0.06);
+      position: relative;
+      border-radius: 3px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(44, 44, 44, 0.06);
       transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
-      transform-style: preserve-3d; perspective: 800px;
+      transform-style: preserve-3d;
+      perspective: 800px;
     }
-    .pcard:hover { transform: translateY(-8px) rotateX(2deg); box-shadow: 0 20px 48px rgba(44,44,44,0.14); }
-    .pcard-img { position: relative; height: 220px; overflow: hidden; }
-    .pcard-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); }
-    .pcard:hover .pcard-img img { transform: scale(1.06); }
+
+    .pcard:hover {
+      transform: translateY(-8px) rotateX(2deg);
+      box-shadow: 0 20px 48px rgba(44, 44, 44, 0.14);
+    }
+
+    .pcard-img {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .pcard-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s var(--ease);
+    }
+
+    .pcard:hover .pcard-img img {
+      transform: scale(1.06);
+    }
 
     /* Placeholder gradient for missing images */
     .pcard-img .img-placeholder {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       background: linear-gradient(135deg, var(--cream2) 0%, #d4cfc7 100%);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .img-placeholder-text { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; font-style: italic; color: var(--txt3); letter-spacing: 0.05em; }
+
+    .img-placeholder-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--txt3);
+      letter-spacing: 0.05em;
+    }
 
     .pcard-tag {
-      position: absolute; top: 1rem; left: 1rem;
-      font-size: 0.52rem; letter-spacing: 0.14em; text-transform: uppercase;
-      font-weight: 500; padding: 0.3rem 0.7rem;
-      background: var(--red); color: var(--white); border-radius: 2px;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.52rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.3rem 0.7rem;
+      background: var(--red);
+      color: var(--white);
+      border-radius: 2px;
     }
+
     .pcard-tag.ongoing {
       background: var(--warm2);
-      display: flex; align-items: center; gap: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
+
     .pcard-tag.ongoing::before {
       content: '';
-      width: 5px; height: 5px; border-radius: 50%;
-      background: var(--white); opacity: 0.9;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--white);
+      opacity: 0.9;
       animation: pulseTag 1.6s ease-in-out infinite;
       flex-shrink: 0;
     }
+
     @keyframes pulseTag {
-      0%, 100% { opacity: 0.9; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.7); }
+
+      0%,
+      100% {
+        opacity: 0.9;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.7);
+      }
     }
-    .pcard-tag.new-launch { background: #27ae60; }
+
+    .pcard-tag.new-launch {
+      background: #27ae60;
+    }
 
     .pcard-bottom {
-      position: absolute; bottom: 0; left: 0; right: 0; padding: 1.2rem;
-      background: linear-gradient(to top, rgba(26,26,26,0.92), transparent);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.2rem;
+      background: linear-gradient(to top, rgba(26, 26, 26, 0.92), transparent);
     }
-    .pcard-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--white); }
-    .pcard-loc { font-size: 0.55rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-top: 2px; }
 
-    .pcard-body { padding: 1rem 1.2rem 1.2rem; }
-    .pcard-chips { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+    .pcard-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--white);
+    }
+
+    .pcard-loc {
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 2px;
+    }
+
+    .pcard-body {
+      padding: 1rem 1.2rem 1.2rem;
+    }
+
+    .pcard-chips {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.8rem;
+    }
+
     .pcard-chip {
-      font-size: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 0.28rem 0.6rem; border: 1px solid var(--border);
-      color: var(--txt2); border-radius: 1px;
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.6rem;
+      border: 1px solid var(--border);
+      color: var(--txt2);
+      border-radius: 1px;
     }
 
     /* Brochure button */
     .pcard-brochure {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      font-size: 0.52rem; letter-spacing: 0.1em; text-transform: uppercase;
-      font-weight: 500; padding: 0.4rem 0.9rem;
-      border: 1px solid var(--red); color: var(--red);
-      text-decoration: none; border-radius: 2px;
-      transition: all 0.25s var(--ease); background: transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.52rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--red);
+      color: var(--red);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.25s var(--ease);
+      background: transparent;
     }
-    .pcard-brochure:hover { background: var(--red); color: var(--white); }
-    .pcard-brochure svg { width: 10px; height: 10px; fill: currentColor; flex-shrink: 0; }
+
+    .pcard-brochure:hover {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .pcard-brochure svg {
+      width: 10px;
+      height: 10px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
     .pcard-brochure.no-brochure {
-      border-color: var(--border); color: var(--txt3);
-      pointer-events: none; opacity: 0.5;
+      border-color: var(--border);
+      color: var(--txt3);
+      pointer-events: none;
+      opacity: 0.5;
     }
 
     /* shine overlay on hover */
     .pcard::before {
-      content: ''; position: absolute; inset: 0; z-index: 2;
-      background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 60%);
-      opacity: 0; transition: opacity 0.4s; pointer-events: none;
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
     }
-    .pcard:hover::before { opacity: 1; }
+
+    .pcard:hover::before {
+      opacity: 1;
+    }
 
     /* ── NUMBERS ── */
-    .numbers { padding: 6rem 3rem; background: var(--dark); }
-    .numbers-inner { max-width: 960px; margin: 0 auto; }
-    .numbers-grid { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid rgba(255,255,255,0.06); }
+    .numbers {
+      padding: 6rem 3rem;
+      background: var(--dark);
+    }
+
+    .numbers-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
     .num-card {
-      padding: 2.5rem 2rem; border-right: 1px solid rgba(255,255,255,0.06);
-      opacity: 0; transform: translateY(16px);
+      padding: 2.5rem 2rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+      opacity: 0;
+      transform: translateY(16px);
       transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
     }
-    .num-card:last-child { border-right: none; }
-    .num-card.vis { opacity: 1; transform: translateY(0); }
-    .num-card:nth-child(2).vis { transition-delay: 0.1s; }
-    .num-card:nth-child(3).vis { transition-delay: 0.2s; }
-    .num-card:nth-child(4).vis { transition-delay: 0.3s; }
-    .num-card:nth-child(5).vis { transition-delay: 0.4s; }
-    .num-val { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 400; color: var(--white); line-height: 1; margin-bottom: 0.5rem; }
-    .num-val .red { color: var(--red); }
-    .num-label { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); line-height: 1.6; }
-    .num-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem,2vw,1.5rem); font-weight: 300; font-style: italic; text-align: center; color: rgba(255,255,255,0.3); margin-top: 3rem; opacity: 0; transition: opacity 1s var(--ease) 0.4s; }
-    .num-tagline.vis { opacity: 1; }
-    .num-tagline em { font-style: italic; color: var(--red); }
+
+    .num-card:last-child {
+      border-right: none;
+    }
+
+    .num-card.vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .num-card:nth-child(2).vis {
+      transition-delay: 0.1s;
+    }
+
+    .num-card:nth-child(3).vis {
+      transition-delay: 0.2s;
+    }
+
+    .num-card:nth-child(4).vis {
+      transition-delay: 0.3s;
+    }
+
+    .num-card:nth-child(5).vis {
+      transition-delay: 0.4s;
+    }
+
+    .num-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .num-val .red {
+      color: var(--red);
+    }
+
+    .num-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      line-height: 1.6;
+    }
+
+    .num-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 300;
+      font-style: italic;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.3);
+      margin-top: 3rem;
+      opacity: 0;
+      transition: opacity 1s var(--ease) 0.4s;
+    }
+
+    .num-tagline.vis {
+      opacity: 1;
+    }
+
+    .num-tagline em {
+      font-style: italic;
+      color: var(--red);
+    }
 
     /* ── TESTIMONIAL ── */
-    .tband { padding: 6rem 3rem; background: var(--white); text-align: center; }
-    .tband-inner { max-width: 700px; margin: 0 auto; }
-    .tband-mark { font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: var(--red); opacity: 0.15; line-height: 0.8; margin-bottom: 1rem; }
-    .tband-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.3rem,2.5vw,1.85rem); font-weight: 300; font-style: italic; line-height: 1.7; color: var(--charcoal); margin-bottom: 1.5rem; }
-    .tband-author { font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--txt3); font-weight: 400; }
+    .tband {
+      padding: 6rem 3rem;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .tband-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .tband-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      color: var(--red);
+      opacity: 0.15;
+      line-height: 0.8;
+      margin-bottom: 1rem;
+    }
+
+    .tband-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+
+    .tband-author {
+      font-size: 0.52rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      font-weight: 400;
+    }
 
     /* ── CONTACT ── */
-    .contact { padding: 6rem 3rem; background: var(--cream); }
-    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-    .contact-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 1rem; }
-    .contact-left h2 em { font-style: italic; font-weight: 400; color: var(--red); }
-    .contact-left > p { font-size: 0.83rem; font-weight: 300; color: var(--txt2); line-height: 1.85; margin-bottom: 2rem; }
-    .cd-row { display: flex; flex-direction: column; gap: 1.5rem; }
-    .cd-label { font-size: 0.46rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 0.22rem; font-weight: 500; }
-    .cd-val { font-size: 0.82rem; color: var(--charcoal); font-weight: 300; line-height: 1.6; }
+    .contact {
+      padding: 6rem 3rem;
+      background: var(--cream);
+    }
+
+    .contact-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .contact-left h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+
+    .contact-left>p {
+      font-size: 0.83rem;
+      font-weight: 300;
+      color: var(--txt2);
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .cd-row {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .cd-label {
+      font-size: 0.46rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.22rem;
+      font-weight: 500;
+    }
+
+    .cd-val {
+      font-size: 0.82rem;
+      color: var(--charcoal);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
     .wa-link {
-      display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem;
-      padding: 0.7rem 1.4rem; background: #25D366; color: white;
-      font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-      text-decoration: none; border-radius: 3px; transition: all 0.3s var(--ease);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+      padding: 0.7rem 1.4rem;
+      background: #25D366;
+      color: white;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: all 0.3s var(--ease);
     }
-    .wa-link:hover { background: #1ebe5d; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,211,102,0.3); }
-    .wa-link svg { width: 14px; height: 14px; fill: white; flex-shrink: 0; }
-    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-    .cf-group { display: flex; flex-direction: column; gap: 0.3rem; }
-    .cf-label { font-size: 0.46rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--txt2); font-weight: 400; }
-    .cf-input, .cf-textarea {
-      font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 300;
-      padding: 0.7rem 0; border: none; border-bottom: 1px solid rgba(44,44,44,0.12);
-      background: transparent; color: var(--charcoal); outline: none; transition: border-color 0.3s;
+
+    .wa-link:hover {
+      background: #1ebe5d;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
     }
-    .cf-input:focus, .cf-textarea:focus { border-color: var(--red); }
-    .cf-input::placeholder, .cf-textarea::placeholder { color: var(--txt3); font-weight: 200; }
-    .cf-textarea { min-height: 80px; resize: vertical; }
+
+    .wa-link svg {
+      width: 14px;
+      height: 14px;
+      fill: white;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cf-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .cf-label {
+      font-size: 0.46rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--txt2);
+      font-weight: 400;
+    }
+
+    .cf-input,
+    .cf-textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 300;
+      padding: 0.7rem 0;
+      border: none;
+      border-bottom: 1px solid rgba(44, 44, 44, 0.12);
+      background: transparent;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .cf-input:focus,
+    .cf-textarea:focus {
+      border-color: var(--red);
+    }
+
+    .cf-input::placeholder,
+    .cf-textarea::placeholder {
+      color: var(--txt3);
+      font-weight: 200;
+    }
+
+    .cf-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
     .cf-btn {
-      font-family: 'Inter', sans-serif; font-size: 0.6rem; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 0.9rem 2rem; font-weight: 500; margin-top: 0.5rem;
-      background: var(--red); color: var(--white); border: none; border-radius: 2px;
-      transition: all 0.3s var(--ease); align-self: flex-start;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      border-radius: 2px;
+      transition: all 0.3s var(--ease);
+      align-self: flex-start;
     }
-    .cf-btn:hover { background: var(--red2); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(192,57,43,0.3); }
+
+    .cf-btn:hover {
+      background: var(--red2);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(192, 57, 43, 0.3);
+    }
 
     /* ── INSTAGRAM STRIP ── */
     .insta-strip {
-      padding: 4rem 3rem; background: var(--white);
+      padding: 4rem 3rem;
+      background: var(--white);
       border-top: 1px solid var(--border);
     }
+
     .insta-strip-head {
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 2rem;
     }
+
     .insta-strip-title {
-      display: flex; align-items: center; gap: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
     }
-    .insta-strip-title svg { width: 20px; height: 20px; fill: var(--charcoal); opacity: 0.7; }
+
+    .insta-strip-title svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--charcoal);
+      opacity: 0.7;
+    }
+
     .insta-strip-label {
-      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
-      font-weight: 500; color: var(--charcoal);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--charcoal);
     }
+
     .insta-strip-handle {
-      font-size: 0.62rem; letter-spacing: 0.08em; color: var(--txt2);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: var(--txt2);
     }
+
     .insta-follow {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase;
-      font-weight: 500; padding: 0.5rem 1.1rem;
-      border: 1px solid var(--charcoal); color: var(--charcoal);
-      text-decoration: none; border-radius: 2px; transition: all 0.25s var(--ease);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.5rem 1.1rem;
+      border: 1px solid var(--charcoal);
+      color: var(--charcoal);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.25s var(--ease);
     }
-    .insta-follow:hover { background: var(--charcoal); color: var(--white); }
+
+    .insta-follow:hover {
+      background: var(--charcoal);
+      color: var(--white);
+    }
+
     .insta-grid {
-      display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.5rem;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.5rem;
     }
+
     .insta-tile {
-      aspect-ratio: 1; overflow: hidden; position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
       background: var(--cream2);
-      text-decoration: none; display: block;
+      text-decoration: none;
+      display: block;
     }
+
     .insta-tile-inner {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       background: linear-gradient(135deg, var(--cream2), #c8c4bc);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: transform 0.5s var(--ease);
     }
-    .insta-tile:hover .insta-tile-inner { transform: scale(1.04); }
-    .insta-tile-overlay {
-      position: absolute; inset: 0;
-      background: rgba(26,26,26,0); transition: background 0.3s;
-      display: flex; align-items: center; justify-content: center;
+
+    .insta-tile:hover .insta-tile-inner {
+      transform: scale(1.04);
     }
-    .insta-tile:hover .insta-tile-overlay { background: rgba(26,26,26,0.35); }
-    .insta-tile-overlay svg { width: 20px; height: 20px; fill: white; opacity: 0; transition: opacity 0.3s; }
-    .insta-tile:hover .insta-tile-overlay svg { opacity: 1; }
+
+    .insta-tile-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 26, 26, 0);
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .insta-tile:hover .insta-tile-overlay {
+      background: rgba(26, 26, 26, 0.35);
+    }
+
+    .insta-tile-overlay svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .insta-tile:hover .insta-tile-overlay svg {
+      opacity: 1;
+    }
+
     .insta-tile-icon {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 0.65rem; font-style: italic;
-      color: var(--txt3); letter-spacing: 0.05em;
-      text-align: center; padding: 0.5rem;
+      font-size: 0.65rem;
+      font-style: italic;
+      color: var(--txt3);
+      letter-spacing: 0.05em;
+      text-align: center;
+      padding: 0.5rem;
     }
 
     /* ── FOOTER ── */
     footer {
-      padding: 2.5rem 3rem; background: var(--dark);
-      color: rgba(255,255,255,0.3);
-      display: flex; align-items: center; justify-content: space-between;
+      padding: 2.5rem 3rem;
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .f-brand { display: flex; align-items: center; gap: 0.5rem; }
-    .f-brand-icon { width: 22px; height: 22px; opacity: 0.35; }
-    .f-brand-text { font-size: 0.52rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; color: rgba(255,255,255,0.35); }
-    .f-copy { font-size: 0.5rem; font-weight: 300; letter-spacing: 0.05em; }
-    .f-links { display: flex; gap: 1.5rem; }
-    .f-links a { font-size: 0.48rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 300; color: rgba(255,255,255,0.2); text-decoration: none; transition: color 0.3s; }
-    .f-links a:hover { color: var(--red3); }
+
+    .f-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .f-brand-icon {
+      width: 22px;
+      height: 22px;
+      opacity: 0.35;
+    }
+
+    .f-brand-text {
+      font-size: 0.52rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .f-copy {
+      font-size: 0.5rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    .f-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .f-links a {
+      font-size: 0.48rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .f-links a:hover {
+      color: var(--red3);
+    }
 
     /* ── WHATSAPP FLOAT ── */
     .wa-float {
-      position: fixed; bottom: 2rem; right: 2rem; z-index: 400;
-      width: 52px; height: 52px; border-radius: 50%; background: #25D366;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.45); text-decoration: none;
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 400;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+      text-decoration: none;
       transition: all 0.3s var(--ease);
-      opacity: 0; transform: translateY(16px) scale(0.8);
+      opacity: 0;
+      transform: translateY(16px) scale(0.8);
       animation: waIn 0.5s 2.5s var(--ease) forwards;
     }
-    .wa-float:hover { background: #1ebe5d; transform: translateY(-3px) scale(1.08); box-shadow: 0 8px 28px rgba(37,211,102,0.55); }
-    .wa-float svg { width: 26px; height: 26px; fill: white; }
-    @keyframes waIn { to { opacity: 1; transform: translateY(0) scale(1); } }
-    .wa-float::before {
-      content: 'Chat with us'; position: absolute; right: calc(100% + 10px); top: 50%;
-      transform: translateY(-50%); background: var(--dark); color: white;
-      font-size: 0.58rem; letter-spacing: 0.08em; white-space: nowrap;
-      padding: 0.4rem 0.8rem; border-radius: 3px; opacity: 0;
-      pointer-events: none; transition: opacity 0.2s;
+
+    .wa-float:hover {
+      background: #1ebe5d;
+      transform: translateY(-3px) scale(1.08);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
     }
-    .wa-float:hover::before { opacity: 1; }
+
+    .wa-float svg {
+      width: 26px;
+      height: 26px;
+      fill: white;
+    }
+
+    @keyframes waIn {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .wa-float::before {
+      content: 'Chat with us';
+      position: absolute;
+      right: calc(100% + 10px);
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--dark);
+      color: white;
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .wa-float:hover::before {
+      opacity: 1;
+    }
 
     /* ── RESPONSIVE ── */
     @media(max-width:900px) {
-      nav { padding: 1rem 1.5rem; }
-      nav.scrolled { padding: 0.7rem 1.5rem; }
-      .nav-link { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 5rem 1.5rem 2rem; gap: 2rem; }
-      .hero-right { max-width: 400px; }
-      .hero-scroll { left: 1.5rem; }
-      .about { padding: 5rem 1.5rem; }
-      .about-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .projects { padding: 4rem 1.5rem; }
-      .projects-grid { grid-template-columns: repeat(2, 1fr); }
-      .numbers { padding: 4rem 1.5rem; }
-      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
-      .num-card:nth-child(2) { border-right: none; }
-      .tband { padding: 4rem 1.5rem; }
-      .contact { padding: 4rem 1.5rem; }
-      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      footer { flex-direction: column; gap: 1.2rem; text-align: center; padding: 2rem 1.5rem; }
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      nav.scrolled {
+        padding: 0.7rem 1.5rem;
+      }
+
+      .nav-link {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 5rem 1.5rem 2rem;
+        gap: 2rem;
+      }
+
+      .hero-right {
+        max-width: 400px;
+      }
+
+      .hero-scroll {
+        left: 1.5rem;
+      }
+
+      .about {
+        padding: 5rem 1.5rem;
+      }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .projects {
+        padding: 4rem 1.5rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .numbers {
+        padding: 4rem 1.5rem;
+      }
+
+      .numbers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .num-card:nth-child(2) {
+        border-right: none;
+      }
+
+      .tband {
+        padding: 4rem 1.5rem;
+      }
+
+      .contact {
+        padding: 4rem 1.5rem;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
     }
+
     @media(max-width:600px) {
-      .projects-grid { grid-template-columns: 1fr; }
-      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-title { font-size: 2.4rem; }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .numbers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-title {
+        font-size: 2.4rem;
+      }
     }
   </style>
 </head>
@@ -560,12 +1679,19 @@
   <div class="preloader" id="preloader">
     <img class="pre-logo" src="images/logo.PNG" alt="Shreedhar Group">
     <div class="pre-name">Shreedhar Group</div>
-    <div class="pre-bar"><div class="pre-bar-fill"></div></div>
+    <div class="pre-bar">
+      <div class="pre-bar-fill"></div>
+    </div>
   </div>
 
   <!-- WHATSAPP FLOAT -->
-  <a class="wa-float" href="https://wa.me/919924818400?text=Hello%20Shreedhar%20Group%2C%20I%27m%20interested%20in%20your%20projects." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <a class="wa-float"
+    href="https://wa.me/919924818400?text=Hello%20Shreedhar%20Group%2C%20I%27m%20interested%20in%20your%20projects."
+    target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
   </a>
 
   <!-- NAV -->
@@ -588,13 +1714,16 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-badge"><div class="hero-badge-dot"></div> Vastral's Most Trusted Developer</div>
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div> Vastral's Most Trusted Developer
+      </div>
       <h1 class="hero-title">
         <span class="ht-line"><span class="ht-inner">Building</span></span>
         <span class="ht-line"><span class="ht-inner"><em>Dreams</em> Since</span></span>
         <span class="ht-line"><span class="ht-inner">1992</span></span>
       </h1>
-      <p class="hero-sub">From Vastral to New Nikol and beyond — Shreedhar Group has spent over three decades crafting homes that families trust, cherish, and grow in.</p>
+      <p class="hero-sub">From Vastral to New Nikol and beyond — Shreedhar Group has spent over three decades crafting
+        homes that families trust, cherish, and grow in.</p>
       <div class="hero-ctas">
         <a class="btn-primary" href="#projects">Explore Projects →</a>
         <a class="btn-secondary" href="#contact">Book Site Visit</a>
@@ -603,7 +1732,8 @@
     <div class="hero-right">
       <div class="hero-3d-wrap" id="hero3d">
         <div class="hero-card-3d" id="heroCard">
-          <img class="hero-image" src="images/projects/royal.jpg" alt="Shreedhar Royal" onerror="this.style.background='linear-gradient(135deg,#ede8df,#d4cfc7)';this.style.height='480px'">
+          <img class="hero-image" src="images/projects/royal.jpg" alt="Shreedhar Royal"
+            onerror="this.style.background='linear-gradient(135deg,#ede8df,#d4cfc7)';this.style.height='480px'">
           <div class="hero-image-overlay"></div>
           <div class="hero-image-badge">
             <div class="hib-num">45<span style="font-size:1rem">+</span></div>
@@ -654,7 +1784,8 @@
         <div class="about-num-label">Projects delivered across Ahmedabad</div>
       </div>
       <div class="reveal reveal-d2">
-        <p class="about-text">"We didn't just build homes — we built <em>trust</em>, <em>community</em>, and a legacy that spans three decades of Vastral's story."</p>
+        <p class="about-text">"We didn't just build homes — we built <em>trust</em>, <em>community</em>, and a legacy
+          that spans three decades of Vastral's story."</p>
         <p class="about-credit">— Shreedhar Group · Vastral, Ahmedabad · Since 1992</p>
       </div>
     </div>
@@ -694,7 +1825,8 @@
       <!-- 1. SHREEDHAR VIHAR — Ongoing -->
       <div class="pcard reveal" data-cat="ongoing residential">
         <div class="pcard-img">
-          <img src="images/projects/vihar.jpg" alt="Shreedhar Vihar" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Vihar</span></div>'">
+          <img src="images/projects/vihar.jpg" alt="Shreedhar Vihar"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Vihar</span></div>'">
           <div class="pcard-tag ongoing">Ongoing</div>
           <div class="pcard-bottom">
             <div class="pcard-name">Shreedhar Vihar</div>
@@ -708,7 +1840,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <a class="pcard-brochure" href="brochures/vihar.pdf" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Download Brochure
           </a>
         </div>
@@ -717,7 +1852,8 @@
       <!-- 2. SHREEDHAR GLORY — Ongoing -->
       <div class="pcard reveal reveal-d1" data-cat="ongoing residential">
         <div class="pcard-img">
-          <img src="images/projects/glory.jpg" alt="Shreedhar Glory" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Glory</span></div>'">
+          <img src="images/projects/glory.jpg" alt="Shreedhar Glory"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Glory</span></div>'">
           <div class="pcard-tag ongoing">Ongoing</div>
           <div class="pcard-bottom">
             <div class="pcard-name">Shreedhar Glory</div>
@@ -731,7 +1867,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <a class="pcard-brochure" href="brochures/glory.pdf" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Download Brochure
           </a>
         </div>
@@ -740,7 +1879,8 @@
       <!-- 3. SHREEDHAR LUXURIA — Ongoing -->
       <div class="pcard reveal reveal-d2" data-cat="ongoing residential">
         <div class="pcard-img">
-          <img src="images/projects/luxuria.jpg" alt="Shreedhar Luxuria" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Luxuria</span></div>'">
+          <img src="images/projects/luxuria.jpg" alt="Shreedhar Luxuria"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Luxuria</span></div>'">
           <div class="pcard-tag ongoing">Ongoing</div>
           <div class="pcard-bottom">
             <div class="pcard-name">Shreedhar Luxuria</div>
@@ -754,7 +1894,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <a class="pcard-brochure" href="brochures/luxuria.pdf" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Download Brochure
           </a>
         </div>
@@ -763,7 +1906,8 @@
       <!-- 4. SHREEDHAR ROYAL — Ongoing -->
       <div class="pcard reveal" data-cat="ongoing residential">
         <div class="pcard-img">
-          <img src="images/projects/royal.jpg" alt="Shreedhar Royal" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Royal</span></div>'">
+          <img src="images/projects/royal.jpg" alt="Shreedhar Royal"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Royal</span></div>'">
           <div class="pcard-tag ongoing">Ongoing</div>
           <div class="pcard-bottom">
             <div class="pcard-name">Shreedhar Royal</div>
@@ -777,7 +1921,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <a class="pcard-brochure" href="brochures/royal.pdf" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Download Brochure
           </a>
         </div>
@@ -786,7 +1933,8 @@
       <!-- 5. SHREEDHAR SKY — Completed -->
       <div class="pcard reveal reveal-d1" data-cat="completed residential">
         <div class="pcard-img">
-          <img src="images/projects/sky.jpg" alt="Shreedhar Sky" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Sky</span></div>'">
+          <img src="images/projects/sky.jpg" alt="Shreedhar Sky"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Sky</span></div>'">
           <div class="pcard-tag">Completed</div>
           <div class="pcard-bottom">
             <div class="pcard-name">Shreedhar Sky</div>
@@ -800,7 +1948,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <a class="pcard-brochure" href="brochures/sky.pdf" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Download Brochure
           </a>
         </div>
@@ -809,7 +1960,8 @@
       <!-- 6. SHREEDHAR SPARSH — Completed -->
       <div class="pcard reveal reveal-d2" data-cat="completed residential">
         <div class="pcard-img">
-          <img src="images/projects/sparsh.jpg" alt="Shreedhar Sparsh" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Sparsh</span></div>'">
+          <img src="images/projects/sparsh.jpg" alt="Shreedhar Sparsh"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Sparsh</span></div>'">
           <div class="pcard-tag">Completed</div>
           <div class="pcard-bottom">
             <div class="pcard-name">Shreedhar Sparsh</div>
@@ -823,7 +1975,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <a class="pcard-brochure" href="brochures/sparsh.pdf" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Download Brochure
           </a>
         </div>
@@ -832,7 +1987,8 @@
       <!-- 7. SHREEDHAR STAR — Completed -->
       <div class="pcard reveal" data-cat="completed residential">
         <div class="pcard-img">
-          <img src="images/projects/star.jpg" alt="Shreedhar Star" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Star</span></div>'">
+          <img src="images/projects/star.jpg" alt="Shreedhar Star"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Star</span></div>'">
           <div class="pcard-tag">Completed</div>
           <div class="pcard-bottom">
             <div class="pcard-name">Shreedhar Star</div>
@@ -846,7 +2002,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <a class="pcard-brochure" href="brochures/star.pdf" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Download Brochure
           </a>
         </div>
@@ -855,7 +2014,8 @@
       <!-- 8. SHREEDHAR GREENS — Completed -->
       <div class="pcard reveal reveal-d1" data-cat="completed residential">
         <div class="pcard-img">
-          <img src="images/projects/greens.jpg" alt="Shreedhar Greens" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Greens</span></div>'">
+          <img src="images/projects/greens.jpg" alt="Shreedhar Greens"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Greens</span></div>'">
           <div class="pcard-tag">Completed</div>
           <div class="pcard-bottom">
             <div class="pcard-name">Shreedhar Greens</div>
@@ -869,7 +2029,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <a class="pcard-brochure" href="brochures/greens.pdf" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Download Brochure
           </a>
         </div>
@@ -878,7 +2041,8 @@
       <!-- 9. SHREEDHAR VILLA — Completed -->
       <div class="pcard reveal reveal-d2" data-cat="completed villa residential">
         <div class="pcard-img">
-          <img src="images/projects/villa.jpg" alt="Shreedhar Villa" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Villa</span></div>'">
+          <img src="images/projects/villa.jpg" alt="Shreedhar Villa"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Villa</span></div>'">
           <div class="pcard-tag">Completed</div>
           <div class="pcard-bottom">
             <div class="pcard-name">Shreedhar Villa</div>
@@ -892,7 +2056,10 @@
             <span class="pcard-chip">New Nikol</span>
           </div>
           <a class="pcard-brochure" href="brochures/villa.pdf" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Download Brochure
           </a>
         </div>
@@ -901,7 +2068,8 @@
       <!-- 10. SHREEDHAR PALACE — Completed -->
       <div class="pcard reveal" data-cat="completed villa residential">
         <div class="pcard-img">
-          <img src="images/projects/palace.jpg" alt="Shreedhar Palace" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Palace</span></div>'">
+          <img src="images/projects/palace.jpg" alt="Shreedhar Palace"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Palace</span></div>'">
           <div class="pcard-tag">Completed</div>
           <div class="pcard-bottom">
             <div class="pcard-name">Shreedhar Palace</div>
@@ -915,7 +2083,10 @@
             <span class="pcard-chip">New Nikol</span>
           </div>
           <a class="pcard-brochure" href="brochures/palace.pdf" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Download Brochure
           </a>
         </div>
@@ -937,7 +2108,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <span class="pcard-brochure no-brochure">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Brochure Coming Soon
           </span>
         </div>
@@ -959,7 +2133,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <span class="pcard-brochure no-brochure">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Brochure Coming Soon
           </span>
         </div>
@@ -981,7 +2158,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <span class="pcard-brochure no-brochure">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Brochure Coming Soon
           </span>
         </div>
@@ -1003,7 +2183,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <span class="pcard-brochure no-brochure">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Brochure Coming Soon
           </span>
         </div>
@@ -1025,7 +2208,10 @@
             <span class="pcard-chip">Vastral</span>
           </div>
           <span class="pcard-brochure no-brochure">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Brochure Coming Soon
           </span>
         </div>
@@ -1034,7 +2220,8 @@
       <!-- 16. SHREEDHAR BLISS — New Launch / Weekend Homes -->
       <div class="pcard reveal" data-cat="weekend villa">
         <div class="pcard-img">
-          <img src="images/projects/bliss.jpg" alt="Shreedhar Bliss" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Bliss</span></div>'">
+          <img src="images/projects/bliss.jpg" alt="Shreedhar Bliss"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Bliss</span></div>'">
           <div class="pcard-tag new-launch">New Launch</div>
           <div class="pcard-bottom">
             <div class="pcard-name">Shreedhar Bliss</div>
@@ -1048,7 +2235,10 @@
             <span class="pcard-chip">Dahegam</span>
           </div>
           <a class="pcard-brochure" href="brochures/bliss.pdf" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+            </svg>
             Download Brochure
           </a>
         </div>
@@ -1082,7 +2272,8 @@
           <div class="num-label">Bungalows<br>Built</div>
         </div>
       </div>
-      <p class="num-tagline" id="numTag">Every brick placed with <em>trust</em>. Every home, a <em>promise</em> kept.</p>
+      <p class="num-tagline" id="numTag">Every brick placed with <em>trust</em>. Every home, a <em>promise</em> kept.
+      </p>
     </div>
   </section>
 
@@ -1090,7 +2281,8 @@
   <section class="tband">
     <div class="tband-inner reveal">
       <div class="tband-mark">"</div>
-      <p class="tband-quote">"Shreedhar Group didn't just build our home — they built our trust. From the first visit to the day we moved in, every promise was kept."</p>
+      <p class="tband-quote">"Shreedhar Group didn't just build our home — they built our trust. From the first visit to
+        the day we moved in, every promise was kept."</p>
       <p class="tband-author">— A Shreedhar Family Homeowner · Vastral, Ahmedabad</p>
     </div>
   </section>
@@ -1111,7 +2303,8 @@
       <div class="contact-left reveal">
         <p class="sec-eye">Get in Touch</p>
         <h2>Let's build your<br><em>dream home</em></h2>
-        <p>Whether you're looking for your first home or investing in your future — Shreedhar Group has been Vastral's trusted partner since 1992.</p>
+        <p>Whether you're looking for your first home or investing in your future — Shreedhar Group has been Vastral's
+          trusted partner since 1992.</p>
         <div class="cd-row">
           <div class="cd-item">
             <div class="cd-label">Phone</div>
@@ -1123,11 +2316,17 @@
           </div>
           <div class="cd-item">
             <div class="cd-label">Instagram</div>
-            <div class="cd-val"><a href="https://www.instagram.com/shreedhar_group_/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">@shreedhar_group_</a></div>
+            <div class="cd-val"><a href="https://www.instagram.com/shreedhar_group_/" target="_blank" rel="noopener"
+                style="color:inherit;text-decoration:none;">@shreedhar_group_</a></div>
           </div>
         </div>
-        <a class="wa-link" href="https://wa.me/919924818400?text=Hello%20Shreedhar%20Group%2C%20I%27m%20interested%20in%20your%20projects." target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <a class="wa-link"
+          href="https://wa.me/919924818400?text=Hello%20Shreedhar%20Group%2C%20I%27m%20interested%20in%20your%20projects."
+          target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
           Chat on WhatsApp
         </a>
       </div>
@@ -1140,6 +2339,10 @@
           <div class="cf-group">
             <label class="cf-label">Phone Number</label>
             <input class="cf-input" type="tel" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">Email Address</label>
+            <input class="cf-input" type="email" name="reply_to" placeholder="your@email.com">
           </div>
           <div class="cf-group">
             <label class="cf-label">Interested In</label>
@@ -1167,7 +2370,10 @@
   <div class="insta-strip reveal">
     <div class="insta-strip-head">
       <div class="insta-strip-title">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        </svg>
         <span class="insta-strip-label">Follow Us</span>
         <span class="insta-strip-handle">@shreedhar_group_</span>
       </div>
@@ -1179,27 +2385,45 @@
       <!-- 6 placeholder tiles — replace src with actual Instagram image URLs -->
       <a class="insta-tile" href="https://www.instagram.com/shreedhar_group_/" target="_blank" rel="noopener">
         <div class="insta-tile-inner"><span class="insta-tile-icon">Shreedhar Vihar</span></div>
-        <div class="insta-tile-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+        <div class="insta-tile-overlay"><svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg></div>
       </a>
       <a class="insta-tile" href="https://www.instagram.com/shreedhar_group_/" target="_blank" rel="noopener">
         <div class="insta-tile-inner"><span class="insta-tile-icon">Shreedhar Glory</span></div>
-        <div class="insta-tile-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+        <div class="insta-tile-overlay"><svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg></div>
       </a>
       <a class="insta-tile" href="https://www.instagram.com/shreedhar_group_/" target="_blank" rel="noopener">
         <div class="insta-tile-inner"><span class="insta-tile-icon">Shreedhar Royal</span></div>
-        <div class="insta-tile-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+        <div class="insta-tile-overlay"><svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg></div>
       </a>
       <a class="insta-tile" href="https://www.instagram.com/shreedhar_group_/" target="_blank" rel="noopener">
         <div class="insta-tile-inner"><span class="insta-tile-icon">Shreedhar Luxuria</span></div>
-        <div class="insta-tile-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+        <div class="insta-tile-overlay"><svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg></div>
       </a>
       <a class="insta-tile" href="https://www.instagram.com/shreedhar_group_/" target="_blank" rel="noopener">
         <div class="insta-tile-inner"><span class="insta-tile-icon">Shreedhar Villa</span></div>
-        <div class="insta-tile-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+        <div class="insta-tile-overlay"><svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg></div>
       </a>
       <a class="insta-tile" href="https://www.instagram.com/shreedhar_group_/" target="_blank" rel="noopener">
         <div class="insta-tile-inner"><span class="insta-tile-icon">Shreedhar Palace</span></div>
-        <div class="insta-tile-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+        <div class="insta-tile-overlay"><svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg></div>
       </a>
     </div>
   </div>
@@ -1343,7 +2567,7 @@
 
       // EmailJS send — replace YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, YOUR_PUBLIC_KEY
       // with your actual values from emailjs.com (free account, 200 emails/month)
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
+      emailjs.sendForm('service_qshg3nl', 'template_qjeokna', form)
         .then(() => {
           btn.textContent = 'Request Sent ✓'; btn.style.background = '#27ae60';
           setTimeout(() => { btn.textContent = 'Book a Site Visit →'; btn.style.background = ''; btn.disabled = false; form.reset(); }, 3500);
@@ -1359,10 +2583,11 @@
   <!-- Sign up free at emailjs.com, replace YOUR_PUBLIC_KEY below -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    (function() {
+    (function () {
       // Replace 'YOUR_PUBLIC_KEY' with the key from your EmailJS dashboard
-      emailjs.init({ publicKey: 'YOUR_PUBLIC_KEY' });
+      emailjs.init({ publicKey: 'X5WF5wLQft1zv6C_u' });
     })();
   </script>
 </body>
+
 </html>
