@@ -2045,7 +2045,7 @@
       </div>
 
       <!-- 9. SHREEDHAR VILLA — Completed -->
-      <a class="pcard reveal reveal-d2" href="projects/villa.html" data-cat="completed villa residential">
+      <div class="pcard reveal reveal-d2" data-cat="completed villa residential" onclick="window.location='projects/villa.html'" style="cursor:pointer!important;">
         <div class="pcard-img">
           <img src="images/projects/villa.jpg" alt="Shreedhar Villa"
             onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Villa</span></div>'">
@@ -2054,22 +2054,24 @@
             <div class="pcard-name">Shreedhar Villa</div>
             <div class="pcard-loc">New Nikol, Ahmedabad</div>
           </div>
-      </a>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">5 BHK</span>
-          <span class="pcard-chip">Villas</span>
-          <span class="pcard-chip">New Nikol</span>
         </div>
-        <a class="pcard-brochure" href="brochures/villa.pdf" target="_blank">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-          </svg>
-          Download Brochure
-        </a>
+        <div class="pcard-body">
+          <div class="pcard-chips">
+            <span class="pcard-chip">5 BHK</span>
+            <span class="pcard-chip">Villas</span>
+            <span class="pcard-chip">New Nikol</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a class="pcard-brochure" href="projects/villa.html" style="background:var(--red);color:var(--white);border-color:var(--red);" onclick="event.stopPropagation()">
+              View Details →
+            </a>
+            <a class="pcard-brochure" href="brochures/villa.pdf" target="_blank" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+              Brochure
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
 
     <!-- 10. SHREEDHAR PALACE — Completed -->
     <div class="pcard reveal" data-cat="completed villa residential">

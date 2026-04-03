@@ -167,7 +167,7 @@ section{padding:5.5rem 3rem;}
 .g-cell img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s var(--ease);}
 .g-cell:hover img{transform:scale(1.04);}
 .g-placeholder{
-  width:100%;height:100%;
+  width:100%;height:100%;min-height:300px;
   display:flex;align-items:center;justify-content:center;
   background:linear-gradient(135deg,var(--cream2),#c8c4bc);
 }
@@ -461,23 +461,28 @@ footer{
   <div class="gallery-grid r" data-d="1">
     <div class="g-cell">
       <img src="../images/projects/villa/hero.jpg" alt="Shreedhar Villa Exterior"
-        onerror="this.parentElement.innerHTML='<div class=\'g-placeholder\'><span>Shreedhar Villa</span></div>'">
+        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+      <div class="g-placeholder" style="display:none"><span>Shreedhar Villa</span></div>
     </div>
     <div class="g-cell">
-      <img src="../images/projects/villa/exterior-1.jpg" alt="Shreedhar Villa Aerial View"
-        onerror="this.parentElement.innerHTML='<div class=\'g-placeholder\'><span>Aerial View</span></div>'">
+      <img src="../images/projects/villa/plan-ground.jpg" alt="Ground Floor Plan Preview"
+        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+      <div class="g-placeholder" style="display:none"><span>Ground Floor Plan</span></div>
     </div>
     <div class="g-cell">
-      <img src="../images/projects/villa/exterior-2.jpg" alt="Shreedhar Villa Row"
-        onerror="this.parentElement.innerHTML='<div class=\'g-placeholder\'><span>Villa Row</span></div>'">
+      <img src="../images/projects/villa/plan-first.jpg" alt="First Floor Plan Preview"
+        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+      <div class="g-placeholder" style="display:none"><span>First Floor Plan</span></div>
     </div>
     <div class="g-cell">
-      <img src="../images/projects/villa/exterior-1.jpg" alt="Shreedhar Villa Evening"
-        onerror="this.parentElement.innerHTML='<div class=\'g-placeholder\'><span>Evening View</span></div>'">
+      <img src="../images/projects/villa/plan-second.jpg" alt="Second Floor Plan Preview"
+        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+      <div class="g-placeholder" style="display:none"><span>Second Floor Plan</span></div>
     </div>
     <div class="g-cell">
-      <img src="../images/projects/villa/exterior-2.jpg" alt="Shreedhar Villa Garden"
-        onerror="this.parentElement.innerHTML='<div class=\'g-placeholder\'><span>Garden View</span></div>'">
+      <img src="../images/projects/villa/location.jpg" alt="Location Map"
+        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+      <div class="g-placeholder" style="display:none"><span>Location Map</span></div>
     </div>
   </div>
 </section>
