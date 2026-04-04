@@ -454,10 +454,12 @@
       margin-top: 2.5rem;
     }
 
+    /* Gallery cells clickable */
     .g-cell {
       overflow: hidden;
       background: var(--cream2);
       position: relative;
+      cursor: zoom-in !important;
     }
 
     .g-cell:first-child {
@@ -1386,27 +1388,27 @@
       <h2 class="sec-title">A Home That <em>Speaks</em></h2>
     </div>
     <div class="gallery-grid r" data-d="1">
-      <div class="g-cell">
+      <div class="g-cell" onclick="openLightbox('../images/projects/villa/hero.jpg','Shreedhar Villa — Exterior')">
         <img src="../images/projects/villa/hero.jpg" alt="Shreedhar Villa Exterior"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
         <div class="g-placeholder" style="display:none"><span>Shreedhar Villa</span></div>
       </div>
-      <div class="g-cell">
+      <div class="g-cell" onclick="openLightbox('../images/projects/villa/plan-ground.jpg','Ground Floor Plan')">
         <img src="../images/projects/villa/plan-ground.jpg" alt="Ground Floor Plan Preview"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
         <div class="g-placeholder" style="display:none"><span>Ground Floor Plan</span></div>
       </div>
-      <div class="g-cell">
+      <div class="g-cell" onclick="openLightbox('../images/projects/villa/plan-first.jpg','First Floor Plan')">
         <img src="../images/projects/villa/plan-first.jpg" alt="First Floor Plan Preview"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
         <div class="g-placeholder" style="display:none"><span>First Floor Plan</span></div>
       </div>
-      <div class="g-cell">
+      <div class="g-cell" onclick="openLightbox('../images/projects/villa/plan-second.jpg','Second Floor Plan')">
         <img src="../images/projects/villa/plan-second.jpg" alt="Second Floor Plan Preview"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
         <div class="g-placeholder" style="display:none"><span>Second Floor Plan</span></div>
       </div>
-      <div class="g-cell">
+      <div class="g-cell" onclick="openLightbox('../images/projects/villa/location.jpg','Location Map')">
         <img src="../images/projects/villa/location.jpg" alt="Location Map"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
         <div class="g-placeholder" style="display:none"><span>Location Map</span></div>
