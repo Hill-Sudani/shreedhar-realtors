@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreedhar Greens — 2 &amp; 3 BHK Natural Living | Vastral, Ahmedabad | Shreedhar Group</title>
+  <meta name="description"
+    content="Shreedhar Greens — 2 & 3 BHK Natural Living Space & Shops across 11 blocks with 7 landscape gardens and 20+ amenities. Opp. Devasya School Road, Vastral, Ahmedabad. RERA RAA08296. By Shreehari Buildcon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --charcoal: #2c2c2c;
+      --dark: #1a1a1a;
+      --red: #c0392b;
+      --red2: #a93226;
+      --red3: #e74c3c;
+      --cream: #f7f4ef;
+      --cream2: #ede8df;
+      --warm: #c9a96e;
+      --warm2: #b8944f;
+      --white: #ffffff;
+      --txt: #2c2c2c;
+      --txt2: #777;
+      --txt3: #aaa;
+      --border: rgba(44, 44, 44, 0.08);
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      background: var(--cream);
+      color: var(--charcoal);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    * {
+      cursor: default !important;
+    }
+
+    a,
+    button {
+      cursor: pointer !important;
+    }
+
+    input,
+    textarea,
+    select {
+      cursor: text !important;
+    }
+
+    ::selection {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--red);
+      border-radius: 2px;
+    }
+
+    .sp {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: var(--red);
+      z-index: 1000;
+      width: 0;
+      transition: width 0.1s linear;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(247, 244, 239, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      height: 30px;
+      width: auto;
+    }
+
+    .nav-logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-logo-tag {
+      font-size: 0.4rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 500;
+    }
+
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--charcoal);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-back:hover {
+      color: var(--red);
+    }
+
+    .nav-back svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .nav-cta {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.55rem 1.3rem;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s var(--ease);
+    }
+
+    .nav-cta:hover {
+      background: var(--red2);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 3rem 4rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0a150a, #050f05);
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.1s linear;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.85;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5, 15, 5, 0.9) 0%, rgba(5, 15, 5, 0.38) 50%, rgba(5, 15, 5, 0.1) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--warm);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--warm);
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--warm);
+    }
+
+    .hero-sub {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.85rem 1.8rem;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.35s var(--ease);
+    }
+
+    .btn-primary:hover {
+      background: var(--red2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(192, 57, 43, 0.35);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 400;
+      padding: 0.85rem 1.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--warm);
+      color: var(--warm);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      right: 3rem;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-scroll span {
+      font-size: 0.5rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 36px;
+      background: var(--warm);
+      animation: scrlp 2s ease-in-out infinite;
+    }
+
+    @keyframes scrlp {
+
+      0%,
+      100% {
+        transform: scaleY(1);
+      }
+
+      50% {
+        transform: scaleY(0.4);
+      }
+    }
+
+    .highlights {
+      background: var(--dark);
+      padding: 2.2rem 3rem;
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .hl-item {
+      flex: 1;
+      padding: 0 1.5rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hl-item:first-child {
+      padding-left: 0;
+    }
+
+    .hl-item:last-child {
+      border-right: none;
+    }
+
+    .hl-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--warm);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .hl-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    section {
+      padding: 5.5rem 3rem;
+    }
+
+    .sec-eye {
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .sec-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--charcoal);
+      margin-bottom: 0.8rem;
+    }
+
+    .sec-title em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    .r {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
+    }
+
+    .r.on {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .r[data-d="1"] {
+      transition-delay: 0.1s;
+    }
+
+    .r[data-d="2"] {
+      transition-delay: 0.2s;
+    }
+
+    .r[data-d="3"] {
+      transition-delay: 0.3s;
+    }
+
+    .gallery {
+      background: var(--white);
+      padding: 5.5rem 3rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 300px 300px;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .g-cell {
+      overflow: hidden;
+      background: var(--cream2);
+      position: relative;
+      cursor: zoom-in !important;
+    }
+
+    .g-cell:first-child {
+      grid-row: 1/3;
+    }
+
+    .g-cell:first-child img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease);
+    }
+
+    .g-cell:first-child:hover img {
+      transform: scale(1.04);
+    }
+
+    .g-cell:not(:first-child) {
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .g-cell:not(:first-child) img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 0.5rem;
+      transition: transform 0.5s var(--ease);
+    }
+
+    .g-cell:not(:first-child):hover img {
+      transform: scale(1.03);
+    }
+
+    .g-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--cream2), #c8c4bc);
+    }
+
+    .g-placeholder span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--txt3);
+      letter-spacing: 0.05em;
+    }
+
+    .about-proj {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 0.9rem;
+      line-height: 1.9;
+      color: var(--txt2);
+      margin-bottom: 1.2rem;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .spec-item {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .spec-item:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .spec-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-bottom: 0.3rem;
+    }
+
+    .spec-val {
+      font-size: 0.88rem;
+      color: var(--charcoal);
+      font-weight: 400;
+    }
+
+    .amenities {
+      background: var(--dark);
+    }
+
+    .amenities .sec-title {
+      color: var(--white);
+    }
+
+    .amenities .sec-eye {
+      color: var(--warm);
+    }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.05);
+      margin-top: 2.5rem;
+    }
+
+    .am-item {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+      transition: background 0.3s;
+    }
+
+    .am-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .am-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .am-name {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.4;
+    }
+
+    .floorplans {
+      background: var(--white);
+    }
+
+    .fp-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin: 2rem 0 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .fp-tab {
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid var(--border);
+      color: var(--txt2);
+      background: transparent;
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    .fp-tab.active,
+    .fp-tab:hover {
+      background: var(--red);
+      color: var(--white);
+      border-color: var(--red);
+    }
+
+    .fp-panel {
+      display: none;
+    }
+
+    .fp-panel.active {
+      display: block;
+    }
+
+    .fp-img-wrap {
+      background-color: var(--cream);
+      background-image: linear-gradient(rgba(44, 44, 44, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(44, 44, 44, 0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: zoom-in !important;
+    }
+
+    .fp-img-wrap img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 4px 24px rgba(44, 44, 44, 0.12));
+      transition: transform 0.4s var(--ease);
+    }
+
+    .fp-img-wrap:hover img {
+      transform: scale(1.01);
+    }
+
+    .fp-zoom-hint {
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-top: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .fp-zoom-hint::before {
+      content: '🔍';
+      font-size: 0.7rem;
+    }
+
+    .fp-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      padding: 3rem;
+      text-align: center;
+      min-height: 300px;
+    }
+
+    .fp-placeholder p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--txt3);
+    }
+
+    .fp-placeholder small {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
+
+    .specifications {
+      background: var(--cream);
+    }
+
+    .specs-table {
+      margin-top: 2.5rem;
+    }
+
+    .specs-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 0;
+    }
+
+    .specs-row:last-child {
+      border-bottom: none;
+    }
+
+    .specs-key {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 500;
+    }
+
+    .specs-val {
+      font-size: 0.85rem;
+      color: var(--txt2);
+      line-height: 1.6;
+    }
+
+    .location-sec {
+      background: var(--white);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 2.5rem;
+    }
+
+    .location-map {
+      background: var(--cream2);
+      height: 380px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .location-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .location-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .loc-item {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.2rem;
+    }
+
+    .loc-item:last-child {
+      border-bottom: none;
+    }
+
+    .loc-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+    }
+
+    .loc-val {
+      font-size: 0.88rem;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    .nearby-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-top: 0.3rem;
+    }
+
+    .nearby-list li {
+      font-size: 0.8rem;
+      color: var(--txt2);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nearby-list li::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    .site-contact {
+      background: var(--dark);
+      padding: 5.5rem 3rem;
+    }
+
+    .sc-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .sc-person {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .sc-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--warm);
+    }
+
+    .sc-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .sc-role {
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .sc-divider {
+      width: 1px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .sc-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .sc-info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .sc-info-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .sc-info-val {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .sc-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .sc-call {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.75rem 1.6rem;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+
+    .sc-call:hover {
+      background: var(--red2);
+      transform: translateY(-1px);
+    }
+
+    .sc-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.75rem 1.6rem;
+      background: #25D366;
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+
+    .sc-wa:hover {
+      background: #1ebe5d;
+      transform: translateY(-1px);
+    }
+
+    .sc-wa svg,
+    .sc-call svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .brochure-cta {
+      background: var(--cream);
+      padding: 4rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+    }
+
+    .brochure-cta-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 0.3rem;
+    }
+
+    .brochure-cta-text p {
+      font-size: 0.82rem;
+      color: var(--txt2);
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.9rem 2rem;
+      border: 1px solid var(--red);
+      color: var(--red);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s var(--ease);
+      white-space: nowrap;
+    }
+
+    .btn-download:hover {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .btn-download svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    footer {
+      background: var(--dark);
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .f-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .f-logo {
+      height: 20px;
+      width: auto;
+      opacity: 0.35;
+    }
+
+    .f-txt {
+      font-size: 0.5rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .f-copy {
+      font-size: 0.48rem;
+      color: rgba(255, 255, 255, 0.18);
+    }
+
+    .f-back {
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .f-back:hover {
+      color: var(--red3);
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 400;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+      text-decoration: none;
+      transition: all 0.3s var(--ease);
+    }
+
+    .wa-float:hover {
+      background: #1ebe5d;
+      transform: translateY(-3px) scale(1.08);
+    }
+
+    .wa-float svg {
+      width: 26px;
+      height: 26px;
+      fill: white;
+    }
+
+    .wa-float::before {
+      content: 'Enquire Now';
+      position: absolute;
+      right: calc(100% + 10px);
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--dark);
+      color: white;
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .wa-float:hover::before {
+      opacity: 1;
+    }
+
+    .lb {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(10, 10, 10, 0.95);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .lb.open {
+      display: flex;
+    }
+
+    .lb img {
+      max-width: 95vw;
+      max-height: 92vh;
+      object-fit: contain;
+      border-radius: 2px;
+    }
+
+    .lb-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .lb-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .lb-caption {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      white-space: nowrap;
+    }
+
+    @media(max-width:900px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .hero {
+        padding: 0 1.5rem 3rem;
+      }
+
+      .highlights {
+        padding: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .hl-item {
+        min-width: 50%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        padding: 1rem 0;
+      }
+
+      section,
+      .gallery,
+      .about-proj,
+      .amenities,
+      .floorplans,
+      .specifications,
+      .location-sec,
+      .site-contact,
+      .brochure-cta {
+        padding: 4rem 1.5rem;
+      }
+
+      .about-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+
+      .g-cell:first-child {
+        grid-row: auto;
+      }
+
+      .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .specs-row {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+      }
+
+      .sc-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .sc-divider {
+        display: none;
+      }
+
+      .sc-person {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .sc-actions {
+        flex-direction: row;
+      }
+
+      .brochure-cta {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sp" id="sp"></div>
+
+  <a class="wa-float"
+    href="https://wa.me/919879503547?text=Hello%2C%20I%27m%20interested%20in%20Shreedhar%20Greens.%20Please%20share%20more%20details."
+    target="_blank" rel="noopener" aria-label="Enquire on WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <nav>
+    <a class="nav-brand" href="../index.html">
+      <img class="nav-logo" src="../images/logo.PNG" alt="Shreedhar Group">
+      <div>
+        <div class="nav-logo-name">Shreedhar Group</div>
+        <div class="nav-logo-tag">Trust Forever · Since 1992</div>
+      </div>
+    </a>
+    <a class="nav-back" href="../index.html#projects">
+      <svg viewBox="0 0 24 24">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+      All Projects
+    </a>
+    <a class="nav-cta" href="#site-contact">Enquire Now</a>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg" id="heroBg">
+      <img src="../images/projects/greens/hero.jpg" alt="Shreedhar Greens"
+        onerror="this.parentElement.style.background='linear-gradient(135deg,#0a150a,#050f05)'">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">New Launch · Vastral, Ahmedabad</p>
+      <h1>Shreedhar <em>Greens</em></h1>
+      <p class="hero-sub">2 &amp; 3 BHK Natural Living Space &amp; Shops — eleven blocks surrounded by 7 landscape
+        gardens, where the fusion of a leafy outdoor oasis and sophisticated design ushers a new modern era.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#site-contact">Book Site Visit &#8594;</a>
+        <a class="btn-outline" href="../brochures/greens.pdf" target="_blank">Download Brochure</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <div class="highlights r">
+    <div class="hl-item">
+      <div class="hl-val">2 &amp; 3 BHK</div>
+      <div class="hl-label">Configuration</div>
+    </div>
+    <div class="hl-item">
+      <div class="hl-val">11</div>
+      <div class="hl-label">Blocks (A–K)</div>
+    </div>
+    <div class="hl-item">
+      <div class="hl-val">7</div>
+      <div class="hl-label">Landscape Gardens</div>
+    </div>
+    <div class="hl-item">
+      <div class="hl-val">20+</div>
+      <div class="hl-label">Amenities</div>
+    </div>
+    <div class="hl-item">
+      <div class="hl-val">RERA</div>
+      <div class="hl-label">RAA08296</div>
+    </div>
+    <div class="hl-item">
+      <div class="hl-val">GO</div>
+      <div class="hl-label">Green</div>
+    </div>
+  </div>
+
+  <section class="gallery" id="gallery">
+    <div class="r">
+      <p class="sec-eye">Photo Gallery</p>
+      <h2 class="sec-title">A Home That <em>Speaks</em></h2>
+    </div>
+    <div class="gallery-grid r" data-d="1">
+      <!-- Main large: evening dusk exterior — all blocks, shops, road -->
+      <div class="g-cell"
+        onclick="openLightbox('../images/projects/greens/hero.jpg','Shreedhar Greens — Evening Exterior')">
+        <img src="../images/projects/greens/hero.jpg" alt="Shreedhar Greens Exterior"
+          onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+        <div class="g-placeholder" style="display:none"><span>Shreedhar Greens</span></div>
+      </div>
+      <!-- Aerial bird's eye render -->
+      <div class="g-cell"
+        onclick="openLightbox('../images/projects/greens/aerial.jpg','Aerial View — All 11 Blocks &amp; 7 Gardens')">
+        <img src="../images/projects/greens/aerial.jpg" alt="Aerial view all blocks"
+          onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+        <div class="g-placeholder" style="display:none"><span>Aerial View</span></div>
+      </div>
+      <!-- Interior courtyard / gazebo / garden view -->
+      <div class="g-cell"
+        onclick="openLightbox('../images/projects/greens/garden.jpg','Landscape Garden &amp; Gazebo View')">
+        <img src="../images/projects/greens/garden.jpg" alt="Landscape garden gazebo"
+          onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+        <div class="g-placeholder" style="display:none"><span>Garden View</span></div>
+      </div>
+      <!-- Entrance / retail ground floor -->
+      <div class="g-cell"
+        onclick="openLightbox('../images/projects/greens/entrance.jpg','Shreedhar Greens — Main Entrance &amp; Shops')">
+        <img src="../images/projects/greens/entrance.jpg" alt="Main entrance and shops"
+          onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+        <div class="g-placeholder" style="display:none"><span>Entrance &amp; Shops</span></div>
+      </div>
+      <!-- Ground floor layout plan -->
+      <div class="g-cell"
+        onclick="openLightbox('../images/projects/greens/plan-ground.jpg','Ground Floor Layout Plan')">
+        <img src="../images/projects/greens/plan-ground.jpg" alt="Ground Floor Layout Plan"
+          onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+        <div class="g-placeholder" style="display:none"><span>Ground Floor Plan</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-proj" id="about">
+    <div class="about-grid">
+      <div class="r">
+        <p class="sec-eye">About The Project</p>
+        <h2 class="sec-title">Green is the Colour of<br>Nature's <em>Heart</em></h2>
+        <div class="about-text" style="margin-top:1.5rem;">
+          <p>Shreedhar Greens is Vastral's newest landmark — a sweeping campus of 11 blocks (A through K) offering 2
+            &amp; 3 BHK natural living spaces surrounded by 7 dedicated landscape gardens, one facing each pair of
+            blocks. The fusion of a leafy outdoor oasis and sophisticated design ushers a new modern era in residential
+            living.</p>
+          <p>In a city where space is at premium, Shreedhar Greens has the capacity to amaze with its capacious
+            surroundings, high ceilings, and extremely generous floor space. The views and light that flood through the
+            huge windows add to the luxurious feeling of freedom — letting you know you are living somewhere truly
+            special.</p>
+          <p>With over 20 lifestyle and wellness amenities, ground floor retail shops, and a 15 MT Wide T.P. Road
+            frontage, Shreedhar Greens is designed by Z-Axis Architects and developed by Shreehari Buildcon — a place to
+            come home to your very own luxurious abode.</p>
+        </div>
+      </div>
+      <div class="r" data-d="2">
+        <p class="sec-eye">Project Details</p>
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-label">Project Name</div>
+            <div class="spec-val">Shreedhar Greens</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Developer</div>
+            <div class="spec-val">Shreehari Buildcon</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Configuration</div>
+            <div class="spec-val">2 BHK &amp; 3 BHK + Shops</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Blocks</div>
+            <div class="spec-val">11 Blocks — A, B, C, D, E, F, G, H, I, J, K</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">3 BHK Blocks</div>
+            <div class="spec-val">A, B, J, K</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">2 BHK Blocks</div>
+            <div class="spec-val">C, D, E, F, G, H, I</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Gardens</div>
+            <div class="spec-val">7 Dedicated Landscape Gardens</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">RERA No.</div>
+            <div class="spec-val">RAA08296/060421</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Architect</div>
+            <div class="spec-val">Z-Axis Architects</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Location</div>
+            <div class="spec-val">Opp. Devasya School Road, Vastral, Ahmedabad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="amenities" id="amenities">
+    <div class="r">
+      <p class="sec-eye">Amenities</p>
+      <h2 class="sec-title" style="color:var(--white);">20+ Amenities — A <em style="color:var(--warm)">Green Extra</em>
+      </h2>
+    </div>
+    <div class="amenities-grid r" data-d="1">
+      <div class="am-item">
+        <div class="am-icon">🔐</div>
+        <div class="am-name">Security Cabin with Gate</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🚗</div>
+        <div class="am-name">Drop Off Zone</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🌿</div>
+        <div class="am-name">Well Planted Garden</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🌳</div>
+        <div class="am-name">7 Common Gardens</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">👴</div>
+        <div class="am-name">Senior Citizen Park</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🎪</div>
+        <div class="am-name">Mounted Lawn</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🎉</div>
+        <div class="am-name">Party Lawn</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🪑</div>
+        <div class="am-name">Garden Side Benches</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">💺</div>
+        <div class="am-name">Seat Out Areas</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🛝</div>
+        <div class="am-name">Children Play Area</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🏟️</div>
+        <div class="am-name">Multipurpose Court</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🏛️</div>
+        <div class="am-name">Entrance Foyer Lounge</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🕌</div>
+        <div class="am-name">Julla Court</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">⛲</div>
+        <div class="am-name">Gazebo</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🔥</div>
+        <div class="am-name">Fire Safety System</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🏃</div>
+        <div class="am-name">Jogging Track</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🚿</div>
+        <div class="am-name">24 Hrs. Water Supply</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🚪</div>
+        <div class="am-name">Decorative Main Gate</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🏬</div>
+        <div class="am-name">Ground Floor Retail Shops</div>
+      </div>
+      <div class="am-item">
+        <div class="am-icon">🛗</div>
+        <div class="am-name">Lifts in Each Block</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="floorplans" id="floorplans">
+    <div class="r">
+      <p class="sec-eye">Floor Plans</p>
+      <h2 class="sec-title">Designed to <em>Perfection</em></h2>
+      <p style="font-size:0.85rem;color:var(--txt2);margin-top:0.5rem;">2 &amp; 3 BHK Natural Living · 11 Blocks (A–K) ·
+        7 Landscape Gardens · Ground Floor Shops</p>
+    </div>
+    <div class="fp-tabs r" data-d="1">
+      <button class="fp-tab active" onclick="showPlan('ground',this)">Ground Floor Layout</button>
+      <button class="fp-tab" onclick="showPlan('typical',this)">Typical Layout Plan</button>
+      <button class="fp-tab" onclick="showPlan('3bhk',this)">3 BHK — Block A, B, J, K</button>
+      <button class="fp-tab" onclick="showPlan('2bhk-cdhi',this)">2 BHK — Block C, D, E, H, I</button>
+      <button class="fp-tab" onclick="showPlan('2bhk-f',this)">2 BHK — Block F (Type 1 &amp; 2)</button>
+      <button class="fp-tab" onclick="showPlan('2bhk-g',this)">2 BHK — Block G (Type 1, 2 &amp; 3)</button>
+    </div>
+
+    <div class="fp-panel active r" id="plan-ground" data-d="2">
+      <div class="fp-img-wrap"
+        onclick="openLightbox('../images/projects/greens/plan-ground.jpg','Ground Floor Layout Plan — All 11 Blocks + Shops')">
+        <img src="../images/projects/greens/plan-ground.jpg" alt="Ground Floor Layout Plan"
+          onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Ground Floor Layout Plan</p><small>Image coming soon</small></div>'">
+        <div class="fp-zoom-hint">Click to enlarge</div>
+      </div>
+    </div>
+
+    <div class="fp-panel" id="plan-typical">
+      <div class="fp-img-wrap"
+        onclick="openLightbox('../images/projects/greens/plan-typical.jpg','Typical Layout Plan — All 11 Blocks')">
+        <img src="../images/projects/greens/plan-typical.jpg" alt="Typical Layout Plan"
+          onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Typical Layout Plan</p><small>Image coming soon</small></div>'">
+        <div class="fp-zoom-hint">Click to enlarge</div>
+      </div>
+    </div>
+
+    <div class="fp-panel" id="plan-3bhk">
+      <div class="fp-img-wrap"
+        onclick="openLightbox('../images/projects/greens/plan-unit-3bhk.jpg','3 BHK Unit Plan — Block A, B, J, K')">
+        <img src="../images/projects/greens/plan-unit-3bhk.jpg" alt="3 BHK Unit Plan Block A B J K"
+          onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>3 BHK — Block A, B, J, K</p><small>Image coming soon</small></div>'">
+        <div class="fp-zoom-hint">Click to enlarge</div>
+      </div>
+    </div>
+
+    <div class="fp-panel" id="plan-2bhk-cdhi">
+      <div class="fp-img-wrap"
+        onclick="openLightbox('../images/projects/greens/plan-unit-2bhk-cdhi.jpg','2 BHK Unit Plan — Block C, D, E, H, I')">
+        <img src="../images/projects/greens/plan-unit-2bhk-cdhi.jpg" alt="2 BHK Unit Plan Block C D E H I"
+          onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>2 BHK — Block C, D, E, H, I</p><small>Image coming soon</small></div>'">
+        <div class="fp-zoom-hint">Click to enlarge</div>
+      </div>
+    </div>
+
+    <div class="fp-panel" id="plan-2bhk-f">
+      <div class="fp-img-wrap"
+        onclick="openLightbox('../images/projects/greens/plan-unit-2bhk-f.jpg','2 BHK Unit Plan — Block F (Type 1 &amp; Type 2)')">
+        <img src="../images/projects/greens/plan-unit-2bhk-f.jpg" alt="2 BHK Unit Plan Block F"
+          onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>2 BHK — Block F</p><small>Image coming soon</small></div>'">
+        <div class="fp-zoom-hint">Click to enlarge</div>
+      </div>
+    </div>
+
+    <div class="fp-panel" id="plan-2bhk-g">
+      <div class="fp-img-wrap"
+        onclick="openLightbox('../images/projects/greens/plan-unit-2bhk-g.jpg','2 BHK Unit Plan — Block G (Type 1, 2 &amp; 3)')">
+        <img src="../images/projects/greens/plan-unit-2bhk-g.jpg" alt="2 BHK Unit Plan Block G"
+          onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>2 BHK — Block G</p><small>Image coming soon</small></div>'">
+        <div class="fp-zoom-hint">Click to enlarge</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="specifications" id="specs">
+    <div class="r">
+      <p class="sec-eye">Specifications</p>
+      <h2 class="sec-title">Built to the <em>Highest Standards</em></h2>
+    </div>
+    <div class="specs-table r" data-d="1">
+      <div class="specs-row">
+        <div class="specs-key">Structure</div>
+        <div class="specs-val">Earthquake resistant RCC frame structure with brick walls</div>
+      </div>
+      <div class="specs-row">
+        <div class="specs-key">Kitchen</div>
+        <div class="specs-val">Granite platform with S.S. sink &amp; ceramic / glazed tiles up to lintel level</div>
+      </div>
+      <div class="specs-row">
+        <div class="specs-key">Plaster — External</div>
+        <div class="specs-val">Double coat plaster with sand face finish</div>
+      </div>
+      <div class="specs-row">
+        <div class="specs-key">Plaster — Internal</div>
+        <div class="specs-val">Single coat mala plaster</div>
+      </div>
+      <div class="specs-row">
+        <div class="specs-key">Toilet</div>
+        <div class="specs-val">Glazed / Ceramic tiles up to lintel level. Standard C.P. Brass fittings. Counter basin /
+          wall hung basin. Waterproofing treatment in all toilet &amp; wash areas</div>
+      </div>
+      <div class="specs-row">
+        <div class="specs-key">Doors</div>
+        <div class="specs-val">Decorative main door with laminate finish. Other flush door</div>
+      </div>
+      <div class="specs-row">
+        <div class="specs-key">Windows</div>
+        <div class="specs-val">Aluminium section window with granite frame</div>
+      </div>
+      <div class="specs-row">
+        <div class="specs-key">Colour — External</div>
+        <div class="specs-val">Acrylic paints</div>
+      </div>
+      <div class="specs-row">
+        <div class="specs-key">Colour — Internal</div>
+        <div class="specs-val">Putty finish</div>
+      </div>
+      <div class="specs-row">
+        <div class="specs-key">Electrification</div>
+        <div class="specs-val">Single phase ISI copper wiring</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="location-sec" id="location">
+    <div class="r">
+      <p class="sec-eye">Location</p>
+      <h2 class="sec-title">Perfectly <em>Connected</em></h2>
+    </div>
+    <div class="location-grid">
+      <div class="location-map r" data-d="1">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d324.5910261376672!2d72.67928876198144!3d23.011716835091335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8793defe0469%3A0x39c49f11ae020da7!2sSubedar%20Soda%20Shop!5e0!3m2!1sen!2sus!4v1775681884080!5m2!1sen!2sus"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="location-details r" data-d="2">
+        <div class="loc-item">
+          <div class="loc-label">Site Address</div>
+          <div class="loc-val">Opp. Devasya School Road, Vastral, Ahmedabad</div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-label">Nearby Landmarks</div>
+          <ul class="nearby-list">
+            <li>Devasya School — opposite</li>
+            <li>Kalhaar Villa Bungalows — nearby</li>
+            <li>Shreedhar Parivaar — adjacent</li>
+            <li>Shreedhar Family — adjacent</li>
+            <li>SP Ring Road — 5 min</li>
+            <li>Vastral Metro Station — 10 min</li>
+            <li>Arpan School — 5 min</li>
+            <li>M.B. Patel Hospital — 10 min</li>
+          </ul>
+        </div>
+        <div class="loc-item">
+          <div class="loc-label">Connectivity</div>
+          <div class="loc-val">15 MT Wide T.P. Road frontage opposite Devasya School, Vastral. Well connected to SP Ring
+            Road, Kalhaar Bungalows corridor, and the Vastral Metro Station.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-contact r" id="site-contact">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <p class="sec-eye" style="color:var(--warm);justify-content:center;display:flex;align-items:center;gap:0.7rem;">
+        <span style="width:22px;height:1px;background:var(--warm);display:inline-block;"></span>Site Office<span
+          style="width:22px;height:1px;background:var(--warm);display:inline-block;"></span>
+      </p>
+      <h2
+        style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;color:var(--white);margin-top:0.5rem;">
+        Talk to Our <em style="color:var(--warm);font-style:italic;">Expert</em>
+      </h2>
+      <p style="font-size:0.82rem;color:rgba(255,255,255,0.35);margin-top:0.5rem;">Our site team is available Mon–Sat,
+        10am–7pm</p>
+    </div>
+    <div class="sc-inner">
+      <div class="sc-person">
+        <div class="sc-avatar">S</div>
+        <div>
+          <div class="sc-name">Site In-Charge</div>
+          <div class="sc-role">Shreedhar Greens · Vastral</div>
+        </div>
+      </div>
+      <div class="sc-divider"></div>
+      <div class="sc-info">
+        <div class="sc-info-item">
+          <div class="sc-info-label">Phone</div>
+          <div class="sc-info-val">+91 98795 03547</div>
+        </div>
+        <div class="sc-info-item">
+          <div class="sc-info-label">Alternate</div>
+          <div class="sc-info-val">+91 99789 55534</div>
+        </div>
+        <div class="sc-info-item">
+          <div class="sc-info-label">Office Hours</div>
+          <div class="sc-info-val">Mon – Sat · 10am to 7pm</div>
+        </div>
+      </div>
+      <div class="sc-actions">
+        <a class="sc-call" href="tel:+919879503547">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 6.18 2 2 0 015 4h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 11.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+          </svg>
+          Call Now
+        </a>
+        <a class="sc-wa"
+          href="https://wa.me/919879503547?text=Hello%2C%20I%27m%20interested%20in%20Shreedhar%20Greens.%20Please%20share%20details."
+          target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="brochure-cta r">
+    <div class="brochure-cta-text">
+      <h3>Download Full Brochure</h3>
+      <p>Floor plans, specifications, amenities list and more — all in one document.</p>
+    </div>
+    <a class="btn-download" href="../brochures/greens.pdf" target="_blank">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
+      </svg>
+      Download Brochure PDF
+    </a>
+  </div>
+
+  <footer>
+    <div class="f-brand">
+      <img class="f-logo" src="../images/logo.PNG" alt="Shreedhar Group">
+      <span class="f-txt">Shreedhar Group</span>
+    </div>
+    <div class="f-copy">&#169; 2025 Shreedhar Group · Trust Forever</div>
+    <a class="f-back" href="../index.html">&#8592; Back to Homepage</a>
+  </footer>
+
+  <div class="lb" id="lb" onclick="closeLightbox()">
+    <button class="lb-close" onclick="closeLightbox()">&#10005;</button>
+    <img id="lb-img" src="" alt="Project Image">
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+
+  <script>
+    const sp = document.getElementById('sp');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      sp.style.width = (scrollY / h * 100) + '%';
+    }, { passive: true });
+
+    window.addEventListener('scroll', () => {
+      const bg = document.getElementById('heroBg');
+      if (bg && scrollY < window.innerHeight) bg.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
+    }, { passive: true });
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+    function showPlan(id, btn) {
+      document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.fp-tab').forEach(b => b.classList.remove('active'));
+      document.getElementById('plan-' + id).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    function openLightbox(src, caption) {
+      const lb = document.getElementById('lb');
+      document.getElementById('lb-img').src = src;
+      document.getElementById('lb-caption').textContent = caption;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lb').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+
+</html>
