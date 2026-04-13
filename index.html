@@ -61,8 +61,7 @@
 
     a,
     button,
-    .pcard,
-    .wa-float {
+    .pcard {
       cursor: pointer !important;
     }
 
@@ -950,6 +949,19 @@
       background: #27ae60;
     }
 
+    .pcard-tag.editor-pick {
+      background: var(--warm2);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .pcard-tag.editor-pick::before {
+      content: '★';
+      font-size: 0.6em;
+      opacity: 0.9;
+    }
+
     .pcard-bottom {
       position: absolute;
       bottom: 0;
@@ -1520,67 +1532,7 @@
       color: var(--red3);
     }
 
-    /* ── WHATSAPP FLOAT ── */
-    .wa-float {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 400;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
-      text-decoration: none;
-      transition: all 0.3s var(--ease);
-      opacity: 0;
-      transform: translateY(16px) scale(0.8);
-      animation: waIn 0.5s 2.5s var(--ease) forwards;
-    }
-
-    .wa-float:hover {
-      background: #1ebe5d;
-      transform: translateY(-3px) scale(1.08);
-      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
-    }
-
-    .wa-float svg {
-      width: 26px;
-      height: 26px;
-      fill: white;
-    }
-
-    @keyframes waIn {
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .wa-float::before {
-      content: 'Chat with us';
-      position: absolute;
-      right: calc(100% + 10px);
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--dark);
-      color: white;
-      font-size: 0.58rem;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
-      padding: 0.4rem 0.8rem;
-      border-radius: 3px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s;
-    }
-
-    .wa-float:hover::before {
-      opacity: 1;
-    }
+    /* WhatsApp float removed — chatbot button reserved for future use */
 
     /* ── RESPONSIVE ── */
     @media(max-width:900px) {
@@ -1690,15 +1642,6 @@
     </div>
   </div>
 
-  <!-- WHATSAPP FLOAT -->
-  <a class="wa-float"
-    href="https://wa.me/919924818400?text=Hello%20Shreedhar%20Group%2C%20I%27m%20interested%20in%20your%20projects."
-    target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24">
-      <path
-        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-    </svg>
-  </a>
 
   <!-- NAV -->
   <nav id="mainNav">
@@ -1812,7 +1755,7 @@
     <div class="projects-header reveal">
       <div>
         <p class="sec-eye">Our Portfolio</p>
-        <h2>16 Projects. One <em>Promise.</em></h2>
+        <h2>11 Projects. One <em>Promise.</em></h2>
       </div>
       <div class="projects-count">45+ Projects · Since 1992</div>
     </div>
@@ -1828,8 +1771,37 @@
 
     <div class="projects-grid">
 
-      <!-- 1. SHREEDHAR VIHAR — Ongoing -->
-      <div class="pcard reveal" data-cat="ongoing residential">
+      <!-- 1. SHREEDHAR BLISS — Editor's Pick / Weekend Homes (FEATURED FIRST) -->
+      <div class="pcard reveal" data-cat="weekend villa" onclick="window.location='projects/bliss.html'" style="cursor:pointer!important;">
+        <div class="pcard-img">
+          <img src="images/projects/bliss.jpg" alt="Shreedhar Bliss"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Bliss</span></div>'">
+          <div class="pcard-tag editor-pick">Editor's Pick</div>
+          <div class="pcard-bottom">
+            <div class="pcard-name">Shreedhar Bliss</div>
+            <div class="pcard-loc">Dahegam Highway, Ahmedabad</div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-chips">
+            <span class="pcard-chip">Weekend Homes</span>
+            <span class="pcard-chip">Villas</span>
+            <span class="pcard-chip">Dahegam</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a class="pcard-brochure" href="projects/bliss.html" style="background:var(--red);color:var(--white);border-color:var(--red);" onclick="event.stopPropagation()">
+              View Details →
+            </a>
+            <a class="pcard-brochure" href="brochures/bliss.pdf" target="_blank" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+              Brochure
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. SHREEDHAR VIHAR — Ongoing -->
+      <div class="pcard reveal reveal-d1" data-cat="ongoing residential" onclick="window.location='projects/vihar.html'" style="cursor:pointer!important;">
         <div class="pcard-img">
           <img src="images/projects/vihar.jpg" alt="Shreedhar Vihar"
             onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Vihar</span></div>'">
@@ -1845,18 +1817,20 @@
             <span class="pcard-chip">Residential</span>
             <span class="pcard-chip">Vastral</span>
           </div>
-          <a class="pcard-brochure" href="brochures/vihar.pdf" target="_blank">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-            </svg>
-            Download Brochure
-          </a>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a class="pcard-brochure" href="projects/vihar.html" style="background:var(--red);color:var(--white);border-color:var(--red);" onclick="event.stopPropagation()">
+              View Details →
+            </a>
+            <a class="pcard-brochure" href="brochures/vihar.pdf" target="_blank" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+              Brochure
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- 2. SHREEDHAR GLORY — Ongoing -->
-      <div class="pcard reveal reveal-d1" data-cat="ongoing residential">
+      <!-- 3. SHREEDHAR GLORY — Ongoing -->
+      <div class="pcard reveal reveal-d2" data-cat="ongoing residential" onclick="window.location='projects/glory.html'" style="cursor:pointer!important;">
         <div class="pcard-img">
           <img src="images/projects/glory.jpg" alt="Shreedhar Glory"
             onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Glory</span></div>'">
@@ -1872,18 +1846,20 @@
             <span class="pcard-chip">Residential</span>
             <span class="pcard-chip">Vastral</span>
           </div>
-          <a class="pcard-brochure" href="brochures/glory.pdf" target="_blank">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-            </svg>
-            Download Brochure
-          </a>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a class="pcard-brochure" href="projects/glory.html" style="background:var(--red);color:var(--white);border-color:var(--red);" onclick="event.stopPropagation()">
+              View Details →
+            </a>
+            <a class="pcard-brochure" href="brochures/glory.pdf" target="_blank" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+              Brochure
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- 3. SHREEDHAR LUXURIA — Ongoing -->
-      <div class="pcard reveal reveal-d2" data-cat="ongoing residential">
+      <!-- 4. SHREEDHAR LUXURIA — Ongoing -->
+      <div class="pcard reveal" data-cat="ongoing residential" onclick="window.location='projects/luxuria.html'" style="cursor:pointer!important;">
         <div class="pcard-img">
           <img src="images/projects/luxuria.jpg" alt="Shreedhar Luxuria"
             onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Luxuria</span></div>'">
@@ -1899,18 +1875,20 @@
             <span class="pcard-chip">+ Shops</span>
             <span class="pcard-chip">Vastral</span>
           </div>
-          <a class="pcard-brochure" href="brochures/luxuria.pdf" target="_blank">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-            </svg>
-            Download Brochure
-          </a>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a class="pcard-brochure" href="projects/luxuria.html" style="background:var(--red);color:var(--white);border-color:var(--red);" onclick="event.stopPropagation()">
+              View Details →
+            </a>
+            <a class="pcard-brochure" href="brochures/luxuria.pdf" target="_blank" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+              Brochure
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- 4. SHREEDHAR ROYAL — Ongoing -->
-      <div class="pcard reveal" data-cat="ongoing residential">
+      <!-- 5. SHREEDHAR ROYAL — Ongoing -->
+      <div class="pcard reveal reveal-d1" data-cat="ongoing residential" onclick="window.location='projects/royal.html'" style="cursor:pointer!important;">
         <div class="pcard-img">
           <img src="images/projects/royal.jpg" alt="Shreedhar Royal"
             onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Royal</span></div>'">
@@ -1926,126 +1904,49 @@
             <span class="pcard-chip">Spacious Living</span>
             <span class="pcard-chip">Vastral</span>
           </div>
-          <a class="pcard-brochure" href="brochures/royal.pdf" target="_blank">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-            </svg>
-            Download Brochure
-          </a>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a class="pcard-brochure" href="projects/royal.html" style="background:var(--red);color:var(--white);border-color:var(--red);" onclick="event.stopPropagation()">
+              View Details →
+            </a>
+            <a class="pcard-brochure" href="brochures/royal.pdf" target="_blank" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+              Brochure
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- 5. SHREEDHAR SKY — Completed -->
-      <div class="pcard reveal reveal-d1" data-cat="completed residential">
+      <!-- 6. SHREEDHAR PALACE — Completed -->
+      <div class="pcard reveal reveal-d2" data-cat="completed villa residential" onclick="window.location='projects/palace.html'" style="cursor:pointer!important;">
         <div class="pcard-img">
-          <img src="images/projects/sky.jpg" alt="Shreedhar Sky"
-            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Sky</span></div>'">
+          <img src="images/projects/palace.jpg" alt="Shreedhar Palace"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Palace</span></div>'">
           <div class="pcard-tag">Completed</div>
           <div class="pcard-bottom">
-            <div class="pcard-name">Shreedhar Sky</div>
-            <div class="pcard-loc">Vastral, Ahmedabad</div>
+            <div class="pcard-name">Shreedhar Palace</div>
+            <div class="pcard-loc">New Nikol, Ahmedabad</div>
           </div>
         </div>
         <div class="pcard-body">
           <div class="pcard-chips">
-            <span class="pcard-chip">2 BHK</span>
-            <span class="pcard-chip">+ Shops</span>
-            <span class="pcard-chip">Vastral</span>
+            <span class="pcard-chip">4 BHK</span>
+            <span class="pcard-chip">Bungalows</span>
+            <span class="pcard-chip">New Nikol</span>
           </div>
-          <a class="pcard-brochure" href="brochures/sky.pdf" target="_blank">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-            </svg>
-            Download Brochure
-          </a>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a class="pcard-brochure" href="projects/palace.html" style="background:var(--red);color:var(--white);border-color:var(--red);" onclick="event.stopPropagation()">
+              View Details →
+            </a>
+            <a class="pcard-brochure" href="brochures/palace.pdf" target="_blank" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+              Brochure
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- 6. SHREEDHAR SPARSH — Completed -->
-      <div class="pcard reveal reveal-d2" data-cat="completed residential">
-        <div class="pcard-img">
-          <img src="images/projects/sparsh.jpg" alt="Shreedhar Sparsh"
-            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Sparsh</span></div>'">
-          <div class="pcard-tag">Completed</div>
-          <div class="pcard-bottom">
-            <div class="pcard-name">Shreedhar Sparsh</div>
-            <div class="pcard-loc">Vastral, Ahmedabad</div>
-          </div>
-        </div>
-        <div class="pcard-body">
-          <div class="pcard-chips">
-            <span class="pcard-chip">2 & 3 BHK</span>
-            <span class="pcard-chip">+ Shops</span>
-            <span class="pcard-chip">Vastral</span>
-          </div>
-          <a class="pcard-brochure" href="brochures/sparsh.pdf" target="_blank">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-            </svg>
-            Download Brochure
-          </a>
-        </div>
-      </div>
-
-      <!-- 7. SHREEDHAR STAR — Completed -->
-      <div class="pcard reveal" data-cat="completed residential">
-        <div class="pcard-img">
-          <img src="images/projects/star.jpg" alt="Shreedhar Star"
-            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Star</span></div>'">
-          <div class="pcard-tag">Completed</div>
-          <div class="pcard-bottom">
-            <div class="pcard-name">Shreedhar Star</div>
-            <div class="pcard-loc">Vastral, Ahmedabad</div>
-          </div>
-        </div>
-        <div class="pcard-body">
-          <div class="pcard-chips">
-            <span class="pcard-chip">3 BHK</span>
-            <span class="pcard-chip">+ Shops</span>
-            <span class="pcard-chip">Vastral</span>
-          </div>
-          <a class="pcard-brochure" href="brochures/star.pdf" target="_blank">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-            </svg>
-            Download Brochure
-          </a>
-        </div>
-      </div>
-
-      <!-- 8. SHREEDHAR GREENS — Completed -->
-      <div class="pcard reveal reveal-d1" data-cat="completed residential">
-        <div class="pcard-img">
-          <img src="images/projects/greens.jpg" alt="Shreedhar Greens"
-            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Greens</span></div>'">
-          <div class="pcard-tag">Completed</div>
-          <div class="pcard-bottom">
-            <div class="pcard-name">Shreedhar Greens</div>
-            <div class="pcard-loc">Vastral, Ahmedabad</div>
-          </div>
-        </div>
-        <div class="pcard-body">
-          <div class="pcard-chips">
-            <span class="pcard-chip">2 & 3 BHK</span>
-            <span class="pcard-chip">+ Shops</span>
-            <span class="pcard-chip">Vastral</span>
-          </div>
-          <a class="pcard-brochure" href="brochures/greens.pdf" target="_blank">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-            </svg>
-            Download Brochure
-          </a>
-        </div>
-      </div>
-
-      <!-- 9. SHREEDHAR VILLA — Completed -->
-      <div class="pcard reveal reveal-d2" data-cat="completed villa residential" onclick="window.location='projects/villa.html'" style="cursor:pointer!important;">
+      <!-- 7. SHREEDHAR VILLA — Completed -->
+      <div class="pcard reveal" data-cat="completed villa residential" onclick="window.location='projects/villa.html'" style="cursor:pointer!important;">
         <div class="pcard-img">
           <img src="images/projects/villa.jpg" alt="Shreedhar Villa"
             onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Villa</span></div>'">
@@ -2073,184 +1974,121 @@
         </div>
       </div>
 
-    <!-- 10. SHREEDHAR PALACE — Completed -->
-    <div class="pcard reveal" data-cat="completed villa residential">
-      <div class="pcard-img">
-        <img src="images/projects/palace.jpg" alt="Shreedhar Palace"
-          onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Palace</span></div>'">
-        <div class="pcard-tag">Completed</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Palace</div>
-          <div class="pcard-loc">New Nikol, Ahmedabad</div>
+      <!-- 8. SHREEDHAR SKY — Completed -->
+      <div class="pcard reveal reveal-d1" data-cat="completed residential" onclick="window.location='projects/sky.html'" style="cursor:pointer!important;">
+        <div class="pcard-img">
+          <img src="images/projects/sky.jpg" alt="Shreedhar Sky"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Sky</span></div>'">
+          <div class="pcard-tag">Completed</div>
+          <div class="pcard-bottom">
+            <div class="pcard-name">Shreedhar Sky</div>
+            <div class="pcard-loc">Vastral, Ahmedabad</div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-chips">
+            <span class="pcard-chip">2 BHK</span>
+            <span class="pcard-chip">+ Shops</span>
+            <span class="pcard-chip">Vastral</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a class="pcard-brochure" href="projects/sky.html" style="background:var(--red);color:var(--white);border-color:var(--red);" onclick="event.stopPropagation()">
+              View Details →
+            </a>
+            <a class="pcard-brochure" href="brochures/sky.pdf" target="_blank" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+              Brochure
+            </a>
+          </div>
         </div>
       </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">4 BHK</span>
-          <span class="pcard-chip">Bungalows</span>
-          <span class="pcard-chip">New Nikol</span>
-        </div>
-        <a class="pcard-brochure" href="brochures/palace.pdf" target="_blank">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-          </svg>
-          Download Brochure
-        </a>
-      </div>
-    </div>
 
-    <!-- 11. SHREEDHAR HEAVEN — Completed -->
-    <div class="pcard reveal reveal-d1" data-cat="completed residential">
-      <div class="pcard-img">
-        <div class="img-placeholder"><span class="img-placeholder-text">Shreedhar Heaven</span></div>
-        <div class="pcard-tag">Completed</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Heaven</div>
-          <div class="pcard-loc">Vastral, Ahmedabad</div>
+      <!-- 9. SHREEDHAR SPARSH — Completed -->
+      <div class="pcard reveal reveal-d2" data-cat="completed residential" onclick="window.location='projects/sparsh.html'" style="cursor:pointer!important;">
+        <div class="pcard-img">
+          <img src="images/projects/sparsh.jpg" alt="Shreedhar Sparsh"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Sparsh</span></div>'">
+          <div class="pcard-tag">Completed</div>
+          <div class="pcard-bottom">
+            <div class="pcard-name">Shreedhar Sparsh</div>
+            <div class="pcard-loc">Vastral, Ahmedabad</div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-chips">
+            <span class="pcard-chip">2 & 3 BHK</span>
+            <span class="pcard-chip">+ Shops</span>
+            <span class="pcard-chip">Vastral</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a class="pcard-brochure" href="projects/sparsh.html" style="background:var(--red);color:var(--white);border-color:var(--red);" onclick="event.stopPropagation()">
+              View Details →
+            </a>
+            <a class="pcard-brochure" href="brochures/sparsh.pdf" target="_blank" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+              Brochure
+            </a>
+          </div>
         </div>
       </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">Residential</span>
-          <span class="pcard-chip">Vastral</span>
-        </div>
-        <span class="pcard-brochure no-brochure">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-          </svg>
-          Brochure Coming Soon
-        </span>
-      </div>
-    </div>
 
-    <!-- 12. SHREEDHAR PARIVAAR — Completed -->
-    <div class="pcard reveal reveal-d2" data-cat="completed residential">
-      <div class="pcard-img">
-        <div class="img-placeholder"><span class="img-placeholder-text">Shreedhar Parivaar</span></div>
-        <div class="pcard-tag">Completed</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Parivaar</div>
-          <div class="pcard-loc">Vastral, Ahmedabad</div>
+      <!-- 10. SHREEDHAR STAR — Completed -->
+      <div class="pcard reveal" data-cat="completed residential" onclick="window.location='projects/star.html'" style="cursor:pointer!important;">
+        <div class="pcard-img">
+          <img src="images/projects/star.jpg" alt="Shreedhar Star"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Star</span></div>'">
+          <div class="pcard-tag">Completed</div>
+          <div class="pcard-bottom">
+            <div class="pcard-name">Shreedhar Star</div>
+            <div class="pcard-loc">Odhav, Ahmedabad</div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-chips">
+            <span class="pcard-chip">3 BHK</span>
+            <span class="pcard-chip">+ Shops</span>
+            <span class="pcard-chip">Odhav</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a class="pcard-brochure" href="projects/star.html" style="background:var(--red);color:var(--white);border-color:var(--red);" onclick="event.stopPropagation()">
+              View Details →
+            </a>
+            <a class="pcard-brochure" href="brochures/star.pdf" target="_blank" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+              Brochure
+            </a>
+          </div>
         </div>
       </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">Residential</span>
-          <span class="pcard-chip">Vastral</span>
-        </div>
-        <span class="pcard-brochure no-brochure">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-          </svg>
-          Brochure Coming Soon
-        </span>
-      </div>
-    </div>
 
-    <!-- 13. SHREEDHAR FAMILY — Completed -->
-    <div class="pcard reveal" data-cat="completed residential">
-      <div class="pcard-img">
-        <div class="img-placeholder"><span class="img-placeholder-text">Shreedhar Family</span></div>
-        <div class="pcard-tag">Completed</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Family</div>
-          <div class="pcard-loc">Vastral, Ahmedabad</div>
+      <!-- 11. SHREEDHAR GREENS — Completed -->
+      <div class="pcard reveal reveal-d1" data-cat="completed residential" onclick="window.location='projects/greens.html'" style="cursor:pointer!important;">
+        <div class="pcard-img">
+          <img src="images/projects/greens.jpg" alt="Shreedhar Greens"
+            onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Greens</span></div>'">
+          <div class="pcard-tag">Completed</div>
+          <div class="pcard-bottom">
+            <div class="pcard-name">Shreedhar Greens</div>
+            <div class="pcard-loc">Vastral, Ahmedabad</div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-chips">
+            <span class="pcard-chip">2 & 3 BHK</span>
+            <span class="pcard-chip">+ Shops</span>
+            <span class="pcard-chip">Vastral</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a class="pcard-brochure" href="projects/greens.html" style="background:var(--red);color:var(--white);border-color:var(--red);" onclick="event.stopPropagation()">
+              View Details →
+            </a>
+            <a class="pcard-brochure" href="brochures/greens.pdf" target="_blank" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
+              Brochure
+            </a>
+          </div>
         </div>
       </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">Residential</span>
-          <span class="pcard-chip">Vastral</span>
-        </div>
-        <span class="pcard-brochure no-brochure">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-          </svg>
-          Brochure Coming Soon
-        </span>
-      </div>
-    </div>
-
-    <!-- 14. SHREEDHAR UPVAN — Completed -->
-    <div class="pcard reveal reveal-d1" data-cat="completed residential">
-      <div class="pcard-img">
-        <div class="img-placeholder"><span class="img-placeholder-text">Shreedhar Upvan</span></div>
-        <div class="pcard-tag">Completed</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Upvan</div>
-          <div class="pcard-loc">Vastral, Ahmedabad</div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">Residential</span>
-          <span class="pcard-chip">Vastral</span>
-        </div>
-        <span class="pcard-brochure no-brochure">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-          </svg>
-          Brochure Coming Soon
-        </span>
-      </div>
-    </div>
-
-    <!-- 15. SHREEDHAR PARADISE — Completed -->
-    <div class="pcard reveal reveal-d2" data-cat="completed residential">
-      <div class="pcard-img">
-        <div class="img-placeholder"><span class="img-placeholder-text">Shreedhar Paradise</span></div>
-        <div class="pcard-tag">Completed</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Paradise</div>
-          <div class="pcard-loc">Vastral, Ahmedabad</div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">Residential</span>
-          <span class="pcard-chip">Vastral</span>
-        </div>
-        <span class="pcard-brochure no-brochure">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-          </svg>
-          Brochure Coming Soon
-        </span>
-      </div>
-    </div>
-
-    <!-- 16. SHREEDHAR BLISS — New Launch / Weekend Homes -->
-    <div class="pcard reveal" data-cat="weekend villa">
-      <div class="pcard-img">
-        <img src="images/projects/bliss.jpg" alt="Shreedhar Bliss"
-          onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Bliss</span></div>'">
-        <div class="pcard-tag new-launch">New Launch</div>
-        <div class="pcard-bottom">
-          <div class="pcard-name">Shreedhar Bliss</div>
-          <div class="pcard-loc">Dahegam Highway, Ahmedabad</div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-chips">
-          <span class="pcard-chip">Weekend Homes</span>
-          <span class="pcard-chip">Villas</span>
-          <span class="pcard-chip">Dahegam</span>
-        </div>
-        <a class="pcard-brochure" href="brochures/bliss.pdf" target="_blank">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z" />
-          </svg>
-          Download Brochure
-        </a>
-      </div>
-    </div>
 
     </div>
   </section>
