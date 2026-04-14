@@ -274,23 +274,23 @@ footer{background:var(--dark);padding:2rem 3rem;display:flex;align-items:center;
 <!-- NAV -->
 <nav>
   <a class="nav-brand" href="../index.html">
-    <img class="nav-logo" src="../images/logo.png" alt="Shreedhar Group">
+    <img class="nav-logo" src="../images/logo.png" alt="Shreedhar Group" width="30" height="30">
     <div>
       <div class="nav-logo-name">Shreedhar Group</div>
       <div class="nav-logo-tag">Trust Forever · Since 1992</div>
     </div>
   </a>
-  <a class="nav-back" href="../index.html#projects">
+  <a class="nav-back" href="../index.html#projects" aria-label="Return to all projects">
     <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
     All Projects
   </a>
-  <a class="nav-cta" href="#site-contact">Enquire Now</a>
+  <a class="nav-cta" href="#site-contact" aria-label="Enquire about Shreedhar Glory">Enquire Now</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg" id="heroBg">
-    <img src="../images/projects/glory/hero.webp" alt="Shreedhar Glory"
+    <img src="../images/projects/glory/hero.webp" alt="Shreedhar Glory" loading="lazy" width="1920" height="1080"
       onerror="this.parentElement.style.background='linear-gradient(135deg,#1a0a2a,#0a0515)'">
   </div>
   <div class="hero-overlay"></div>
@@ -345,27 +345,27 @@ footer{background:var(--dark);padding:2rem 3rem;display:flex;align-items:center;
   </div>
   <div class="gallery-grid r" data-d="1">
     <div class="g-cell" onclick="openLightbox('../images/projects/glory/hero.webp','Shreedhar Glory — Exterior')">
-      <img src="../images/projects/glory/hero.webp" alt="Shreedhar Glory Exterior"
+      <img src="../images/projects/glory/hero.webp" alt="Shreedhar Glory Exterior" loading="lazy" width="800" height="600"
         onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
       <div class="g-placeholder" style="display:none"><span>Shreedhar Glory</span></div>
     </div>
     <div class="g-cell" onclick="openLightbox('../images/projects/glory/exterior-2.webp','Shreedhar Glory — Night View')">
-      <img src="../images/projects/glory/exterior-2.webp" alt="Shreedhar Glory Night View"
+      <img src="../images/projects/glory/exterior-2.webp" alt="Shreedhar Glory Night View" loading="lazy" width="800" height="600"
         onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
       <div class="g-placeholder" style="display:none"><span>Night View</span></div>
     </div>
     <div class="g-cell" onclick="openLightbox('../images/projects/glory/amenities.webp','Amenities')">
-      <img src="../images/projects/glory/amenities.webp" alt="Amenities"
+      <img src="../images/projects/glory/amenities.webp" alt="Amenities" loading="lazy" width="800" height="600"
         onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
       <div class="g-placeholder" style="display:none"><span>Amenities</span></div>
     </div>
     <div class="g-cell" onclick="openLightbox('../images/projects/glory/plan-ground.webp','Ground Floor Plan')">
-      <img src="../images/projects/glory/plan-ground.webp" alt="Ground Floor Plan"
+      <img src="../images/projects/glory/plan-ground.webp" alt="Ground Floor Plan" loading="lazy" width="800" height="600"
         onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
       <div class="g-placeholder" style="display:none"><span>Ground Floor Plan</span></div>
     </div>
     <div class="g-cell" onclick="openLightbox('../images/projects/glory/plan-typical.webp','Typical Floor Plan')">
-      <img src="../images/projects/glory/plan-typical.webp" alt="Typical Floor Plan"
+      <img src="../images/projects/glory/plan-typical.webp" alt="Typical Floor Plan" loading="lazy" width="800" height="600"
         onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
       <div class="g-placeholder" style="display:none"><span>Typical Floor Plan</span></div>
     </div>
@@ -464,21 +464,21 @@ footer{background:var(--dark);padding:2rem 3rem;display:flex;align-items:center;
   </div>
   <div class="fp-panel active r" id="plan-ground" data-d="2">
     <div class="fp-img-wrap" onclick="openLightbox('../images/projects/glory/plan-ground.webp','Ground Floor Plan')">
-      <img src="../images/projects/glory/plan-ground.webp" alt="Ground Floor Plan"
+      <img src="../images/projects/glory/plan-ground.webp" alt="Ground Floor Plan" loading="lazy" width="1000" height="800"
         onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Ground Floor Plan</p><small>Image coming soon</small></div>'">
       <div class="fp-zoom-hint">Click to enlarge</div>
     </div>
   </div>
   <div class="fp-panel" id="plan-typical">
     <div class="fp-img-wrap" onclick="openLightbox('../images/projects/glory/plan-typical.webp','Typical Floor Plan')">
-      <img src="../images/projects/glory/plan-typical.webp" alt="Typical Floor Plan"
+      <img src="../images/projects/glory/plan-typical.webp" alt="Typical Floor Plan" loading="lazy" width="1000" height="800"
         onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Typical Floor Plan</p><small>Image coming soon</small></div>'">
       <div class="fp-zoom-hint">Click to enlarge</div>
     </div>
   </div>
   <div class="fp-panel" id="plan-unit">
     <div class="fp-img-wrap" onclick="openLightbox('../images/projects/glory/plan-unit.webp','2 BHK Unit Plan')">
-      <img src="../images/projects/glory/plan-unit.webp" alt="2 BHK Unit Plan"
+      <img src="../images/projects/glory/plan-unit.webp" alt="2 BHK Unit Plan" loading="lazy" width="1000" height="800"
         onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>2 BHK Unit Plan</p><small>Image coming soon</small></div>'">
       <div class="fp-zoom-hint">Click to enlarge</div>
     </div>
@@ -607,11 +607,11 @@ footer{background:var(--dark);padding:2rem 3rem;display:flex;align-items:center;
       </div>
     </div>
     <div class="sc-actions">
-      <a class="sc-call" href="tel:+919328103161">
+      <a class="sc-call" href="tel:+919328103161" aria-label="Call site in-charge">
         <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 6.18 2 2 0 015 4h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 11.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         Call Now
       </a>
-      <a class="sc-wa" href="https://wa.me/919328103161?text=Hello%2C%20I%27m%20interested%20in%20Shreedhar%20Glory.%20Please%20share%20details." target="_blank" rel="noopener">
+      <a class="sc-wa" href="https://wa.me/919328103161?text=Hello%2C%20I%27m%20interested%20in%20Shreedhar%20Glory.%20Please%20share%20details." target="_blank" rel="noopener" aria-label="WhatsApp enquiry for Shreedhar Glory">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp
       </a>
@@ -625,7 +625,7 @@ footer{background:var(--dark);padding:2rem 3rem;display:flex;align-items:center;
     <h3>Download Full Brochure</h3>
     <p>Floor plans, specifications, amenities list and more — all in one document.</p>
   </div>
-  <a class="btn-download" href="../brochures/glory.pdf" target="_blank">
+  <a class="btn-download" href="../brochures/glory.pdf" target="_blank" aria-label="Download Shreedhar Glory brochure PDF">
     <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-3 8l-3-3h2v-4h2v4h2l-3 3z"/></svg>
     Download Brochure PDF
   </a>
@@ -638,7 +638,7 @@ footer{background:var(--dark);padding:2rem 3rem;display:flex;align-items:center;
     <span class="f-txt">Shreedhar Group</span>
   </div>
   <div class="f-copy">© 2025 Shreedhar Group · Trust Forever</div>
-  <a class="f-back" href="../index.html">← Back to Homepage</a>
+  <a class="f-back" href="../index.html" aria-label="Return to homepage">← Back to Homepage</a>
 </footer>
 
 <!-- LIGHTBOX -->
