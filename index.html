@@ -35,8 +35,8 @@
       --warm2: #b8944f;
       --white: #ffffff;
       --txt: #2c2c2c;
-      --txt2: #777;
-      --txt3: #aaa;
+      --txt2: #666;
+      --txt3: #888;
       --border: rgba(44, 44, 44, 0.08);
       --ease: cubic-bezier(.22, 1, .36, 1);
       --ease2: cubic-bezier(.16, 1, .3, 1);
@@ -1662,8 +1662,9 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
+  <main>
+    <!-- HERO -->
+    <section class="hero">
     <div class="hero-left">
       <div class="hero-badge">
         <div class="hero-badge-dot"></div> Vastral's Most Trusted Developer
@@ -2260,20 +2261,20 @@
       <div class="contact-right reveal reveal-d2">
         <form class="contact-form" onsubmit="submitForm(event)">
           <div class="cf-group">
-            <label class="cf-label">Full Name</label>
-            <input class="cf-input" type="text" name="from_name" placeholder="Your name" required>
+            <label class="cf-label" for="cf-name">Full Name</label>
+            <input class="cf-input" type="text" id="cf-name" name="from_name" placeholder="Your name" required>
           </div>
           <div class="cf-group">
-            <label class="cf-label">Phone Number</label>
-            <input class="cf-input" type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+            <label class="cf-label" for="cf-phone">Phone Number</label>
+            <input class="cf-input" type="tel" id="cf-phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
           </div>
           <div class="cf-group">
-            <label class="cf-label">Email Address</label>
-            <input class="cf-input" type="email" name="reply_to" placeholder="your@email.com">
+            <label class="cf-label" for="cf-email">Email Address</label>
+            <input class="cf-input" type="email" id="cf-email" name="reply_to" placeholder="your@email.com">
           </div>
           <div class="cf-group">
-            <label class="cf-label">Interested In</label>
-            <select class="cf-input" name="project_name" style="cursor:pointer!important">
+            <label class="cf-label" for="cf-project">Interested In</label>
+            <select class="cf-input" id="cf-project" name="project_name" style="cursor:pointer!important" aria-label="Select interested project">
               <option value="">Select a project...</option>
               <option>Shreedhar Vihar — 2 BHK</option>
               <option>Shreedhar Glory — 2 BHK Premium</option>
@@ -2284,8 +2285,8 @@
             </select>
           </div>
           <div class="cf-group">
-            <label class="cf-label">Message</label>
-            <textarea class="cf-textarea" name="message" placeholder="Tell us about your requirements..."></textarea>
+            <label class="cf-label" for="cf-message">Message</label>
+            <textarea class="cf-textarea" id="cf-message" name="message" placeholder="Tell us about your requirements..."></textarea>
           </div>
           <button class="cf-btn" type="submit" id="cfBtn" aria-label="Submit site visit request">Book a Site Visit
             →</button>
@@ -2355,6 +2356,7 @@
       </a>
     </div>
   </div>
+  </main>
 
   <!-- FOOTER -->
   <footer>
