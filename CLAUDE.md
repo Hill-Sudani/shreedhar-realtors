@@ -21,6 +21,10 @@ The project is a static website consisting of:
     - Direct WhatsApp integration via `wa.me` links.
 - **Responsiveness**: Implemented via CSS media queries for mobile and tablet views.
 
+## Project Standards
+- **Accessibility**: All `<img>` tags must have descriptive `alt` text. All icon-only links (like social media) must have `aria-label` attributes.
+- **Performance**: Use `fetchpriority="high"` and `loading="eager"` for the logo and the Hero LCP image. All other images must use `loading="lazy"`.
+
 ## Common Tasks
 - **Adding a New Project**:
     1. Create a new HTML file in `projects/` (e.g., `projects/new-project.html`).
@@ -35,4 +39,5 @@ For every task, the following protocol must be strictly followed:
 2. **Structured Planning**: Propose a detailed multi-step plan for the user's approval before executing changes.
 3. **Verification**: Run `npm run build` in the terminal after every major change to identify and resolve errors immediately.
 4. **Proactive Optimization**: Continuously analyze the live URL (`shreedhargroup.vercel.app`) for visual regressions, performance bottlenecks, or UX gaps, and proactively suggest fixes without waiting for specific prompts.
+5. **Windows Operational Rule**: Prefer `Edit` over `Write` (full file rewrites) to prevent file-system lock loops on Windows.
 
