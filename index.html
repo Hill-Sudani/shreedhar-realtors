@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.emailjs.com;">
   <title>Shreedhar Group — Trust Forever | Vastral's Most Trusted Developer Since 1992</title>
   <meta name="google-site-verification" content="33HitKncApB78g7-Y7GCJ4Ejf6OvdpIqV5y0kL5Ukhg" />
   <meta name="description"
@@ -1687,7 +1688,7 @@
           <div class="hero-card-3d" id="heroCard">
             <img class="hero-image" src="images/projects/royal.webp" alt="Shreedhar Royal" width="800" height="480"
               fetchpriority="high"
-              onerror="this.style.background='linear-gradient(135deg,#ede8df,#d4cfc7)';this.style.height='480px'">
+              onerror="handleImageError(this)">
             <div class="hero-image-overlay"></div>
             <div class="hero-image-badge">
               <div class="hib-num">45<span style="font-size:1rem">+</span></div>
@@ -1783,7 +1784,7 @@
           style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/bliss.webp" alt="Shreedhar Bliss" loading="lazy"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Bliss</span></div>'">
+              onerror="handleImageError(this)">
             <div class="pcard-tag editor-pick">Editor's Pick</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Bliss</div>
@@ -1819,7 +1820,7 @@
           onclick="window.location='projects/vihar.html'" style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/vihar.webp" alt="Shreedhar Vihar" loading="lazy"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Vihar</span></div>'">
+              onerror="handleImageError(this)">
             <div class="pcard-tag ongoing">Ongoing</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Vihar</div>
@@ -1855,7 +1856,7 @@
           onclick="window.location='projects/glory.html'" style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/glory.webp" alt="Shreedhar Glory" loading="lazy"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Glory</span></div>'">
+              onerror="handleImageError(this)">
             <div class="pcard-tag ongoing">Ongoing</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Glory</div>
@@ -1891,7 +1892,7 @@
           style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/luxuria.webp" alt="Shreedhar Luxuria" loading="lazy"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Luxuria</span></div>'">
+              onerror="handleImageError(this)">
             <div class="pcard-tag ongoing">Ongoing</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Luxuria</div>
@@ -1927,7 +1928,7 @@
           onclick="window.location='projects/royal.html'" style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/royal.webp" alt="Shreedhar Royal" loading="lazy"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Royal</span></div>'">
+              onerror="handleImageError(this)">
             <div class="pcard-tag ongoing">Ongoing</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Royal</div>
@@ -1963,7 +1964,7 @@
           onclick="window.location='projects/palace.html'" style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/palace.webp" alt="Shreedhar Palace" loading="lazy"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Palace</span></div>'">
+              onerror="handleImageError(this)">
             <div class="pcard-tag">Completed</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Palace</div>
@@ -1999,7 +2000,7 @@
           style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/villa.webp" alt="Shreedhar Villa" loading="lazy"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Villa</span></div>'">
+              onerror="handleImageError(this)">
             <div class="pcard-tag">Completed</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Villa</div>
@@ -2035,7 +2036,7 @@
           onclick="window.location='projects/sky.html'" style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/sky.webp" alt="Shreedhar Sky" loading="lazy"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Sky</span></div>'">
+              onerror="handleImageError(this)">
             <div class="pcard-tag">Completed</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Sky</div>
@@ -2071,7 +2072,7 @@
           onclick="window.location='projects/sparsh.html'" style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/sparsh.webp" alt="Shreedhar Sparsh" loading="lazy"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Sparsh</span></div>'">
+              onerror="handleImageError(this)">
             <div class="pcard-tag">Completed</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Sparsh</div>
@@ -2107,7 +2108,7 @@
           style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/star.webp" alt="Shreedhar Star" loading="lazy"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Star</span></div>'">
+              onerror="handleImageError(this)">
             <div class="pcard-tag">Completed</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Star</div>
@@ -2143,7 +2144,7 @@
           onclick="window.location='projects/greens.html'" style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/greens.webp" alt="Shreedhar Greens" loading="lazy"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><span class=\'img-placeholder-text\'>Shreedhar Greens</span></div>'">
+              onerror="handleImageError(this)">
             <div class="pcard-tag">Completed</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Greens</div>
@@ -2381,6 +2382,20 @@
   </footer>
 
   <script>
+    /* ═══ UTILS ═══ */
+    function handleImageError(img) {
+      const placeholder = document.createElement('div');
+      placeholder.className = 'img-placeholder';
+      const text = document.createElement('span');
+      text.className = 'img-placeholder-text';
+      text.textContent = img.alt || 'Image coming soon';
+      placeholder.appendChild(text);
+
+      if (img.parentNode) {
+        img.parentNode.replaceChild(placeholder, img);
+      }
+    }
+
     /* ═══ PRELOADER ═══ */
     window.addEventListener('load', () => { setTimeout(() => document.getElementById('preloader').classList.add('done'), 2300); });
 
@@ -2496,15 +2511,19 @@
     });
 
     /* ═══ FORM SUBMIT — EmailJS ═══ */
+    const EMAIL_CONFIG = {
+      serviceId: 'service_qshg3nl',
+      templateId: 'template_qjeokna',
+      publicKey: 'X5WF5wLQft1zv6C_u'
+    };
+
     function submitForm(e) {
       e.preventDefault();
       const btn = document.getElementById('cfBtn');
       const form = e.target;
       btn.textContent = 'Sending…'; btn.disabled = true;
 
-      // EmailJS send — replace YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, YOUR_PUBLIC_KEY
-      // with your actual values from emailjs.com (free account, 200 emails/month)
-      emailjs.sendForm('service_qshg3nl', 'template_qjeokna', form)
+      emailjs.sendForm(EMAIL_CONFIG.serviceId, EMAIL_CONFIG.templateId, form)
         .then(() => {
           btn.textContent = 'Request Sent ✓'; btn.style.background = '#27ae60';
           setTimeout(() => { btn.textContent = 'Book a Site Visit →'; btn.style.background = ''; btn.disabled = false; form.reset(); }, 3500);
@@ -2521,8 +2540,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     (function () {
-      // Replace 'YOUR_PUBLIC_KEY' with the key from your EmailJS dashboard
-      emailjs.init({ publicKey: 'X5WF5wLQft1zv6C_u' });
+      emailjs.init({ publicKey: EMAIL_CONFIG.publicKey });
     })();
   </script>
 </body>
