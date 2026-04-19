@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.emailjs.com https://vitals.vercel-insights.com https://shreedhargroup.vercel.app;">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.emailjs.com https://vitals.vercel-insights.com https://shreedhargroup.vercel.app;">
   <title>Luxury Real Estate in Vastral, Ahmedabad | Shreedhar Group — Trust Forever</title>
   <meta property="og:site_name" content="Shreedhar Group">
   <meta name="google-site-verification" content="33HitKncApB78g7-Y7GCJ4Ejf6OvdpIqV5y0kL5Ukhg" />
@@ -30,7 +31,6 @@
   </script>
   <meta name="description"
     content="Experience luxury living with Shreedhar Group, Vastral's most trusted real estate developer since 1992. Explore premium apartments and commercial spaces in Ahmedabad.">
-  <link rel="preload" as="image" href="images/hero-building.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -1653,77 +1653,371 @@
 
     /* ── CHATBOT WIDGET ── */
     .chat-btn {
-      position: fixed; bottom: 2rem; right: 2rem; z-index: 400;
-      width: 54px; height: 54px; border-radius: 50%;
-      background: var(--red); border: none;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(192,57,43,0.45);
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 400;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--red);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(192, 57, 43, 0.45);
       cursor: pointer !important;
       transition: all 0.3s var(--ease);
-      opacity: 0; transform: translateY(16px) scale(0.8);
+      opacity: 0;
+      transform: translateY(16px) scale(0.8);
       animation: chatBtnIn 0.5s 2.8s var(--ease) forwards;
     }
-    @keyframes chatBtnIn { to { opacity: 1; transform: translateY(0) scale(1); } }
-    .chat-btn:hover { background: var(--red2); transform: translateY(-3px) scale(1.08); box-shadow: 0 8px 28px rgba(192,57,43,0.55); }
-    .chat-btn svg { width: 24px; height: 24px; fill: white; transition: opacity 0.2s; }
-    .chat-btn .icon-chat { opacity: 1; position: absolute; }
-    .chat-btn .icon-close { opacity: 0; position: absolute; }
-    .chat-btn.open .icon-chat { opacity: 0; }
-    .chat-btn.open .icon-close { opacity: 1; }
+
+    @keyframes chatBtnIn {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .chat-btn:hover {
+      background: var(--red2);
+      transform: translateY(-3px) scale(1.08);
+      box-shadow: 0 8px 28px rgba(192, 57, 43, 0.55);
+    }
+
+    .chat-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+      transition: opacity 0.2s;
+    }
+
+    .chat-btn .icon-chat {
+      opacity: 1;
+      position: absolute;
+    }
+
+    .chat-btn .icon-close {
+      opacity: 0;
+      position: absolute;
+    }
+
+    .chat-btn.open .icon-chat {
+      opacity: 0;
+    }
+
+    .chat-btn.open .icon-close {
+      opacity: 1;
+    }
+
     .chat-btn::before {
       content: 'Ask our AI';
-      position: absolute; right: calc(100% + 10px); top: 50%; transform: translateY(-50%);
-      background: var(--dark); color: white; font-size: 0.58rem; letter-spacing: 0.08em;
-      white-space: nowrap; padding: 0.4rem 0.8rem; border-radius: 3px;
-      opacity: 0; pointer-events: none; transition: opacity 0.2s; font-family: 'Inter', sans-serif;
+      position: absolute;
+      right: calc(100% + 10px);
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--dark);
+      color: white;
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      font-family: 'Inter', sans-serif;
     }
-    .chat-btn:hover::before { opacity: 1; }
-    .chat-btn.open::before { display: none; }
+
+    .chat-btn:hover::before {
+      opacity: 1;
+    }
+
+    .chat-btn.open::before {
+      display: none;
+    }
+
     .chat-drawer {
-      position: fixed; bottom: 6rem; right: 2rem; z-index: 399;
-      width: 340px; max-height: 520px;
-      background: var(--white); border-radius: 6px;
-      box-shadow: 0 20px 60px rgba(44,44,44,0.18), 0 0 0 1px var(--border);
-      display: flex; flex-direction: column; overflow: hidden;
-      opacity: 0; transform: translateY(16px) scale(0.96);
+      position: fixed;
+      bottom: 6rem;
+      right: 2rem;
+      z-index: 399;
+      width: 340px;
+      max-height: 520px;
+      background: var(--white);
+      border-radius: 6px;
+      box-shadow: 0 20px 60px rgba(44, 44, 44, 0.18), 0 0 0 1px var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px) scale(0.96);
       pointer-events: none;
       transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
     }
-    .chat-drawer.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-    .chat-drawer-head { background: var(--dark); padding: 1rem 1.2rem; display: flex; align-items: center; gap: 0.8rem; flex-shrink: 0; }
-    .chat-head-avatar { width: 34px; height: 34px; border-radius: 50%; background: rgba(192,57,43,0.2); border: 1px solid rgba(192,57,43,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .chat-head-avatar svg { width: 16px; height: 16px; fill: var(--red3); }
-    .chat-head-info { flex: 1; }
-    .chat-head-name { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-weight: 400; color: var(--white); line-height: 1; }
-    .chat-head-status { font-size: 0.5rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 2px; display: flex; align-items: center; gap: 0.3rem; }
-    .chat-head-status::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #27ae60; flex-shrink: 0; }
-    .chat-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.8rem; background: var(--cream); }
-    .chat-messages::-webkit-scrollbar { width: 3px; }
-    .chat-messages::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
-    .chat-msg { display: flex; flex-direction: column; gap: 0.2rem; max-width: 88%; animation: msgIn 0.25s var(--ease); }
-    @keyframes msgIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-    .chat-msg.bot { align-self: flex-start; }
-    .chat-msg.user { align-self: flex-end; }
-    .chat-msg-label { font-size: 0.48rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--txt3); font-weight: 500; }
-    .chat-msg.user .chat-msg-label { text-align: right; }
-    .chat-msg-bubble { padding: 0.7rem 0.9rem; border-radius: 3px; font-size: 0.8rem; line-height: 1.65; font-weight: 300; }
-    .chat-msg.bot .chat-msg-bubble { background: var(--white); color: var(--charcoal); border: 1px solid var(--border); border-bottom-left-radius: 0; }
-    .chat-msg.user .chat-msg-bubble { background: var(--red); color: white; border-bottom-right-radius: 0; }
-    .chat-typing { display: flex; align-items: center; gap: 4px; padding: 0.7rem 0.9rem; background: var(--white); border: 1px solid var(--border); border-radius: 3px; border-bottom-left-radius: 0; width: fit-content; align-self: flex-start; }
-    .chat-typing-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--txt3); animation: typeDot 1.2s ease-in-out infinite; }
-    .chat-typing-dot:nth-child(2) { animation-delay: 0.2s; }
-    .chat-typing-dot:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes typeDot { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-4px); opacity: 1; } }
-    .chat-input-row { display: flex; border-top: 1px solid var(--border); flex-shrink: 0; background: var(--white); }
-    .chat-input { flex: 1; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 300; padding: 0.85rem 1rem; border: none; background: transparent; color: var(--charcoal); outline: none; }
-    .chat-input::placeholder { color: var(--txt3); font-weight: 200; }
-    .chat-send { font-family: 'Inter', sans-serif; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 0 1.2rem; background: var(--red); color: white; border: none; cursor: pointer !important; transition: background 0.2s; flex-shrink: 0; }
-    .chat-send:hover { background: var(--red2); }
-    .chat-send:disabled { background: var(--cream2); color: var(--txt3); cursor: not-allowed !important; }
-    .chat-disclaimer { font-size: 0.46rem; letter-spacing: 0.06em; color: var(--txt3); text-align: center; padding: 0.4rem; background: var(--white); border-top: 1px solid var(--border); flex-shrink: 0; }
+
+    .chat-drawer.open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .chat-drawer-head {
+      background: var(--dark);
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .chat-head-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(192, 57, 43, 0.2);
+      border: 1px solid rgba(192, 57, 43, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .chat-head-avatar svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--red3);
+    }
+
+    .chat-head-info {
+      flex: 1;
+    }
+
+    .chat-head-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .chat-head-status {
+      font-size: 0.5rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .chat-head-status::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #27ae60;
+      flex-shrink: 0;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      background: var(--cream);
+    }
+
+    .chat-messages::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    .chat-messages::-webkit-scrollbar-thumb {
+      background: var(--red);
+      border-radius: 2px;
+    }
+
+    .chat-msg {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      max-width: 88%;
+      animation: msgIn 0.25s var(--ease);
+    }
+
+    @keyframes msgIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .chat-msg.bot {
+      align-self: flex-start;
+    }
+
+    .chat-msg.user {
+      align-self: flex-end;
+    }
+
+    .chat-msg-label {
+      font-size: 0.48rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      font-weight: 500;
+    }
+
+    .chat-msg.user .chat-msg-label {
+      text-align: right;
+    }
+
+    .chat-msg-bubble {
+      padding: 0.7rem 0.9rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .chat-msg.bot .chat-msg-bubble {
+      background: var(--white);
+      color: var(--charcoal);
+      border: 1px solid var(--border);
+      border-bottom-left-radius: 0;
+    }
+
+    .chat-msg.user .chat-msg-bubble {
+      background: var(--red);
+      color: white;
+      border-bottom-right-radius: 0;
+    }
+
+    .chat-typing {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0.7rem 0.9rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      border-bottom-left-radius: 0;
+      width: fit-content;
+      align-self: flex-start;
+    }
+
+    .chat-typing-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--txt3);
+      animation: typeDot 1.2s ease-in-out infinite;
+    }
+
+    .chat-typing-dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .chat-typing-dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes typeDot {
+
+      0%,
+      60%,
+      100% {
+        transform: translateY(0);
+        opacity: 0.4;
+      }
+
+      30% {
+        transform: translateY(-4px);
+        opacity: 1;
+      }
+    }
+
+    .chat-input-row {
+      display: flex;
+      border-top: 1px solid var(--border);
+      flex-shrink: 0;
+      background: var(--white);
+    }
+
+    .chat-input {
+      flex: 1;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 300;
+      padding: 0.85rem 1rem;
+      border: none;
+      background: transparent;
+      color: var(--charcoal);
+      outline: none;
+    }
+
+    .chat-input::placeholder {
+      color: var(--txt3);
+      font-weight: 200;
+    }
+
+    .chat-send {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0 1.2rem;
+      background: var(--red);
+      color: white;
+      border: none;
+      cursor: pointer !important;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .chat-send:hover {
+      background: var(--red2);
+    }
+
+    .chat-send:disabled {
+      background: var(--cream2);
+      color: var(--txt3);
+      cursor: not-allowed !important;
+    }
+
+    .chat-disclaimer {
+      font-size: 0.46rem;
+      letter-spacing: 0.06em;
+      color: var(--txt3);
+      text-align: center;
+      padding: 0.4rem;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
     @media(max-width:600px) {
-      .chat-drawer { right: 1rem; left: 1rem; width: auto; bottom: 5.5rem; }
-      .chat-btn { right: 1rem; bottom: 1rem; }
+      .chat-drawer {
+        right: 1rem;
+        left: 1rem;
+        width: auto;
+        bottom: 5.5rem;
+      }
+
+      .chat-btn {
+        right: 1rem;
+        bottom: 1rem;
+      }
     }
   </style>
 </head>
@@ -1746,13 +2040,20 @@
 
   <!-- CHATBOT WIDGET -->
   <button class="chat-btn" id="chatBtn" aria-label="Chat with Shreedhar Assistant" onclick="toggleChat()">
-    <svg class="icon-chat" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
-    <svg class="icon-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    <svg class="icon-chat" viewBox="0 0 24 24">
+      <path
+        d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+    </svg>
+    <svg class="icon-close" viewBox="0 0 24 24">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+    </svg>
   </button>
   <div class="chat-drawer" id="chatDrawer">
     <div class="chat-drawer-head">
       <div class="chat-head-avatar">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+        </svg>
       </div>
       <div class="chat-head-info">
         <div class="chat-head-name">Shreedhar Assistant</div>
@@ -1762,11 +2063,13 @@
     <div class="chat-messages" id="chatMessages">
       <div class="chat-msg bot">
         <div class="chat-msg-label">Shreedhar Assistant</div>
-        <div class="chat-msg-bubble">Kem chho! 🙏 I'm the Shreedhar Group assistant. Ask me about our projects, configurations, locations, or how to book a site visit.</div>
+        <div class="chat-msg-bubble">Kem chho! 🙏 I'm the Shreedhar Group assistant. Ask me about our projects,
+          configurations, locations, or how to book a site visit.</div>
       </div>
     </div>
     <div class="chat-input-row">
-      <input class="chat-input" id="chatInput" type="text" placeholder="Ask about our projects..." onkeydown="if(event.key==='Enter')sendChat()" />
+      <input class="chat-input" id="chatInput" type="text" placeholder="Ask about our projects..."
+        onkeydown="if(event.key==='Enter')sendChat()" />
       <button class="chat-send" id="chatSend" onclick="sendChat()">Send →</button>
     </div>
     <div class="chat-disclaimer">AI assistant · Responses may not be 100% accurate · Call us to confirm</div>
@@ -1812,8 +2115,7 @@
         <div class="hero-3d-wrap" id="hero3d">
           <div class="hero-card-3d" id="heroCard">
             <img class="hero-image" src="images/projects/royal.webp" alt="Shreedhar Royal" width="800" height="480"
-              fetchpriority="high"
-              onerror="handleImageError(this)">
+              fetchpriority="high" onerror="handleImageError(this)">
             <div class="hero-image-overlay"></div>
             <div class="hero-image-badge">
               <div class="hib-num">45<span style="font-size:1rem">+</span></div>
@@ -1908,8 +2210,7 @@
         <div class="pcard reveal" data-cat="weekend villa" onclick="window.location='projects/bliss'"
           style="cursor:pointer!important;">
           <div class="pcard-img">
-            <img src="images/projects/bliss.webp" alt="Shreedhar Bliss" loading="lazy"
-              onerror="handleImageError(this)">
+            <img src="images/projects/bliss.webp" alt="Shreedhar Bliss" loading="lazy" onerror="handleImageError(this)">
             <div class="pcard-tag editor-pick">Editor's Pick</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Bliss</div>
@@ -1941,11 +2242,10 @@
         </div>
 
         <!-- 2. SHREEDHAR VIHAR — Ongoing -->
-        <div class="pcard reveal reveal-d1" data-cat="ongoing residential"
-          onclick="window.location='projects/vihar'" style="cursor:pointer!important;">
+        <div class="pcard reveal reveal-d1" data-cat="ongoing residential" onclick="window.location='projects/vihar'"
+          style="cursor:pointer!important;">
           <div class="pcard-img">
-            <img src="images/projects/vihar.webp" alt="Shreedhar Vihar" loading="lazy"
-              onerror="handleImageError(this)">
+            <img src="images/projects/vihar.webp" alt="Shreedhar Vihar" loading="lazy" onerror="handleImageError(this)">
             <div class="pcard-tag ongoing">Ongoing</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Vihar</div>
@@ -1977,11 +2277,10 @@
         </div>
 
         <!-- 3. SHREEDHAR GLORY — Ongoing -->
-        <div class="pcard reveal reveal-d2" data-cat="ongoing residential"
-          onclick="window.location='projects/glory'" style="cursor:pointer!important;">
+        <div class="pcard reveal reveal-d2" data-cat="ongoing residential" onclick="window.location='projects/glory'"
+          style="cursor:pointer!important;">
           <div class="pcard-img">
-            <img src="images/projects/glory.webp" alt="Shreedhar Glory" loading="lazy"
-              onerror="handleImageError(this)">
+            <img src="images/projects/glory.webp" alt="Shreedhar Glory" loading="lazy" onerror="handleImageError(this)">
             <div class="pcard-tag ongoing">Ongoing</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Glory</div>
@@ -2049,11 +2348,10 @@
         </div>
 
         <!-- 5. SHREEDHAR ROYAL — Ongoing -->
-        <div class="pcard reveal reveal-d1" data-cat="ongoing residential"
-          onclick="window.location='projects/royal'" style="cursor:pointer!important;">
+        <div class="pcard reveal reveal-d1" data-cat="ongoing residential" onclick="window.location='projects/royal'"
+          style="cursor:pointer!important;">
           <div class="pcard-img">
-            <img src="images/projects/royal.webp" alt="Shreedhar Royal" loading="lazy"
-              onerror="handleImageError(this)">
+            <img src="images/projects/royal.webp" alt="Shreedhar Royal" loading="lazy" onerror="handleImageError(this)">
             <div class="pcard-tag ongoing">Ongoing</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Royal</div>
@@ -2124,8 +2422,7 @@
         <div class="pcard reveal" data-cat="completed villa residential" onclick="window.location='projects/villa'"
           style="cursor:pointer!important;">
           <div class="pcard-img">
-            <img src="images/projects/villa.webp" alt="Shreedhar Villa" loading="lazy"
-              onerror="handleImageError(this)">
+            <img src="images/projects/villa.webp" alt="Shreedhar Villa" loading="lazy" onerror="handleImageError(this)">
             <div class="pcard-tag">Completed</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Villa</div>
@@ -2157,11 +2454,10 @@
         </div>
 
         <!-- 8. SHREEDHAR SKY — Completed -->
-        <div class="pcard reveal reveal-d1" data-cat="completed residential"
-          onclick="window.location='projects/sky'" style="cursor:pointer!important;">
+        <div class="pcard reveal reveal-d1" data-cat="completed residential" onclick="window.location='projects/sky'"
+          style="cursor:pointer!important;">
           <div class="pcard-img">
-            <img src="images/projects/sky.webp" alt="Shreedhar Sky" loading="lazy"
-              onerror="handleImageError(this)">
+            <img src="images/projects/sky.webp" alt="Shreedhar Sky" loading="lazy" onerror="handleImageError(this)">
             <div class="pcard-tag">Completed</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Sky</div>
@@ -2193,8 +2489,8 @@
         </div>
 
         <!-- 9. SHREEDHAR SPARSH — Completed -->
-        <div class="pcard reveal reveal-d2" data-cat="completed residential"
-          onclick="window.location='projects/sparsh'" style="cursor:pointer!important;">
+        <div class="pcard reveal reveal-d2" data-cat="completed residential" onclick="window.location='projects/sparsh'"
+          style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/sparsh.webp" alt="Shreedhar Sparsh" loading="lazy"
               onerror="handleImageError(this)">
@@ -2232,8 +2528,7 @@
         <div class="pcard reveal" data-cat="completed residential" onclick="window.location='projects/star'"
           style="cursor:pointer!important;">
           <div class="pcard-img">
-            <img src="images/projects/star.webp" alt="Shreedhar Star" loading="lazy"
-              onerror="handleImageError(this)">
+            <img src="images/projects/star.webp" alt="Shreedhar Star" loading="lazy" onerror="handleImageError(this)">
             <div class="pcard-tag">Completed</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Star</div>
@@ -2265,8 +2560,8 @@
         </div>
 
         <!-- 11. SHREEDHAR GREENS — Completed -->
-        <div class="pcard reveal reveal-d1" data-cat="completed residential"
-          onclick="window.location='projects/greens'" style="cursor:pointer!important;">
+        <div class="pcard reveal reveal-d1" data-cat="completed residential" onclick="window.location='projects/greens'"
+          style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/greens.webp" alt="Shreedhar Greens" loading="lazy"
               onerror="handleImageError(this)">
