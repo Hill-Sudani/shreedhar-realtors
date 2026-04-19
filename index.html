@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.emailjs.com https://vitals.vercel-insights.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.emailjs.com https://vitals.vercel-insights.com https://shreedhargroup.vercel.app;">
   <title>Luxury Real Estate in Vastral, Ahmedabad | Shreedhar Group — Trust Forever</title>
   <meta property="og:site_name" content="Shreedhar Group">
   <meta name="google-site-verification" content="33HitKncApB78g7-Y7GCJ4Ejf6OvdpIqV5y0kL5Ukhg" />
@@ -1650,6 +1650,81 @@
         font-size: 2.4rem;
       }
     }
+
+    /* ── CHATBOT WIDGET ── */
+    .chat-btn {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 400;
+      width: 54px; height: 54px; border-radius: 50%;
+      background: var(--red); border: none;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(192,57,43,0.45);
+      cursor: pointer !important;
+      transition: all 0.3s var(--ease);
+      opacity: 0; transform: translateY(16px) scale(0.8);
+      animation: chatBtnIn 0.5s 2.8s var(--ease) forwards;
+    }
+    @keyframes chatBtnIn { to { opacity: 1; transform: translateY(0) scale(1); } }
+    .chat-btn:hover { background: var(--red2); transform: translateY(-3px) scale(1.08); box-shadow: 0 8px 28px rgba(192,57,43,0.55); }
+    .chat-btn svg { width: 24px; height: 24px; fill: white; transition: opacity 0.2s; }
+    .chat-btn .icon-chat { opacity: 1; position: absolute; }
+    .chat-btn .icon-close { opacity: 0; position: absolute; }
+    .chat-btn.open .icon-chat { opacity: 0; }
+    .chat-btn.open .icon-close { opacity: 1; }
+    .chat-btn::before {
+      content: 'Ask our AI';
+      position: absolute; right: calc(100% + 10px); top: 50%; transform: translateY(-50%);
+      background: var(--dark); color: white; font-size: 0.58rem; letter-spacing: 0.08em;
+      white-space: nowrap; padding: 0.4rem 0.8rem; border-radius: 3px;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s; font-family: 'Inter', sans-serif;
+    }
+    .chat-btn:hover::before { opacity: 1; }
+    .chat-btn.open::before { display: none; }
+    .chat-drawer {
+      position: fixed; bottom: 6rem; right: 2rem; z-index: 399;
+      width: 340px; max-height: 520px;
+      background: var(--white); border-radius: 6px;
+      box-shadow: 0 20px 60px rgba(44,44,44,0.18), 0 0 0 1px var(--border);
+      display: flex; flex-direction: column; overflow: hidden;
+      opacity: 0; transform: translateY(16px) scale(0.96);
+      pointer-events: none;
+      transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    .chat-drawer.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+    .chat-drawer-head { background: var(--dark); padding: 1rem 1.2rem; display: flex; align-items: center; gap: 0.8rem; flex-shrink: 0; }
+    .chat-head-avatar { width: 34px; height: 34px; border-radius: 50%; background: rgba(192,57,43,0.2); border: 1px solid rgba(192,57,43,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .chat-head-avatar svg { width: 16px; height: 16px; fill: var(--red3); }
+    .chat-head-info { flex: 1; }
+    .chat-head-name { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-weight: 400; color: var(--white); line-height: 1; }
+    .chat-head-status { font-size: 0.5rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 2px; display: flex; align-items: center; gap: 0.3rem; }
+    .chat-head-status::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #27ae60; flex-shrink: 0; }
+    .chat-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.8rem; background: var(--cream); }
+    .chat-messages::-webkit-scrollbar { width: 3px; }
+    .chat-messages::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+    .chat-msg { display: flex; flex-direction: column; gap: 0.2rem; max-width: 88%; animation: msgIn 0.25s var(--ease); }
+    @keyframes msgIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .chat-msg.bot { align-self: flex-start; }
+    .chat-msg.user { align-self: flex-end; }
+    .chat-msg-label { font-size: 0.48rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--txt3); font-weight: 500; }
+    .chat-msg.user .chat-msg-label { text-align: right; }
+    .chat-msg-bubble { padding: 0.7rem 0.9rem; border-radius: 3px; font-size: 0.8rem; line-height: 1.65; font-weight: 300; }
+    .chat-msg.bot .chat-msg-bubble { background: var(--white); color: var(--charcoal); border: 1px solid var(--border); border-bottom-left-radius: 0; }
+    .chat-msg.user .chat-msg-bubble { background: var(--red); color: white; border-bottom-right-radius: 0; }
+    .chat-typing { display: flex; align-items: center; gap: 4px; padding: 0.7rem 0.9rem; background: var(--white); border: 1px solid var(--border); border-radius: 3px; border-bottom-left-radius: 0; width: fit-content; align-self: flex-start; }
+    .chat-typing-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--txt3); animation: typeDot 1.2s ease-in-out infinite; }
+    .chat-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .chat-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typeDot { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-4px); opacity: 1; } }
+    .chat-input-row { display: flex; border-top: 1px solid var(--border); flex-shrink: 0; background: var(--white); }
+    .chat-input { flex: 1; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 300; padding: 0.85rem 1rem; border: none; background: transparent; color: var(--charcoal); outline: none; }
+    .chat-input::placeholder { color: var(--txt3); font-weight: 200; }
+    .chat-send { font-family: 'Inter', sans-serif; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 0 1.2rem; background: var(--red); color: white; border: none; cursor: pointer !important; transition: background 0.2s; flex-shrink: 0; }
+    .chat-send:hover { background: var(--red2); }
+    .chat-send:disabled { background: var(--cream2); color: var(--txt3); cursor: not-allowed !important; }
+    .chat-disclaimer { font-size: 0.46rem; letter-spacing: 0.06em; color: var(--txt3); text-align: center; padding: 0.4rem; background: var(--white); border-top: 1px solid var(--border); flex-shrink: 0; }
+    @media(max-width:600px) {
+      .chat-drawer { right: 1rem; left: 1rem; width: auto; bottom: 5.5rem; }
+      .chat-btn { right: 1rem; bottom: 1rem; }
+    }
   </style>
 </head>
 
@@ -1668,6 +1743,34 @@
     </div>
   </div>
 
+
+  <!-- CHATBOT WIDGET -->
+  <button class="chat-btn" id="chatBtn" aria-label="Chat with Shreedhar Assistant" onclick="toggleChat()">
+    <svg class="icon-chat" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+    <svg class="icon-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </button>
+  <div class="chat-drawer" id="chatDrawer">
+    <div class="chat-drawer-head">
+      <div class="chat-head-avatar">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+      </div>
+      <div class="chat-head-info">
+        <div class="chat-head-name">Shreedhar Assistant</div>
+        <div class="chat-head-status">Online · AI Powered</div>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">
+        <div class="chat-msg-label">Shreedhar Assistant</div>
+        <div class="chat-msg-bubble">Kem chho! 🙏 I'm the Shreedhar Group assistant. Ask me about our projects, configurations, locations, or how to book a site visit.</div>
+      </div>
+    </div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Ask about our projects..." onkeydown="if(event.key==='Enter')sendChat()" />
+      <button class="chat-send" id="chatSend" onclick="sendChat()">Send →</button>
+    </div>
+    <div class="chat-disclaimer">AI assistant · Responses may not be 100% accurate · Call us to confirm</div>
+  </div>
 
   <!-- NAV -->
   <nav id="mainNav">
@@ -2554,6 +2657,96 @@
           btn.textContent = 'Error — Try WhatsApp'; btn.style.background = '#c0392b';
           setTimeout(() => { btn.textContent = 'Book a Site Visit →'; btn.style.background = ''; btn.disabled = false; }, 3500);
         });
+    }
+
+    /* ═══ CHATBOT ═══ */
+    const CHAT_HISTORY = [];
+    const CHAT_SYSTEM = `You are a friendly assistant for Shreedhar Group, a trusted real estate developer in Vastral, Ahmedabad, est. 1992. Help potential buyers find the right home.
+
+Projects:
+1. SHREEDHAR BLISS - Weekend villas, Dahegam Highway. Config: Villas.
+2. SHREEDHAR VIHAR - Ongoing. Vastral. Config: 2 BHK only.
+3. SHREEDHAR GLORY - Ongoing. Vastral. Config: 2 BHK Premium only.
+4. SHREEDHAR LUXURIA - Ongoing. Vastral. Config: 3 BHK only (no 2 BHK).
+5. SHREEDHAR ROYAL - Ongoing. Vastral, Nr. Metro Mall. Config: 3 & 4 BHK only (no 2 BHK).
+6. SHREEDHAR PALACE - Completed. New Nikol. Config: 4 BHK Bungalows.
+7. SHREEDHAR VILLA - Completed. New Nikol. Config: 5 BHK Villas.
+8. SHREEDHAR SKY - Completed. Vastral. Config: 2 BHK + Shops.
+9. SHREEDHAR SPARSH - Completed. S.P. Ring Road, Vastral. Config: 2 & 3 BHK + Shops.
+10. SHREEDHAR STAR - Completed. Devasya School Road, Odhav. Config: 3 BHK + Shops.
+
+Contact: +91 99248 18400 / +91 95121 66161. WhatsApp: +91 99248 18400.
+
+Rules:
+- Respond in English by default. Switch language only if user writes in Gujarati or Hindi.
+- Never make up prices - say please contact us for current pricing.
+- Keep responses to 2-4 sentences.
+- For site visits, give the contact number.
+- Never invent details not listed above.`;
+
+    function toggleChat() {
+      const btn = document.getElementById('chatBtn');
+      const drawer = document.getElementById('chatDrawer');
+      btn.classList.toggle('open');
+      drawer.classList.toggle('open');
+      if (drawer.classList.contains('open')) {
+        setTimeout(() => document.getElementById('chatInput').focus(), 300);
+      }
+    }
+
+    async function sendChat() {
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+      addChatMsg('user', text);
+      CHAT_HISTORY.push({ role: 'user', content: text });
+      const typing = showChatTyping();
+      document.getElementById('chatSend').disabled = true;
+      try {
+        const response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            messages: [
+              { role: 'system', content: CHAT_SYSTEM },
+              ...CHAT_HISTORY
+            ]
+          })
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || 'Something went wrong');
+        const reply = data.choices?.[0]?.message?.content;
+        if (!reply) throw new Error('Empty response');
+        CHAT_HISTORY.push({ role: 'assistant', content: reply });
+        typing.remove();
+        addChatMsg('bot', reply);
+      } catch (err) {
+        typing.remove();
+        addChatMsg('bot', 'Sorry, I\'m having trouble right now. Please call us at +91 99248 18400.');
+        console.error('Chat error:', err);
+      }
+      document.getElementById('chatSend').disabled = false;
+      document.getElementById('chatInput').focus();
+    }
+
+    function addChatMsg(role, text) {
+      const win = document.getElementById('chatMessages');
+      const msg = document.createElement('div');
+      msg.className = 'chat-msg ' + role;
+      msg.innerHTML = '<div class="chat-msg-label">' + (role === 'user' ? 'You' : 'Shreedhar Assistant') + '</div><div class="chat-msg-bubble">' + text.replace(/\n/g, '<br>') + '</div>';
+      win.appendChild(msg);
+      win.scrollTop = win.scrollHeight;
+    }
+
+    function showChatTyping() {
+      const win = document.getElementById('chatMessages');
+      const el = document.createElement('div');
+      el.className = 'chat-typing';
+      el.innerHTML = '<div class="chat-typing-dot"></div><div class="chat-typing-dot"></div><div class="chat-typing-dot"></div>';
+      win.appendChild(el);
+      win.scrollTop = win.scrollHeight;
+      return el;
     }
   </script>
 
