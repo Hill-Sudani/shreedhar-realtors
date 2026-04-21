@@ -987,6 +987,42 @@
       opacity: 0.9;
     }
 
+    .pcard-tag.ready-possession {
+      background: var(--warm2);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .pcard-tag.ready-possession::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--white);
+      opacity: 0.9;
+      animation: pulseTag 1.6s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    .pcard-tag.bliss-tag {
+      background: #25900a;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .pcard-tag.bliss-tag::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--white);
+      opacity: 0.9;
+      animation: pulseTag 1.6s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
     .pcard-bottom {
       position: absolute;
       bottom: 0;
@@ -2211,7 +2247,7 @@
           style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/bliss.webp" alt="Shreedhar Bliss" loading="lazy" onerror="handleImageError(this)">
-            <div class="pcard-tag editor-pick">Editor's Pick</div>
+            <div class="pcard-tag bliss-tag">Weekend Escape</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Bliss</div>
               <div class="pcard-loc">Dahegam Highway, Ahmedabad</div>
@@ -2317,7 +2353,7 @@
           <div class="pcard-img">
             <img src="images/projects/luxuria.webp" alt="Shreedhar Luxuria" loading="lazy"
               onerror="handleImageError(this)">
-            <div class="pcard-tag ongoing">Ongoing</div>
+            <div class="pcard-tag ready-possession">Ready Possession</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Luxuria</div>
               <div class="pcard-loc">Vastral, Ahmedabad</div>
@@ -2388,7 +2424,7 @@
           <div class="pcard-img">
             <img src="images/projects/palace.webp" alt="Shreedhar Palace" loading="lazy"
               onerror="handleImageError(this)">
-            <div class="pcard-tag">Completed</div>
+            <div class="pcard-tag ready-possession">Ready Possession</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Palace</div>
               <div class="pcard-loc">New Nikol, Ahmedabad</div>
@@ -2423,7 +2459,7 @@
           style="cursor:pointer!important;">
           <div class="pcard-img">
             <img src="images/projects/villa.webp" alt="Shreedhar Villa" loading="lazy" onerror="handleImageError(this)">
-            <div class="pcard-tag">Completed</div>
+            <div class="pcard-tag ready-possession">Ready Possession</div>
             <div class="pcard-bottom">
               <div class="pcard-name">Shreedhar Villa</div>
               <div class="pcard-loc">New Nikol, Ahmedabad</div>
@@ -2660,7 +2696,7 @@
           <div class="cd-row">
             <div class="cd-item">
               <div class="cd-label">Phone</div>
-              <div class="cd-val">+91 99248 18400 · +91 95121 66161</div>
+              <div class="cd-val">+91 98795 03547 · +91 98256 37199</div>
             </div>
             <div class="cd-item">
               <div class="cd-label">Office</div>
@@ -2673,7 +2709,7 @@
             </div>
           </div>
           <a class="wa-link"
-            href="https://wa.me/919924818400?text=Hello%20Shreedhar%20Group%2C%20I%27m%20interested%20in%20your%20projects."
+            href="https://wa.me/919879503547?text=Hello%20Shreedhar%20Group%2C%20I%27m%20interested%20in%20your%20projects."
             target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24">
               <path
@@ -2970,7 +3006,7 @@ Projects:
 9. SHREEDHAR SPARSH - Completed. S.P. Ring Road, Vastral. Config: 2 & 3 BHK + Shops.
 10. SHREEDHAR STAR - Completed. Devasya School Road, Odhav. Config: 3 BHK + Shops.
 
-Contact: +91 99248 18400 / +91 95121 66161. WhatsApp: +91 99248 18400.
+Contact: +91 98795 03547 / +91 98256 37199. WhatsApp: +91 98795 03547.
 
 Rules:
 - Respond in English by default. Switch language only if user writes in Gujarati or Hindi.
@@ -3018,7 +3054,7 @@ Rules:
         addChatMsg('bot', reply);
       } catch (err) {
         typing.remove();
-        addChatMsg('bot', 'Sorry, I\'m having trouble right now. Please call us at +91 99248 18400.');
+        addChatMsg('bot', 'Sorry, I\'m having trouble right now. Please call us at +91 98795 03547.');
         console.error('Chat error:', err);
       }
       document.getElementById('chatSend').disabled = false;
