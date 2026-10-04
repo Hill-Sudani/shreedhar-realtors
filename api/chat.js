@@ -27,7 +27,7 @@ const RATE_LIMIT_MAX_REQUESTS = 10;
 const rateLimits = new Map();
 
 function isAllowedOrigin(origin) {
-  if (!origin) return true;
+  if (!origin) return false;
 
   try {
     const url = new URL(origin);
@@ -60,7 +60,8 @@ function getClientIp(req) {
   return req.socket?.remoteAddress || 'unknown';
 }
 
-// Best-effort only: serverless instances do not share in-memory rate-limit state.
+// Origin can be forged by non-browser clients, and this per-instance limiter does not share state,
+// so both checks are deterrents rather than full protection.
 function isRateLimited(ip) {
   const now = Date.now();
   const current = rateLimits.get(ip);
