@@ -2055,6 +2055,33 @@
         bottom: 1rem;
       }
     }
+    @media(max-width:380px) {
+      .numbers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .num-card {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .num-card:last-child {
+        border-bottom: none;
+      }
+
+      .insta-strip {
+        padding: 3rem 1.5rem;
+      }
+
+      .insta-strip-head,
+      .insta-strip-title {
+        flex-wrap: wrap;
+      }
+
+      .insta-strip-head {
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
 

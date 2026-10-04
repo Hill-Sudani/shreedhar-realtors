@@ -1260,6 +1260,39 @@
         gap: 0.3rem;
       }
     }
+    @media(max-width:380px) {
+      nav {
+        padding: 0.5rem 0.75rem;
+        gap: 0.35rem;
+      }
+
+      .nav-brand {
+        gap: 0;
+        flex: 0 0 auto;
+      }
+
+      .nav-logo-name,
+      .nav-logo-tag {
+        display: none;
+      }
+
+      .nav-back,
+      .nav-cta {
+        min-height: 44px;
+      }
+
+      .nav-back {
+        gap: 0.25rem;
+      }
+
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.45rem 0.55rem;
+        white-space: nowrap;
+      }
+    }
   </style>
 </head>
 
@@ -1271,7 +1304,7 @@
   <!-- NAV -->
   <nav>
     <a class="nav-brand" href="/">
-      <img class="nav-logo" src="../images/logo.png" alt="Shreedhar Group" loading="eager" width="30" height="30">
+      <img class="nav-logo" src="../images/logo.png" alt="Shreedhar Group" loading="eager" width="63" height="30">
       <div class="nav-logo-text">
         <span class="nav-logo-name">Shreedhar Group</span>
         <span class="nav-logo-tag">Trust Forever · Since 1992</span>
