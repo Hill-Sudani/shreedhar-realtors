@@ -2092,6 +2092,46 @@
         gap: 1rem;
       }
     }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
+        scroll-behavior: auto !important;
+      }
+
+      .preloader {
+        display: none !important;
+      }
+
+      .ht-inner,
+      .hero-sub,
+      .hero-ctas,
+      .hero-right,
+      .hero-scroll,
+      .hero-card-3d,
+      .reveal,
+      .num-card,
+      .num-tagline,
+      .chat-btn {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .marquee-track {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 
@@ -2889,8 +2929,14 @@
       }
     }
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     /* ═══ PRELOADER ═══ */
-    window.addEventListener('load', () => { setTimeout(() => document.getElementById('preloader').classList.add('done'), 2300); });
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      if (prefersReducedMotion) preloader.classList.add('done');
+      else setTimeout(() => preloader.classList.add('done'), 2300);
+    });
 
     /* ═══ SCROLL PROGRESS ═══ */
     const prog = document.getElementById('scrollProg');
@@ -2903,7 +2949,7 @@
     /* ═══ 3D HERO CARD ═══ */
     const wrap = document.getElementById('hero3d');
     const card = document.getElementById('heroCard');
-    if (wrap && card) {
+    if (!prefersReducedMotion && wrap && card) {
       wrap.addEventListener('mousemove', e => {
         const r = wrap.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
@@ -2920,51 +2966,69 @@
     /* ═══ IMAGE DIVIDER PARALLAX ═══ */
     document.querySelectorAll('.img-divider').forEach(el => {
       const bg = el.querySelector('.img-divider-bg');
-      new IntersectionObserver(entries => { entries.forEach(e => el.classList.toggle('in-view', e.isIntersecting)); }, { threshold: 0.2 }).observe(el);
-      window.addEventListener('scroll', () => {
-        const rect = el.getBoundingClientRect();
-        const offset = (rect.top + rect.height / 2 - window.innerHeight / 2) * 0.1;
-        bg.style.transform = `translateY(${offset}px)`;
-      }, { passive: true });
+      if (prefersReducedMotion) {
+        el.classList.add('in-view');
+      } else {
+        new IntersectionObserver(entries => { entries.forEach(e => el.classList.toggle('in-view', e.isIntersecting)); }, { threshold: 0.2 }).observe(el);
+        window.addEventListener('scroll', () => {
+          const rect = el.getBoundingClientRect();
+          const offset = (rect.top + rect.height / 2 - window.innerHeight / 2) * 0.1;
+          bg.style.transform = `translateY(${offset}px)`;
+        }, { passive: true });
+      }
     });
 
     /* ═══ HERO PARALLAX ═══ */
     const heroInner = document.querySelector('.hero-left');
-    window.addEventListener('scroll', () => {
-      if (scrollY < window.innerHeight) {
-        heroInner.style.transform = `translateY(${scrollY * 0.12}px)`;
-        heroInner.style.opacity = 1 - (scrollY / window.innerHeight) * 1.1;
-      }
-    }, { passive: true });
+    if (!prefersReducedMotion) {
+      window.addEventListener('scroll', () => {
+        if (scrollY < window.innerHeight) {
+          heroInner.style.transform = `translateY(${scrollY * 0.12}px)`;
+          heroInner.style.opacity = 1 - (scrollY / window.innerHeight) * 1.1;
+        }
+      }, { passive: true });
+    }
 
     /* ═══ NUMBERS COUNTER ═══ */
     const numGrid = document.getElementById('numGrid');
     const numTag = document.getElementById('numTag');
     let counted = false;
-    new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          numGrid.querySelectorAll('.num-card').forEach(c => c.classList.add('vis'));
-          numTag.classList.add('vis');
-          if (!counted) {
-            counted = true;
-            numGrid.querySelectorAll('.num-val[data-count]').forEach(el => {
-              const end = parseInt(el.dataset.count), suffix = el.dataset.suffix || '';
-              let v = 0; const dur = 2000, fps = 60, inc = end / (dur / 1000 * fps);
-              const t = setInterval(() => {
-                v = Math.min(v + inc, end);
-                el.textContent = Math.round(v) + suffix;
-                if (v >= end) clearInterval(t);
-              }, 1000 / fps);
-            });
-          }
-        }
+    if (prefersReducedMotion) {
+      numGrid.querySelectorAll('.num-card').forEach(c => c.classList.add('vis'));
+      numTag.classList.add('vis');
+      numGrid.querySelectorAll('.num-val[data-count]').forEach(el => {
+        el.textContent = el.dataset.count + (el.dataset.suffix || '');
       });
-    }, { threshold: 0.25 }).observe(numGrid);
+    } else {
+      new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            numGrid.querySelectorAll('.num-card').forEach(c => c.classList.add('vis'));
+            numTag.classList.add('vis');
+            if (!counted) {
+              counted = true;
+              numGrid.querySelectorAll('.num-val[data-count]').forEach(el => {
+                const end = parseInt(el.dataset.count), suffix = el.dataset.suffix || '';
+                let v = 0; const dur = 2000, fps = 60, inc = end / (dur / 1000 * fps);
+                const t = setInterval(() => {
+                  v = Math.min(v + inc, end);
+                  el.textContent = Math.round(v) + suffix;
+                  if (v >= end) clearInterval(t);
+                }, 1000 / fps);
+              });
+            }
+          }
+        });
+      }, { threshold: 0.25 }).observe(numGrid);
+    }
 
     /* ═══ SCROLL REVEAL ═══ */
-    const revObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); }); }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+    if (prefersReducedMotion) {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('vis'));
+    } else {
+      const revObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); }); }, { threshold: 0.08 });
+      document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+    }
 
     /* ═══ PROJECT FILTER ═══ */
     document.querySelectorAll('.proj-filter').forEach(btn => {
@@ -2984,22 +3048,24 @@
     });
 
     /* ═══ 3D TILT ON PROJECT CARDS ═══ */
-    document.querySelectorAll('.pcard').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const r = card.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `translateY(-8px) rotateX(${-y * 6}deg) rotateY(${x * 8}deg)`;
+    if (!prefersReducedMotion) {
+      document.querySelectorAll('.pcard').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - 0.5;
+          const y = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transform = `translateY(-8px) rotateX(${-y * 6}deg) rotateY(${x * 8}deg)`;
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
       });
-      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-    });
+    }
 
     /* ═══ SMOOTH ANCHORS ═══ */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
         const t = document.querySelector(a.getAttribute('href'));
-        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (t) t.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
       });
     });
 

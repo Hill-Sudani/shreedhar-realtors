@@ -1326,6 +1326,27 @@
         white-space: nowrap;
       }
     }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
+        scroll-behavior: auto !important;
+      }
+
+      .r {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -1849,21 +1870,29 @@
   </div>
 
   <script>
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const sp = document.getElementById('sp');
     window.addEventListener('scroll', () => {
       const h = document.documentElement.scrollHeight - window.innerHeight;
       sp.style.width = (scrollY / h * 100) + '%';
     }, { passive: true });
 
-    window.addEventListener('scroll', () => {
-      const bg = document.getElementById('heroBg');
-      if (bg && scrollY < window.innerHeight) bg.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
-    }, { passive: true });
+    if (!prefersReducedMotion) {
+      window.addEventListener('scroll', () => {
+        const bg = document.getElementById('heroBg');
+        if (bg && scrollY < window.innerHeight) bg.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
+      }, { passive: true });
+    }
 
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.r').forEach(el => obs.observe(el));
+    if (prefersReducedMotion) {
+      document.querySelectorAll('.r').forEach(el => el.classList.add('on'));
+    } else {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.r').forEach(el => obs.observe(el));
+    }
 
     function showPlan(id, btn) {
       document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
@@ -1933,7 +1962,7 @@
       a.addEventListener('click', e => {
         e.preventDefault();
         const t = document.querySelector(a.getAttribute('href'));
-        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (t) t.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
       });
     });
   </script>
