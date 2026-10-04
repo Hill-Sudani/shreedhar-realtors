@@ -55,7 +55,7 @@ All images are WebP (`.webp`). Put the JPG/PNG sources in place, run `node conve
 | File | Use | Size guide (from `bliss`) |
 |---|---|---|
 | `images/projects/<slug>.webp` | Card on the homepage | Landscape, about 1400 px wide, 65–235 KB |
-| `images/projects/<slug>/hero.webp` | Top of project page, first gallery cell, link-preview image | About 1700 px wide, 16:9 or wider, under 350 KB |
+| `images/projects/<slug>/hero.webp` | Top of project page, first gallery cell, source of the link-preview image | About 1700 px wide, 16:9 or wider, under 350 KB |
 | `images/projects/<slug>/<name>.webp` | Gallery (Bliss has 5 cells: hero + 4) | 1200–1700 px wide, under 350 KB |
 | `images/projects/<slug>/plan-<name>.webp` | Floor plans, one per tab | 900–1700 px wide, 50–120 KB |
 
@@ -63,6 +63,8 @@ Naming: lowercase, hyphens, descriptive.
 - Gallery: `aerial`, `exterior-day`, `clubhouse`, `pool`, `garden`, `entrance`, `night`, `amenities`.
 - Plans always start with `plan-`: `plan-layout`, `plan-ground`, `plan-typical`, `plan-type-a`, `plan-unit-3bhk`.
 - `hero.webp` is required.
+
+Link-preview image: the one JPG on the site. Add a line for the new slug to the `PAGES` list in `make-og-images.js`, then run `node make-og-images.js`. It writes `images/og/<slug>.jpg` (1200x630, centre crop of the hero image). Open the JPG and check the crop does not cut off the building or the project sign. Run `convert-images.js` before this step, not after: it converts every JPG under `images/`, so a later run also writes unwanted `images/og/*.webp` copies. If that happens, delete those `.webp` copies; keep the JPGs.
 
 ## 3. Create the project page
 
@@ -78,6 +80,7 @@ Work through the page top to bottom:
 | 4 | JSON-LD (structured data for search engines) | `name`, `description`, full `address`, `geo`, `amenity` list, `numberOfRooms` |
 | 5 | `<!-- WHATSAPP FLOAT -->` | Project name inside the pre-filled message. Number stays `919879503547` |
 | 6 | `<!-- NAV -->` | `aria-label` on "Enquire Now" |
+| 7 | `convert-images.js` does not skip `images/og/`, so running it after the link-preview JPGs exist writes stray `.webp` copies there | `convert-images.js` | Delete any `images/og/*.webp` before committing |
 | 7 | `<!-- HERO -->` | Image path, `alt`, `width`/`height`, status tag (`Ongoing · <area>`), `<h1>`, sub-text, brochure link, fallback gradient colour |
 | 8 | `<!-- KEY HIGHLIGHTS -->` | Six `hl-item` tiles. Leave the `RERA ✓` tile as copied; no number |
 | 9 | `<!-- GALLERY -->` | One `g-cell` per image (see "Image tiles" below) |
@@ -103,9 +106,10 @@ Every page carries one canonical link and one set of Open Graph (link preview) t
 <meta property="og:title" content="(same as <title>)">
 <meta property="og:description" content="(same as the meta description)">
 <meta property="og:url" content="(same as canonical)">
-<meta property="og:image" content="https://shreedhargroup.vercel.app/images/projects/bliss/hero.webp">
-<meta property="og:image:width" content="1690">
-<meta property="og:image:height" content="841">
+<meta property="og:image" content="https://shreedhargroup.vercel.app/images/og/bliss.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="(same as the hero image alt)">
 <meta name="twitter:card" content="summary_large_image">
 ```
@@ -220,6 +224,8 @@ Also update `<lastmod>` on the homepage entry, since `index.html` changed. `robo
 - [ ] One `fetchpriority="high"`; every `<img>` has `loading`, and true `width`/`height`
 - [ ] No leftover text from the copied project (search for the old slug, name and area)
 - [ ] 320 px and 375 px wide: no sideways scroll, nav button not cut off, tabs and tiles wrap cleanly
+- [ ] `images/og/<slug>.jpg` exists, is 1200x630, and `og:image` points at it
+- [ ] No `.webp` files in `images/og/`
 - [ ] No JPG/PNG sources left under `images/projects/`; brochure compressed and original backed up
 - [ ] Other project pages and the homepage still load (nothing else was edited)
 - [ ] Hill has approved prices, possession dates, RERA text and contact details
@@ -234,14 +240,11 @@ Open as of 2026-10-03. A copied page inherits these.
 
 | # | Issue | Where | New page: do this |
 |---|---|---|---|
-| 1 | Light text on dark sections is below the 4.5:1 contrast minimum (footer text, highlight labels, site-contact labels). Left as is; fixing it changes the look and needs Hill | all pages | Inherited |
-| 2 | The security policy still allows inline scripts and styles, because every page is built from them. A strict policy needs the inline code moved into shared files | site-wide | Nothing per page |
-| 3 | Link-preview images are WebP. Some services show JPG/PNG more reliably | all pages | Use `hero.webp` like the others until Hill decides |
-| 4 | Every page is a self-contained copy, so any template fix must be repeated in 11 files | `projects/*.html` | Copy from an up-to-date page; never from an old backup |
-| 5 | `glory.html` is written in a compact style unlike the other ten | `projects/glory.html` | Do not copy `glory` |
-| 6 | Homepage card images have no `width`/`height`, and a few homepage image sizes are round guesses | `index.html` | Add true `width`/`height` to the new card image anyway |
-| 7 | `images/projects/glory/location.webp` is not used by any page (kept on purpose) | — | — |
-| 8 | `CLAUDE.md` requires `npm run build`, which does not exist | `package.json` | Verify by opening pages |
-| 9 | Six brochures are still large and were left untouched, because they could not be shrunk without visible loss: bliss 23.8 MB, royal 12.8 MB, vihar 8.9 MB, glory 6.5 MB, villa 5.4 MB, palace 3.7 MB. Luxuria is still 20.1 MB after compression. Smaller files need a fresh export from the designer's source | `brochures/` | Ask the designer for a web-size export of the new brochure |
+| 1 | The security policy still allows inline scripts and styles, because every page is built from them. A strict policy needs the inline code moved into shared files, which is a rebuild Hill has ruled out for now | site-wide | Nothing per page |
+| 2 | Every page is a self-contained copy, so any template fix must be repeated in 11 files | `projects/*.html` | Copy from an up-to-date page; never from an old backup |
+| 3 | `glory.html` is written in a compact style unlike the other ten | `projects/glory.html` | Do not copy `glory` |
+| 4 | `images/projects/glory/location.webp` is not used by any page (kept on purpose) | — | — |
+| 5 | `CLAUDE.md` requires `npm run build`, which does not exist | `package.json` | Verify by opening pages |
+| 6 | Six brochures are still large and were left untouched, because they could not be shrunk without visible loss: bliss 23.8 MB, royal 12.8 MB, vihar 8.9 MB, glory 6.5 MB, villa 5.4 MB, palace 3.7 MB. Luxuria is still 20.1 MB after compression. Smaller files need a fresh export from the designer's source | `brochures/` | Ask the designer for a web-size export of the new brochure |
 
-Fixed in the October 2026 round, for reference: single phone number, chatbot script injection and open chat endpoint, Greens missing from the chatbot, stray tag in `greens.html`, footer year, sitemap dates, EmailJS pinned with an integrity hash, `sharp` upgraded, image loading and true sizes, 320 px layout, keyboard and screen-reader support, muted-text contrast on light backgrounds, canonical and link-preview tags, reduced-motion support, security headers, brochure compression (5 of 11 files).
+Fixed in the October 2026 round, for reference: single phone number, chatbot script injection and open chat endpoint, Greens missing from the chatbot, stray tag in `greens.html`, footer year, sitemap dates, EmailJS pinned with an integrity hash, `sharp` upgraded, image loading and true sizes, 320 px layout, keyboard and screen-reader support, muted-text contrast on light backgrounds, canonical and link-preview tags, reduced-motion support, security headers, brochure compression (5 of 11 files). Second round: chat endpoint requires the site's Origin, light text on dark sections raised to 4.5:1, JPG link-preview images, true sizes on homepage card and hero images, contact form spam protection (headless-browser block, one send per 10 seconds, hidden honeypot field).
