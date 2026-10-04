@@ -305,7 +305,7 @@ footer{background:var(--dark);padding:2rem 3rem;display:flex;align-items:center;
 <!-- NAV -->
 <nav>
   <a class="nav-brand" href="/">
-    <img class="nav-logo" src="../images/logo.png" alt="Shreedhar Group" width="30" height="30">
+    <img class="nav-logo" src="../images/logo.png" alt="Shreedhar Group" loading="eager" width="30" height="30">
     <div>
       <div class="nav-logo-name">Shreedhar Group</div>
       <div class="nav-logo-tag">Trust Forever · Since 1992</div>
@@ -321,8 +321,8 @@ footer{background:var(--dark);padding:2rem 3rem;display:flex;align-items:center;
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg" id="heroBg">
-    <img src="../images/projects/glory/hero.webp" alt="Shreedhar Glory" loading="lazy" width="1920" height="1080"
-      onerror="this.parentElement.style.background='linear-gradient(135deg,#1a0a2a,#0a0515)'">
+    <img src="../images/projects/glory/hero.webp" alt="Shreedhar Glory"
+      onerror="this.parentElement.style.background='linear-gradient(135deg,#1a0a2a,#0a0515)'" loading="eager" fetchpriority="high" decoding="async" width="1060" height="852">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -376,28 +376,28 @@ footer{background:var(--dark);padding:2rem 3rem;display:flex;align-items:center;
   </div>
   <div class="gallery-grid r" data-d="1">
     <div class="g-cell" onclick="openLightbox('../images/projects/glory/hero.webp','Shreedhar Glory — Exterior')">
-      <img src="../images/projects/glory/hero.webp" alt="Shreedhar Glory Exterior" loading="lazy" width="800" height="600"
-        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+      <img src="../images/projects/glory/hero.webp" alt="Shreedhar Glory Exterior"
+        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1060" height="852">
       <div class="g-placeholder" style="display:none"><span>Shreedhar Glory</span></div>
     </div>
     <div class="g-cell" onclick="openLightbox('../images/projects/glory/exterior-2.webp','Shreedhar Glory — Night View')">
-      <img src="../images/projects/glory/exterior-2.webp" alt="Shreedhar Glory Night View" loading="lazy" width="800" height="600"
-        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+      <img src="../images/projects/glory/exterior-2.webp" alt="Shreedhar Glory Night View"
+        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1275" height="912">
       <div class="g-placeholder" style="display:none"><span>Night View</span></div>
     </div>
     <div class="g-cell" onclick="openLightbox('../images/projects/glory/amenities.webp','Amenities')">
-      <img src="../images/projects/glory/amenities.webp" alt="Amenities" loading="lazy" width="800" height="600"
-        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+      <img src="../images/projects/glory/amenities.webp" alt="Amenities"
+        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1272" height="910">
       <div class="g-placeholder" style="display:none"><span>Amenities</span></div>
     </div>
     <div class="g-cell" onclick="openLightbox('../images/projects/glory/plan-ground.webp','Ground Floor Plan')">
-      <img src="../images/projects/glory/plan-ground.webp" alt="Ground Floor Plan" loading="lazy" width="800" height="600"
-        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+      <img src="../images/projects/glory/plan-ground.webp" alt="Ground Floor Plan"
+        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1097" height="777">
       <div class="g-placeholder" style="display:none"><span>Ground Floor Plan</span></div>
     </div>
     <div class="g-cell" onclick="openLightbox('../images/projects/glory/plan-typical.webp','Typical Floor Plan')">
-      <img src="../images/projects/glory/plan-typical.webp" alt="Typical Floor Plan" loading="lazy" width="800" height="600"
-        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'">
+      <img src="../images/projects/glory/plan-typical.webp" alt="Typical Floor Plan"
+        onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1105" height="767">
       <div class="g-placeholder" style="display:none"><span>Typical Floor Plan</span></div>
     </div>
   </div>
@@ -495,22 +495,22 @@ footer{background:var(--dark);padding:2rem 3rem;display:flex;align-items:center;
   </div>
   <div class="fp-panel active r" id="plan-ground" data-d="2">
     <div class="fp-img-wrap" onclick="openLightbox('../images/projects/glory/plan-ground.webp','Ground Floor Plan')">
-      <img src="../images/projects/glory/plan-ground.webp" alt="Ground Floor Plan" loading="lazy" width="1000" height="800"
-        onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Ground Floor Plan</p><small>Image coming soon</small></div>'">
+      <img src="../images/projects/glory/plan-ground.webp" alt="Ground Floor Plan"
+        onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Ground Floor Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1097" height="777">
       <div class="fp-zoom-hint">Click to enlarge</div>
     </div>
   </div>
   <div class="fp-panel" id="plan-typical">
     <div class="fp-img-wrap" onclick="openLightbox('../images/projects/glory/plan-typical.webp','Typical Floor Plan')">
-      <img src="../images/projects/glory/plan-typical.webp" alt="Typical Floor Plan" loading="lazy" width="1000" height="800"
-        onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Typical Floor Plan</p><small>Image coming soon</small></div>'">
+      <img src="../images/projects/glory/plan-typical.webp" alt="Typical Floor Plan"
+        onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Typical Floor Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1105" height="767">
       <div class="fp-zoom-hint">Click to enlarge</div>
     </div>
   </div>
   <div class="fp-panel" id="plan-unit">
     <div class="fp-img-wrap" onclick="openLightbox('../images/projects/glory/plan-unit.webp','2 BHK Unit Plan')">
-      <img src="../images/projects/glory/plan-unit.webp" alt="2 BHK Unit Plan" loading="lazy" width="1000" height="800"
-        onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>2 BHK Unit Plan</p><small>Image coming soon</small></div>'">
+      <img src="../images/projects/glory/plan-unit.webp" alt="2 BHK Unit Plan"
+        onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>2 BHK Unit Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1016" height="787">
       <div class="fp-zoom-hint">Click to enlarge</div>
     </div>
   </div>
@@ -661,7 +661,7 @@ footer{background:var(--dark);padding:2rem 3rem;display:flex;align-items:center;
 <!-- FOOTER -->
 <footer>
   <div class="f-brand">
-    <img class="f-logo" src="../images/logo.png" alt="Shreedhar Group">
+    <img class="f-logo" src="../images/logo.png" alt="Shreedhar Group" loading="lazy" decoding="async" width="672" height="319">
     <span class="f-txt">Shreedhar Group</span>
   </div>
   <div class="f-copy">© 2026 Shreedhar Group · Trust Forever</div>
@@ -671,7 +671,7 @@ footer{background:var(--dark);padding:2rem 3rem;display:flex;align-items:center;
 <!-- LIGHTBOX -->
 <div class="lb" id="lb" onclick="closeLightbox()">
   <button class="lb-close" onclick="closeLightbox()" aria-label="Close lightbox">✕</button>
-  <img id="lb-img" src="" alt="Project Image">
+  <img id="lb-img" src="" alt="Project Image" decoding="async">
   <div class="lb-caption" id="lb-caption"></div>
 </div>
 
