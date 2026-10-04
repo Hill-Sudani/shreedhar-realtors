@@ -275,6 +275,65 @@
       gap: 2rem;
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: var(--cream);
+      color: var(--charcoal);
+    }
+
+    .nav-menu-icon,
+    .nav-menu-icon::before,
+    .nav-menu-icon::after {
+      width: 18px;
+      height: 1px;
+      background: currentColor;
+      transition: transform 0.25s var(--ease), opacity 0.25s var(--ease);
+    }
+
+    .nav-menu-icon {
+      position: relative;
+    }
+
+    .nav-menu-icon::before,
+    .nav-menu-icon::after {
+      content: '';
+      position: absolute;
+      left: 0;
+    }
+
+    .nav-menu-icon::before {
+      top: -6px;
+    }
+
+    .nav-menu-icon::after {
+      top: 6px;
+    }
+
+    .nav-menu-btn[aria-expanded="true"] .nav-menu-icon {
+      background: transparent;
+    }
+
+    .nav-menu-btn[aria-expanded="true"] .nav-menu-icon::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .nav-menu-btn[aria-expanded="true"] .nav-menu-icon::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
     .nav-link {
       font-size: 0.72rem;
       letter-spacing: 0.08em;
@@ -1595,8 +1654,116 @@
         padding: 0.7rem 1.5rem;
       }
 
+      .nav-right {
+        gap: 0.5rem;
+      }
+
+      .nav-brand,
+      .nav-cta,
+      .nav-menu-btn,
+      .nav-link,
+      .btn-primary,
+      .btn-secondary,
+      .proj-filter,
+      .pcard-brochure,
+      .cd-val a,
+      .wa-link,
+      .cf-btn,
+      .insta-follow,
+      .f-links a,
+      .chat-btn,
+      .chat-input,
+      .chat-send {
+        min-width: 44px;
+        min-height: 44px;
+      }
+
+      .nav-brand,
+      .nav-cta,
+      .nav-link,
+      .btn-primary,
+      .btn-secondary,
+      .proj-filter,
+      .pcard-brochure,
+      .cd-val a,
+      .wa-link,
+      .cf-btn,
+      .insta-follow,
+      .f-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-menu-btn {
+        display: inline-flex;
+        flex: 0 0 44px;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 1.5rem;
+        min-width: 180px;
+        padding: 0.5rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--cream);
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        box-shadow: 0 12px 32px rgba(44, 44, 44, 0.14);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-6px);
+        transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+      }
+
+      nav.menu-open .nav-links {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
       .nav-link {
+        padding: 0.65rem 0.75rem;
+      }
+
+      .nav-link::after {
         display: none;
+      }
+
+      .nav-cta,
+      .nav-link,
+      .btn-primary,
+      .btn-secondary,
+      .proj-filter,
+      .pcard-brochure,
+      .wa-link,
+      .cf-btn,
+      .insta-follow,
+      .f-links a,
+      .chat-send {
+        font-size: 12px;
+      }
+
+      .cf-label,
+      .nav-logo-tag,
+      .f-brand-text,
+      .f-copy {
+        font-size: 12px;
+      }
+
+      .cf-input,
+      .cf-textarea {
+        font-size: 16px;
+      }
+
+      .cf-input,
+      .cf-textarea {
+        min-height: 44px;
       }
 
       .hero {
@@ -1664,6 +1831,10 @@
     }
 
     @media(max-width:600px) {
+      .nav-logo-text {
+        display: none;
+      }
+
       .projects-grid {
         grid-template-columns: 1fr;
       }
@@ -1674,6 +1845,10 @@
 
       .numbers-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      footer {
+        padding-bottom: calc(1rem + 54px + 1rem);
       }
 
       .hero-title {
@@ -2036,6 +2211,20 @@
       flex-shrink: 0;
     }
 
+    @media(max-width:900px) {
+      .chat-head-status,
+      .chat-msg-label,
+      .chat-send,
+      .chat-disclaimer,
+      .chat-btn::before {
+        font-size: 12px;
+      }
+
+      .chat-input {
+        font-size: 16px;
+      }
+    }
+
     @media(max-width:600px) {
       .chat-drawer {
         right: 1rem;
@@ -2050,6 +2239,25 @@
       }
     }
     @media(max-width:380px) {
+      nav,
+      nav.scrolled {
+        padding: 0.5rem 0.75rem;
+      }
+
+      .nav-brand {
+        gap: 0;
+        flex: 0 0 44px;
+      }
+
+      .nav-cta {
+        padding: 0.45rem 0.55rem;
+        white-space: nowrap;
+      }
+
+      .nav-links {
+        right: 0.75rem;
+      }
+
       .numbers-grid {
         grid-template-columns: 1fr;
       }
@@ -2182,9 +2390,15 @@
       </div>
     </a>
     <div class="nav-right">
-      <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#projects">Projects</a>
-      <a class="nav-link" href="#contact">Contact</a>
+      <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-label="Open navigation menu"
+        aria-expanded="false" aria-controls="navMenuPanel">
+        <span class="nav-menu-icon" aria-hidden="true"></span>
+      </button>
+      <div class="nav-links" id="navMenuPanel">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
       <a class="nav-cta" href="#contact" aria-label="Send an enquiry">Enquire Now</a>
     </div>
   </nav>
@@ -2907,6 +3121,36 @@
     /* ═══ NAV ═══ */
     const nav = document.getElementById('mainNav');
     window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', scrollY > 50); }, { passive: true });
+
+    const navMenuBtn = document.getElementById('navMenuBtn');
+    const navMenuPanel = document.getElementById('navMenuPanel');
+    const mobileMenuQuery = window.matchMedia('(max-width: 900px)');
+
+    function setMenuOpen(open, returnFocus = false) {
+      const shouldOpen = mobileMenuQuery.matches && open;
+      nav.classList.toggle('menu-open', shouldOpen);
+      navMenuBtn.setAttribute('aria-expanded', String(shouldOpen));
+      navMenuBtn.setAttribute('aria-label', shouldOpen ? 'Close navigation menu' : 'Open navigation menu');
+      navMenuPanel.inert = mobileMenuQuery.matches && !shouldOpen;
+      if (mobileMenuQuery.matches) navMenuPanel.setAttribute('aria-hidden', String(!shouldOpen));
+      else navMenuPanel.removeAttribute('aria-hidden');
+      if (returnFocus) navMenuBtn.focus();
+    }
+
+    setMenuOpen(false);
+    navMenuBtn.addEventListener('click', () => {
+      setMenuOpen(navMenuBtn.getAttribute('aria-expanded') !== 'true');
+    });
+    navMenuPanel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => setMenuOpen(false));
+    });
+    document.addEventListener('pointerdown', e => {
+      if (navMenuBtn.getAttribute('aria-expanded') === 'true' && !nav.contains(e.target)) setMenuOpen(false);
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && navMenuBtn.getAttribute('aria-expanded') === 'true') setMenuOpen(false, true);
+    });
+    mobileMenuQuery.addEventListener('change', () => setMenuOpen(false));
 
     /* ═══ 3D HERO CARD ═══ */
     const wrap = document.getElementById('hero3d');
