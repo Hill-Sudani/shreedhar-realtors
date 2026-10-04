@@ -169,8 +169,9 @@ Four places. Missing any one leaves the site inconsistent.
    - status tag: `pcard-tag ongoing` (Ongoing), `pcard-tag ready-possession` (Ready Possession), plain `pcard-tag` (Completed)
    - `pcard-name`, `pcard-loc`, the three `pcard-chip` values
    - brochure `href` and `aria-label`
-   - stagger class: cards cycle `reveal`, `reveal reveal-d1`, `reveal reveal-d2`. Re-cycle the cards after the insertion point and renumber their comments.
-   - **Position (Hill's rule):** a new project goes after the existing ongoing projects and before the ready-possession and completed ones.
+   - **Position (Hill's rule):** a new project goes at the TOP of the grid, as the first card, unless Hill says otherwise for that project.
+   - stagger class: cards cycle `reveal`, `reveal reveal-d1`, `reveal reveal-d2`. The new first card takes plain `reveal`; re-cycle every card after it and renumber their comments (the old `1.` becomes `2.`, and so on).
+   - The current first card (Bliss) has the comment note `FEATURED FIRST`; move that note to the new first card.
 2. **Section heading** `11 Projects. One Promise.` → bump the number.
 3. **Enquiry form dropdown** `#cf-project`: add `<option>Shreedhar <Name> — <config></option>` before "Other / General Enquiry". Only ongoing projects are listed here.
 4. **Filter buttons** (`.proj-filters`): only if the project needs a category that does not exist. Avoid; reuse an existing key.
@@ -212,7 +213,7 @@ Also update `<lastmod>` on the homepage entry, since `index.html` changed. `robo
 - [ ] Floor-plan tabs switch by click and by arrow keys
 - [ ] Both brochure buttons on the page and the one on the card open the right PDF
 - [ ] Call and WhatsApp buttons use `919879503547` and the new project's name; no other number anywhere on the page
-- [ ] Homepage card sits after the ongoing projects, appears under the right filters and links to the page
+- [ ] Homepage card is the first card in the grid, appears under the right filters and links to the page
 - [ ] Card count on the homepage equals the heading number
 - [ ] Project is in the dropdown (if ongoing), in `api/chat.js`, and in `sitemap.xml`
 - [ ] Canonical URL equals the sitemap `<loc>`; link-preview title, description and image are the new project's
