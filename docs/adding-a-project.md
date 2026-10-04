@@ -64,7 +64,7 @@ Naming: lowercase, hyphens, descriptive.
 - Plans always start with `plan-`: `plan-layout`, `plan-ground`, `plan-typical`, `plan-type-a`, `plan-unit-3bhk`.
 - `hero.webp` is required.
 
-Link-preview image: the one JPG on the site. Add a line for the new slug to the `PAGES` list in `make-og-images.js`, then run `node make-og-images.js`. It writes `images/og/<slug>.jpg` (1200x630, centre crop of the hero image). Open the JPG and check the crop does not cut off the building or the project sign. Run `convert-images.js` before this step, not after: it converts every JPG under `images/`, so a later run also writes unwanted `images/og/*.webp` copies. If that happens, delete those `.webp` copies; keep the JPGs.
+Link-preview image: one JPG per page, the only JPGs kept on the site. Add a line for the new slug to the `PAGES` list in `make-og-images.js`, then run `node make-og-images.js`. It writes `images/og/<slug>.jpg` (1200x630, centre crop of the image you name in that line: `hero.webp`, as most pages do; `sparsh` and `star` use their card image). Open the JPG and check the crop does not cut off the building or the project sign. Run `convert-images.js` before this step, not after: it converts every JPG under `images/`, so a later run also writes unwanted `images/og/*.webp` copies. If that happens, delete those `.webp` copies; keep the JPGs.
 
 ## 3. Create the project page
 
@@ -80,7 +80,6 @@ Work through the page top to bottom:
 | 4 | JSON-LD (structured data for search engines) | `name`, `description`, full `address`, `geo`, `amenity` list, `numberOfRooms` |
 | 5 | `<!-- WHATSAPP FLOAT -->` | Project name inside the pre-filled message. Number stays `919879503547` |
 | 6 | `<!-- NAV -->` | `aria-label` on "Enquire Now" |
-| 7 | `convert-images.js` does not skip `images/og/`, so running it after the link-preview JPGs exist writes stray `.webp` copies there | `convert-images.js` | Delete any `images/og/*.webp` before committing |
 | 7 | `<!-- HERO -->` | Image path, `alt`, `width`/`height`, status tag (`Ongoing · <area>`), `<h1>`, sub-text, brochure link, fallback gradient colour |
 | 8 | `<!-- KEY HIGHLIGHTS -->` | Six `hl-item` tiles. Leave the `RERA ✓` tile as copied; no number |
 | 9 | `<!-- GALLERY -->` | One `g-cell` per image (see "Image tiles" below) |
@@ -246,5 +245,7 @@ Open as of 2026-10-03. A copied page inherits these.
 | 4 | `images/projects/glory/location.webp` is not used by any page (kept on purpose) | — | — |
 | 5 | `CLAUDE.md` requires `npm run build`, which does not exist | `package.json` | Verify by opening pages |
 | 6 | Six brochures are still large and were left untouched, because they could not be shrunk without visible loss: bliss 23.8 MB, royal 12.8 MB, vihar 8.9 MB, glory 6.5 MB, villa 5.4 MB, palace 3.7 MB. Luxuria is still 20.1 MB after compression. Smaller files need a fresh export from the designer's source | `brochures/` | Ask the designer for a web-size export of the new brochure |
+| 7 | `convert-images.js` does not skip `images/og/`, so running it after the link-preview JPGs exist writes stray `.webp` copies there | `convert-images.js` | Delete any `images/og/*.webp` before committing |
+| 8 | The chatbot endpoint can still be abused by a script that fakes the site's Origin header, and its 10-per-minute limit is per server instance, not shared. Code on this site cannot close that; it needs a spend limit at the AI provider and a rate-limit rule at the host (Hill's call) | `api/chat.js` | Nothing per page |
 
-Fixed in the October 2026 round, for reference: single phone number, chatbot script injection and open chat endpoint, Greens missing from the chatbot, stray tag in `greens.html`, footer year, sitemap dates, EmailJS pinned with an integrity hash, `sharp` upgraded, image loading and true sizes, 320 px layout, keyboard and screen-reader support, muted-text contrast on light backgrounds, canonical and link-preview tags, reduced-motion support, security headers, brochure compression (5 of 11 files). Second round: chat endpoint requires the site's Origin, light text on dark sections raised to 4.5:1, JPG link-preview images, true sizes on homepage card and hero images, contact form spam protection (headless-browser block, one send per 10 seconds, hidden honeypot field).
+Fixed in the October 2026 round, for reference: single phone number, chatbot script injection, chat endpoint tightened (input limits, per-instance rate limit; see known issue 8), Greens missing from the chatbot, stray tag in `greens.html`, footer year, sitemap dates, EmailJS pinned with an integrity hash, `sharp` upgraded, image loading and true sizes, 320 px layout, keyboard and screen-reader support, muted-text contrast on light backgrounds, canonical and link-preview tags, reduced-motion support, security headers, brochure compression (5 of 11 files). Second round: chat endpoint requires the site's Origin, light text on dark sections raised to 4.5:1, JPG link-preview images, true sizes on homepage card and hero images, contact form spam protection (headless-browser block, one send per 10 seconds, hidden honeypot field).
