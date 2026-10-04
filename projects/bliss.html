@@ -1244,6 +1244,90 @@
         padding: 1rem 1.5rem;
       }
 
+      nav {
+        box-sizing: border-box;
+        width: 100%;
+      }
+
+      .sc-inner,
+      .sc-person,
+      .sc-info,
+      .sc-actions,
+      .sc-person > div:last-child {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .sc-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .sc-role {
+        overflow-wrap: anywhere;
+      }
+
+
+      .nav-brand,
+      .nav-back,
+      .nav-cta,
+      .btn-primary,
+      .btn-outline,
+      .fp-tab,
+      .g-cell,
+      .fp-img-wrap,
+      .sc-call,
+      .sc-wa,
+      .btn-download,
+      .f-back,
+      .wa-float,
+      .lb-close,
+      .lb-prev,
+      .lb-next {
+        min-width: 44px;
+        min-height: 44px;
+      }
+
+      .nav-brand,
+      .nav-back,
+      .nav-cta,
+      .btn-primary,
+      .btn-outline,
+      .sc-call,
+      .sc-wa,
+      .btn-download,
+      .f-back {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .fp-tab {
+        box-sizing: border-box;
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        line-height: 1.4;
+      }
+
+      .nav-logo-tag,
+      .nav-back,
+      .nav-cta,
+      .btn-primary,
+      .btn-outline,
+      .fp-tab,
+      .sc-call,
+      .sc-wa,
+      .btn-download,
+      .fp-zoom-hint,
+      .f-brand-text,
+      .f-txt,
+      .f-copy,
+      .f-back,
+      .wa-float::before {
+        font-size: 12px;
+      }
+
       .hero {
         padding: 0 1.5rem 3rem;
       }
@@ -1324,6 +1408,16 @@
         flex-direction: column;
         gap: 1rem;
         text-align: center;
+      }
+    }
+    @media(max-width:600px) {
+      .nav-logo-name,
+      .nav-logo-tag {
+        display: none;
+      }
+
+      .wa-float ~ footer {
+        padding-bottom: calc(2rem + 52px + 1rem);
       }
     }
     @media(max-width:380px) {
