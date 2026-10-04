@@ -13,12 +13,12 @@ Get these from Hill. Do not guess or copy them from another project:
 
 - Project name, status (ongoing / ready possession / completed), unit types, unit count
 - Site address, postal code, map coordinates, Google Maps embed link
-- RERA (Real Estate Regulatory Authority) status, any price or possession date
+- Any price or possession date
 - Brochure PDF and source images
 
-**Sign-off rule:** anything touching prices, possession dates, RERA numbers or contact details goes to Hill for approval before it is merged.
+**Sign-off rule:** anything touching prices, possession dates, RERA (Real Estate Regulatory Authority) text or contact details goes to Hill for approval before it is merged.
 
-**RERA:** existing pages show a "RERA ✓ Certified" tile with no number. Never invent a RERA number. If Hill gives one, use it exactly; if not, ask.
+**RERA (Hill's decision, 2026-10-03):** do not put a RERA number on any page. Copy the existing "RERA ✓ Certified" tile as it is and add nothing to it.
 
 ### The one phone number
 
@@ -79,7 +79,7 @@ Work through the page top to bottom:
 | 5 | `<!-- WHATSAPP FLOAT -->` | Project name inside the pre-filled message. Number stays `919879503547` |
 | 6 | `<!-- NAV -->` | `aria-label` on "Enquire Now" |
 | 7 | `<!-- HERO -->` | Image path, `alt`, `width`/`height`, status tag (`Ongoing · <area>`), `<h1>`, sub-text, brochure link, fallback gradient colour |
-| 8 | `<!-- KEY HIGHLIGHTS -->` | Six `hl-item` tiles. The `RERA ✓` tile needs Hill's sign-off |
+| 8 | `<!-- KEY HIGHLIGHTS -->` | Six `hl-item` tiles. Leave the `RERA ✓` tile as copied; no number |
 | 9 | `<!-- GALLERY -->` | One `g-cell` per image (see "Image tiles" below) |
 | 10 | `<!-- ABOUT PROJECT -->` | Copy from the brochure |
 | 11 | `<!-- AMENITIES -->` | Only amenities the brochure lists |
@@ -233,15 +233,14 @@ Open as of 2026-10-03. A copied page inherits these.
 
 | # | Issue | Where | New page: do this |
 |---|---|---|---|
-| 1 | "RERA ✓ Certified" tile is shown but no RERA number appears on any page. Hill has no number to give yet | project pages | Never invent one. Ask Hill |
-| 2 | Light text on dark sections is below the 4.5:1 contrast minimum (footer text, highlight labels, site-contact labels). Left as is; fixing it changes the look and needs Hill | all pages | Inherited |
-| 3 | The security policy still allows inline scripts and styles, because every page is built from them. A strict policy needs the inline code moved into shared files | site-wide | Nothing per page |
-| 4 | Link-preview images are WebP. Some services show JPG/PNG more reliably | all pages | Use `hero.webp` like the others until Hill decides |
-| 5 | Every page is a self-contained copy, so any template fix must be repeated in 11 files | `projects/*.html` | Copy from an up-to-date page; never from an old backup |
-| 6 | `glory.html` is written in a compact style unlike the other ten | `projects/glory.html` | Do not copy `glory` |
-| 7 | Homepage card images have no `width`/`height`, and a few homepage image sizes are round guesses | `index.html` | Add true `width`/`height` to the new card image anyway |
-| 8 | `images/projects/glory/location.webp` is not used by any page (kept on purpose) | — | — |
-| 9 | `CLAUDE.md` requires `npm run build`, which does not exist | `package.json` | Verify by opening pages |
-| 10 | Six brochures are still large and were left untouched, because they could not be shrunk without visible loss: bliss 23.8 MB, royal 12.8 MB, vihar 8.9 MB, glory 6.5 MB, villa 5.4 MB, palace 3.7 MB. Luxuria is still 20.1 MB after compression. Smaller files need a fresh export from the designer's source | `brochures/` | Ask the designer for a web-size export of the new brochure |
+| 1 | Light text on dark sections is below the 4.5:1 contrast minimum (footer text, highlight labels, site-contact labels). Left as is; fixing it changes the look and needs Hill | all pages | Inherited |
+| 2 | The security policy still allows inline scripts and styles, because every page is built from them. A strict policy needs the inline code moved into shared files | site-wide | Nothing per page |
+| 3 | Link-preview images are WebP. Some services show JPG/PNG more reliably | all pages | Use `hero.webp` like the others until Hill decides |
+| 4 | Every page is a self-contained copy, so any template fix must be repeated in 11 files | `projects/*.html` | Copy from an up-to-date page; never from an old backup |
+| 5 | `glory.html` is written in a compact style unlike the other ten | `projects/glory.html` | Do not copy `glory` |
+| 6 | Homepage card images have no `width`/`height`, and a few homepage image sizes are round guesses | `index.html` | Add true `width`/`height` to the new card image anyway |
+| 7 | `images/projects/glory/location.webp` is not used by any page (kept on purpose) | — | — |
+| 8 | `CLAUDE.md` requires `npm run build`, which does not exist | `package.json` | Verify by opening pages |
+| 9 | Six brochures are still large and were left untouched, because they could not be shrunk without visible loss: bliss 23.8 MB, royal 12.8 MB, vihar 8.9 MB, glory 6.5 MB, villa 5.4 MB, palace 3.7 MB. Luxuria is still 20.1 MB after compression. Smaller files need a fresh export from the designer's source | `brochures/` | Ask the designer for a web-size export of the new brochure |
 
 Fixed in the October 2026 round, for reference: single phone number, chatbot script injection and open chat endpoint, Greens missing from the chatbot, stray tag in `greens.html`, footer year, sitemap dates, EmailJS pinned with an integrity hash, `sharp` upgraded, image loading and true sizes, 320 px layout, keyboard and screen-reader support, muted-text contrast on light backgrounds, canonical and link-preview tags, reduced-motion support, security headers, brochure compression (5 of 11 files).
