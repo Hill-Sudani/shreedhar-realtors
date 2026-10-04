@@ -1187,6 +1187,14 @@
       white-space: nowrap;
     }
 
+    .fp-tab:focus-visible,
+    .g-cell:focus-visible,
+    .fp-img-wrap:focus-visible,
+    .lb-close:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 3px;
+    }
+
     @media(max-width:900px) {
       nav {
         padding: 1rem 1.5rem;
@@ -1395,35 +1403,35 @@
     <div class="gallery-grid r" data-d="1">
       <!-- Main large: evening dusk exterior — all blocks, shops, road -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/greens/hero.webp','Shreedhar Greens — Evening Exterior')">
+        onclick="openLightbox('../images/projects/greens/hero.webp','Shreedhar Greens — Evening Exterior')" role="button" tabindex="0" aria-label="View larger: Shreedhar Greens — Evening Exterior">
         <img src="../images/projects/greens/hero.webp" alt="Shreedhar Greens Exterior"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1222" height="866">
         <div class="g-placeholder" style="display:none"><span>Shreedhar Greens</span></div>
       </div>
       <!-- Aerial bird's eye render -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/greens/aerial.webp','Aerial View — All 11 Blocks &amp; 7 Gardens')">
+        onclick="openLightbox('../images/projects/greens/aerial.webp','Aerial View — All 11 Blocks &amp; 7 Gardens')" role="button" tabindex="0" aria-label="View larger: Aerial View — All 11 Blocks &amp; 7 Gardens">
         <img src="../images/projects/greens/aerial.webp" alt="Aerial view all blocks"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="740" height="367">
         <div class="g-placeholder" style="display:none"><span>Aerial View</span></div>
       </div>
       <!-- Interior courtyard / gazebo / garden view -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/greens/garden.webp','Landscape Garden &amp; Gazebo View')">
+        onclick="openLightbox('../images/projects/greens/garden.webp','Landscape Garden &amp; Gazebo View')" role="button" tabindex="0" aria-label="View larger: Landscape Garden &amp; Gazebo View">
         <img src="../images/projects/greens/garden.webp" alt="Landscape garden gazebo"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="845" height="517">
         <div class="g-placeholder" style="display:none"><span>Garden View</span></div>
       </div>
       <!-- Entrance / retail ground floor -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/greens/entrance.webp','Shreedhar Greens — Main Entrance &amp; Shops')">
+        onclick="openLightbox('../images/projects/greens/entrance.webp','Shreedhar Greens — Main Entrance &amp; Shops')" role="button" tabindex="0" aria-label="View larger: Shreedhar Greens — Main Entrance &amp; Shops">
         <img src="../images/projects/greens/entrance.webp" alt="Main entrance and shops"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="888" height="556">
         <div class="g-placeholder" style="display:none"><span>Entrance &amp; Shops</span></div>
       </div>
       <!-- Ground floor layout plan -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/greens/plan-ground.webp','Ground Floor Layout Plan')">
+        onclick="openLightbox('../images/projects/greens/plan-ground.webp','Ground Floor Layout Plan')" role="button" tabindex="0" aria-label="View larger: Ground Floor Layout Plan">
         <img src="../images/projects/greens/plan-ground.webp" alt="Ground Floor Layout Plan"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1452" height="773">
         <div class="g-placeholder" style="display:none"><span>Ground Floor Plan</span></div>
@@ -1594,63 +1602,63 @@
       <p style="font-size:0.85rem;color:var(--txt2);margin-top:0.5rem;">2 &amp; 3 BHK Natural Living · 11 Blocks (A–K) ·
         7 Landscape Gardens · Ground Floor Shops</p>
     </div>
-    <div class="fp-tabs r" data-d="1">
-      <button class="fp-tab active" onclick="showPlan('ground',this)">Ground Floor Layout</button>
-      <button class="fp-tab" onclick="showPlan('typical',this)">Typical Layout Plan</button>
-      <button class="fp-tab" onclick="showPlan('3bhk',this)">3 BHK — Block A, B, J, K</button>
-      <button class="fp-tab" onclick="showPlan('2bhk-cdhi',this)">2 BHK — Block C, D, E, H, I</button>
-      <button class="fp-tab" onclick="showPlan('2bhk-f',this)">2 BHK — Block F (Type 1 &amp; 2)</button>
-      <button class="fp-tab" onclick="showPlan('2bhk-g',this)">2 BHK — Block G (Type 1, 2 &amp; 3)</button>
+    <div class="fp-tabs r" data-d="1" role="tablist" aria-label="Floor plans">
+      <button class="fp-tab active" onclick="showPlan('ground',this)" role="tab" id="tab-ground" aria-controls="plan-ground" aria-selected="true" tabindex="0">Ground Floor Layout</button>
+      <button class="fp-tab" onclick="showPlan('typical',this)" role="tab" id="tab-typical" aria-controls="plan-typical" aria-selected="false" tabindex="-1">Typical Layout Plan</button>
+      <button class="fp-tab" onclick="showPlan('3bhk',this)" role="tab" id="tab-3bhk" aria-controls="plan-3bhk" aria-selected="false" tabindex="-1">3 BHK — Block A, B, J, K</button>
+      <button class="fp-tab" onclick="showPlan('2bhk-cdhi',this)" role="tab" id="tab-2bhk-cdhi" aria-controls="plan-2bhk-cdhi" aria-selected="false" tabindex="-1">2 BHK — Block C, D, E, H, I</button>
+      <button class="fp-tab" onclick="showPlan('2bhk-f',this)" role="tab" id="tab-2bhk-f" aria-controls="plan-2bhk-f" aria-selected="false" tabindex="-1">2 BHK — Block F (Type 1 &amp; 2)</button>
+      <button class="fp-tab" onclick="showPlan('2bhk-g',this)" role="tab" id="tab-2bhk-g" aria-controls="plan-2bhk-g" aria-selected="false" tabindex="-1">2 BHK — Block G (Type 1, 2 &amp; 3)</button>
     </div>
 
-    <div class="fp-panel active r" id="plan-ground" data-d="2">
+    <div class="fp-panel active r" id="plan-ground" data-d="2" role="tabpanel" aria-labelledby="tab-ground">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/greens/plan-ground.webp','Ground Floor Layout Plan — All 11 Blocks + Shops')">
+        onclick="openLightbox('../images/projects/greens/plan-ground.webp','Ground Floor Layout Plan — All 11 Blocks + Shops')" role="button" tabindex="0" aria-label="View larger: Ground Floor Layout Plan — All 11 Blocks + Shops">
         <img src="../images/projects/greens/plan-ground.webp" alt="Ground Floor Layout Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Ground Floor Layout Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1452" height="773">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-typical">
+    <div class="fp-panel" id="plan-typical" role="tabpanel" aria-labelledby="tab-typical">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/greens/plan-typical.webp','Typical Layout Plan — All 11 Blocks')">
+        onclick="openLightbox('../images/projects/greens/plan-typical.webp','Typical Layout Plan — All 11 Blocks')" role="button" tabindex="0" aria-label="View larger: Typical Layout Plan — All 11 Blocks">
         <img src="../images/projects/greens/plan-typical.webp" alt="Typical Layout Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Typical Layout Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1436" height="776">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-3bhk">
+    <div class="fp-panel" id="plan-3bhk" role="tabpanel" aria-labelledby="tab-3bhk">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/greens/plan-unit-3bhk.webp','3 BHK Unit Plan — Block A, B, J, K')">
+        onclick="openLightbox('../images/projects/greens/plan-unit-3bhk.webp','3 BHK Unit Plan — Block A, B, J, K')" role="button" tabindex="0" aria-label="View larger: 3 BHK Unit Plan — Block A, B, J, K">
         <img src="../images/projects/greens/plan-unit-3bhk.webp" alt="3 BHK Unit Plan Block A B J K"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>3 BHK — Block A, B, J, K</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="735" height="562">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-2bhk-cdhi">
+    <div class="fp-panel" id="plan-2bhk-cdhi" role="tabpanel" aria-labelledby="tab-2bhk-cdhi">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/greens/plan-unit-2bhk-cdhi.webp','2 BHK Unit Plan — Block C, D, E, H, I')">
+        onclick="openLightbox('../images/projects/greens/plan-unit-2bhk-cdhi.webp','2 BHK Unit Plan — Block C, D, E, H, I')" role="button" tabindex="0" aria-label="View larger: 2 BHK Unit Plan — Block C, D, E, H, I">
         <img src="../images/projects/greens/plan-unit-2bhk-cdhi.webp" alt="2 BHK Unit Plan Block C D E H I"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>2 BHK — Block C, D, E, H, I</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="742" height="507">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-2bhk-f">
+    <div class="fp-panel" id="plan-2bhk-f" role="tabpanel" aria-labelledby="tab-2bhk-f">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/greens/plan-unit-2bhk-f.webp','2 BHK Unit Plan — Block F (Type 1 &amp; Type 2)')">
+        onclick="openLightbox('../images/projects/greens/plan-unit-2bhk-f.webp','2 BHK Unit Plan — Block F (Type 1 &amp; Type 2)')" role="button" tabindex="0" aria-label="View larger: 2 BHK Unit Plan — Block F (Type 1 &amp; Type 2)">
         <img src="../images/projects/greens/plan-unit-2bhk-f.webp" alt="2 BHK Unit Plan Block F"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>2 BHK — Block F</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1637" height="778">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-2bhk-g">
+    <div class="fp-panel" id="plan-2bhk-g" role="tabpanel" aria-labelledby="tab-2bhk-g">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/greens/plan-unit-2bhk-g.webp','2 BHK Unit Plan — Block G (Type 1, 2 &amp; 3)')">
+        onclick="openLightbox('../images/projects/greens/plan-unit-2bhk-g.webp','2 BHK Unit Plan — Block G (Type 1, 2 &amp; 3)')" role="button" tabindex="0" aria-label="View larger: 2 BHK Unit Plan — Block G (Type 1, 2 &amp; 3)">
         <img src="../images/projects/greens/plan-unit-2bhk-g.webp" alt="2 BHK Unit Plan Block G"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>2 BHK — Block G</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1642" height="870">
         <div class="fp-zoom-hint">Click to enlarge</div>
@@ -1823,7 +1831,7 @@
     <a class="f-back" href="/">&#8592; Back to Homepage</a>
   </footer>
 
-  <div class="lb" id="lb" onclick="closeLightbox()">
+  <div class="lb" id="lb" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button class="lb-close" onclick="closeLightbox()" aria-label="Close lightbox">&#10005;</button>
     <img id="lb-img" src="" alt="Project Image" decoding="async">
     <div class="lb-caption" id="lb-caption"></div>
@@ -1848,23 +1856,67 @@
 
     function showPlan(id, btn) {
       document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.fp-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.fp-tab').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+        b.tabIndex = -1;
+      });
       document.getElementById('plan-' + id).classList.add('active');
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      btn.tabIndex = 0;
     }
 
+    document.querySelectorAll('.fp-tabs').forEach(tablist => {
+      tablist.addEventListener('keydown', e => {
+        const tabs = [...tablist.querySelectorAll('.fp-tab')];
+        const currentIndex = tabs.indexOf(document.activeElement);
+        if (currentIndex < 0) return;
+        let nextIndex;
+        if (e.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') nextIndex = 0;
+        else if (e.key === 'End') nextIndex = tabs.length - 1;
+        else return;
+        e.preventDefault();
+        const nextTab = tabs[nextIndex];
+        nextTab.focus();
+        nextTab.click();
+      });
+    });
+
+    // Lightbox
+    let lastFocusedElement = null;
     function openLightbox(src, caption) {
+      lastFocusedElement = document.activeElement;
       const lb = document.getElementById('lb');
-      document.getElementById('lb-img').src = src;
+      const lbImage = document.getElementById('lb-img');
+      lbImage.src = src;
+      lbImage.alt = caption;
       document.getElementById('lb-caption').textContent = caption;
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
+      lb.querySelector('.lb-close').focus();
     }
     function closeLightbox() {
       document.getElementById('lb').classList.remove('open');
       document.body.style.overflow = '';
+      const focusTarget = lastFocusedElement;
+      lastFocusedElement = null;
+      if (focusTarget && typeof focusTarget.focus === 'function') focusTarget.focus();
     }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        return;
+      }
+      const tile = e.target instanceof Element
+        ? e.target.closest('.g-cell[role="button"], .fp-img-wrap[role="button"]')
+        : null;
+      if (!tile || (e.key !== 'Enter' && e.key !== ' ')) return;
+      e.preventDefault();
+      tile.click();
+    });
 
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {

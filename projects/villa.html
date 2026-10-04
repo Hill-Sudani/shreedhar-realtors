@@ -1238,6 +1238,14 @@
     }
 
     /* RESPONSIVE */
+    .fp-tab:focus-visible,
+    .g-cell:focus-visible,
+    .fp-img-wrap:focus-visible,
+    .lb-close:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 3px;
+    }
+
     @media(max-width:900px) {
       nav {
         padding: 1rem 1.5rem;
@@ -1452,27 +1460,27 @@
       <h2 class="sec-title">Exquisite <em style="color:var(--red)">Luxury Villa</em> Visuals</h2>
     </div>
     <div class="gallery-grid r" data-d="1">
-      <div class="g-cell" onclick="openLightbox('../images/projects/villa/hero.webp','Shreedhar Villa — Exterior')">
+      <div class="g-cell" onclick="openLightbox('../images/projects/villa/hero.webp','Shreedhar Villa — Exterior')" role="button" tabindex="0" aria-label="View larger: Shreedhar Villa — Exterior">
         <img src="../images/projects/villa/hero.webp" alt="Shreedhar Villa Exterior"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1666" height="832">
         <div class="g-placeholder" style="display:none"><span>Shreedhar Villa</span></div>
       </div>
-      <div class="g-cell" onclick="openLightbox('../images/projects/villa/plan-ground.webp','Ground Floor Plan')">
+      <div class="g-cell" onclick="openLightbox('../images/projects/villa/plan-ground.webp','Ground Floor Plan')" role="button" tabindex="0" aria-label="View larger: Ground Floor Plan">
         <img src="../images/projects/villa/plan-ground.webp" alt="Ground Floor Plan Preview"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="470" height="858">
         <div class="g-placeholder" style="display:none"><span>Ground Floor Plan</span></div>
       </div>
-      <div class="g-cell" onclick="openLightbox('../images/projects/villa/plan-first.webp','First Floor Plan')">
+      <div class="g-cell" onclick="openLightbox('../images/projects/villa/plan-first.webp','First Floor Plan')" role="button" tabindex="0" aria-label="View larger: First Floor Plan">
         <img src="../images/projects/villa/plan-first.webp" alt="First Floor Plan Preview"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="576" height="881">
         <div class="g-placeholder" style="display:none"><span>First Floor Plan</span></div>
       </div>
-      <div class="g-cell" onclick="openLightbox('../images/projects/villa/plan-second.webp','Second Floor Plan')">
+      <div class="g-cell" onclick="openLightbox('../images/projects/villa/plan-second.webp','Second Floor Plan')" role="button" tabindex="0" aria-label="View larger: Second Floor Plan">
         <img src="../images/projects/villa/plan-second.webp" alt="Second Floor Plan Preview"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="602" height="832">
         <div class="g-placeholder" style="display:none"><span>Second Floor Plan</span></div>
       </div>
-      <div class="g-cell" onclick="openLightbox('../images/projects/villa/location.webp','Location Map')">
+      <div class="g-cell" onclick="openLightbox('../images/projects/villa/location.webp','Location Map')" role="button" tabindex="0" aria-label="View larger: Location Map">
         <img src="../images/projects/villa/location.webp" alt="Location Map"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1597" height="727">
         <div class="g-placeholder" style="display:none"><span>Location Map</span></div>
@@ -1603,36 +1611,36 @@
       <p style="font-size:0.85rem;color:var(--txt2);margin-top:0.5rem;">Unit 16 — 5 BHK Villa · Basement + Ground +
         First + Second Floor</p>
     </div>
-    <div class="fp-tabs r" data-d="1">
-      <button class="fp-tab active" onclick="showPlan('basement',this)">Basement</button>
-      <button class="fp-tab" onclick="showPlan('ground',this)">Ground Floor</button>
-      <button class="fp-tab" onclick="showPlan('first',this)">First Floor</button>
-      <button class="fp-tab" onclick="showPlan('second',this)">Second Floor</button>
+    <div class="fp-tabs r" data-d="1" role="tablist" aria-label="Floor plans">
+      <button class="fp-tab active" onclick="showPlan('basement',this)" role="tab" id="tab-basement" aria-controls="plan-basement" aria-selected="true" tabindex="0">Basement</button>
+      <button class="fp-tab" onclick="showPlan('ground',this)" role="tab" id="tab-ground" aria-controls="plan-ground" aria-selected="false" tabindex="-1">Ground Floor</button>
+      <button class="fp-tab" onclick="showPlan('first',this)" role="tab" id="tab-first" aria-controls="plan-first" aria-selected="false" tabindex="-1">First Floor</button>
+      <button class="fp-tab" onclick="showPlan('second',this)" role="tab" id="tab-second" aria-controls="plan-second" aria-selected="false" tabindex="-1">Second Floor</button>
     </div>
-    <div class="fp-panel active r" id="plan-basement" data-d="2">
+    <div class="fp-panel active r" id="plan-basement" data-d="2" role="tabpanel" aria-labelledby="tab-basement">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/villa/plan-basement.webp','Basement Floor Plan')">
+        onclick="openLightbox('../images/projects/villa/plan-basement.webp','Basement Floor Plan')" role="button" tabindex="0" aria-label="View larger: Basement Floor Plan">
         <img src="../images/projects/villa/plan-basement.webp" alt="Basement Floor Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Basement Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="408" height="780">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
-    <div class="fp-panel" id="plan-ground">
-      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/villa/plan-ground.webp','Ground Floor Plan')">
+    <div class="fp-panel" id="plan-ground" role="tabpanel" aria-labelledby="tab-ground">
+      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/villa/plan-ground.webp','Ground Floor Plan')" role="button" tabindex="0" aria-label="View larger: Ground Floor Plan">
         <img src="../images/projects/villa/plan-ground.webp" alt="Ground Floor Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Ground Floor Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="470" height="858">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
-    <div class="fp-panel" id="plan-first">
-      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/villa/plan-first.webp','First Floor Plan')">
+    <div class="fp-panel" id="plan-first" role="tabpanel" aria-labelledby="tab-first">
+      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/villa/plan-first.webp','First Floor Plan')" role="button" tabindex="0" aria-label="View larger: First Floor Plan">
         <img src="../images/projects/villa/plan-first.webp" alt="First Floor Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>First Floor Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="576" height="881">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
-    <div class="fp-panel" id="plan-second">
-      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/villa/plan-second.webp','Second Floor Plan')">
+    <div class="fp-panel" id="plan-second" role="tabpanel" aria-labelledby="tab-second">
+      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/villa/plan-second.webp','Second Floor Plan')" role="button" tabindex="0" aria-label="View larger: Second Floor Plan">
         <img src="../images/projects/villa/plan-second.webp" alt="Second Floor Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Second Floor Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="602" height="832">
         <div class="fp-zoom-hint">Click to enlarge</div>
@@ -1641,7 +1649,7 @@
   </section>
 
   <!-- LIGHTBOX -->
-  <div class="lb" id="lb" onclick="closeLightbox()">
+  <div class="lb" id="lb" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button class="lb-close" onclick="closeLightbox()" aria-label="Close lightbox">✕</button>
     <img id="lb-img" src="" alt="Floor Plan" decoding="async">
     <div class="lb-caption" id="lb-caption"></div>
@@ -1839,24 +1847,67 @@
     // Floor plan tabs
     function showPlan(id, btn) {
       document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.fp-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.fp-tab').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+        b.tabIndex = -1;
+      });
       document.getElementById('plan-' + id).classList.add('active');
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      btn.tabIndex = 0;
     }
 
+    document.querySelectorAll('.fp-tabs').forEach(tablist => {
+      tablist.addEventListener('keydown', e => {
+        const tabs = [...tablist.querySelectorAll('.fp-tab')];
+        const currentIndex = tabs.indexOf(document.activeElement);
+        if (currentIndex < 0) return;
+        let nextIndex;
+        if (e.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') nextIndex = 0;
+        else if (e.key === 'End') nextIndex = tabs.length - 1;
+        else return;
+        e.preventDefault();
+        const nextTab = tabs[nextIndex];
+        nextTab.focus();
+        nextTab.click();
+      });
+    });
+
     // Lightbox
+    let lastFocusedElement = null;
     function openLightbox(src, caption) {
+      lastFocusedElement = document.activeElement;
       const lb = document.getElementById('lb');
-      document.getElementById('lb-img').src = src;
+      const lbImage = document.getElementById('lb-img');
+      lbImage.src = src;
+      lbImage.alt = caption;
       document.getElementById('lb-caption').textContent = caption;
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
+      lb.querySelector('.lb-close').focus();
     }
     function closeLightbox() {
       document.getElementById('lb').classList.remove('open');
       document.body.style.overflow = '';
+      const focusTarget = lastFocusedElement;
+      lastFocusedElement = null;
+      if (focusTarget && typeof focusTarget.focus === 'function') focusTarget.focus();
     }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        return;
+      }
+      const tile = e.target instanceof Element
+        ? e.target.closest('.g-cell[role="button"], .fp-img-wrap[role="button"]')
+        : null;
+      if (!tile || (e.key !== 'Enter' && e.key !== ' ')) return;
+      e.preventDefault();
+      tile.click();
+    });
 
     // Smooth anchors
     document.querySelectorAll('a[href^="#"]').forEach(a => {

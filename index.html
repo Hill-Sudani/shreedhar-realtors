@@ -2132,8 +2132,8 @@
     </div>
     <div class="chat-input-row">
       <input class="chat-input" id="chatInput" type="text" maxlength="500" placeholder="Ask about our projects..."
-        onkeydown="if(event.key==='Enter')sendChat()" />
-      <button class="chat-send" id="chatSend" onclick="sendChat()">Send →</button>
+        onkeydown="if(event.key==='Enter')sendChat()" aria-label="Ask about our projects" />
+      <button class="chat-send" id="chatSend" onclick="sendChat()" aria-label="Send message">Send →</button>
     </div>
     <div class="chat-disclaimer">AI assistant · Responses may not be 100% accurate · Call us to confirm</div>
   </div>

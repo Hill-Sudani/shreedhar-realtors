@@ -1208,6 +1208,14 @@
     }
 
     /* RESPONSIVE */
+    .fp-tab:focus-visible,
+    .g-cell:focus-visible,
+    .fp-img-wrap:focus-visible,
+    .lb-close:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 3px;
+    }
+
     @media(max-width:900px) {
       nav {
         padding: 1rem 1.5rem;
@@ -1423,35 +1431,35 @@
     <div class="gallery-grid r" data-d="1">
       <!-- Main large: evening gate + exterior hero -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/palace/hero.webp','Shreedhar Palace — Evening View')">
+        onclick="openLightbox('../images/projects/palace/hero.webp','Shreedhar Palace — Evening View')" role="button" tabindex="0" aria-label="View larger: Shreedhar Palace — Evening View">
         <img src="../images/projects/palace/hero.webp" alt="Shreedhar Palace Evening View"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1202" height="837">
         <div class="g-placeholder" style="display:none"><span>Shreedhar Palace</span></div>
       </div>
       <!-- Daytime row-bungalow facade -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/palace/exterior-day.webp','Shreedhar Palace — Daytime Exterior')">
+        onclick="openLightbox('../images/projects/palace/exterior-day.webp','Shreedhar Palace — Daytime Exterior')" role="button" tabindex="0" aria-label="View larger: Shreedhar Palace — Daytime Exterior">
         <img src="../images/projects/palace/exterior-day.webp" alt="Shreedhar Palace Daytime"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1081" height="568">
         <div class="g-placeholder" style="display:none"><span>Daytime Exterior</span></div>
       </div>
       <!-- Layout plan aerial -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/palace/layout.webp','Shreedhar Palace — Layout Plan')">
+        onclick="openLightbox('../images/projects/palace/layout.webp','Shreedhar Palace — Layout Plan')" role="button" tabindex="0" aria-label="View larger: Shreedhar Palace — Layout Plan">
         <img src="../images/projects/palace/layout.webp" alt="Layout Plan"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1491" height="452">
         <div class="g-placeholder" style="display:none"><span>Layout Plan</span></div>
       </div>
       <!-- Unit plan type standard -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/palace/plan-standard.webp','Standard Unit Floor Plans')">
+        onclick="openLightbox('../images/projects/palace/plan-standard.webp','Standard Unit Floor Plans')" role="button" tabindex="0" aria-label="View larger: Standard Unit Floor Plans">
         <img src="../images/projects/palace/plan-standard.webp" alt="Standard Unit Plan"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1161" height="776">
         <div class="g-placeholder" style="display:none"><span>Unit Floor Plans</span></div>
       </div>
       <!-- Unit plan type corner -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/palace/plan-corner.webp','Corner Unit Floor Plans')">
+        onclick="openLightbox('../images/projects/palace/plan-corner.webp','Corner Unit Floor Plans')" role="button" tabindex="0" aria-label="View larger: Corner Unit Floor Plans">
         <img src="../images/projects/palace/plan-corner.webp" alt="Corner Unit Plan"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1165" height="792">
         <div class="g-placeholder" style="display:none"><span>Corner Unit Plans</span></div>
@@ -1592,62 +1600,62 @@
       <p style="font-size:0.85rem;color:var(--txt2);margin-top:0.5rem;">4 BHK Luxurious Bungalows · 24 Units · Basement
         + Ground + 2 Floors</p>
     </div>
-    <div class="fp-tabs r" data-d="1">
-      <button class="fp-tab active" onclick="showPlan('layout',this)">Layout Plan</button>
-      <button class="fp-tab" onclick="showPlan('standard',this)">Standard Units (2–6, 10–13, 18–23)</button>
-      <button class="fp-tab" onclick="showPlan('corner',this)">Corner Units (1, 17, 24)</button>
-      <button class="fp-tab" onclick="showPlan('unit7',this)">Unit 7</button>
-      <button class="fp-tab" onclick="showPlan('unit89',this)">Units 8 &amp; 9</button>
-      <button class="fp-tab" onclick="showPlan('unit16',this)">Unit 16</button>
+    <div class="fp-tabs r" data-d="1" role="tablist" aria-label="Floor plans">
+      <button class="fp-tab active" onclick="showPlan('layout',this)" role="tab" id="tab-layout" aria-controls="plan-layout" aria-selected="true" tabindex="0">Layout Plan</button>
+      <button class="fp-tab" onclick="showPlan('standard',this)" role="tab" id="tab-standard" aria-controls="plan-standard" aria-selected="false" tabindex="-1">Standard Units (2–6, 10–13, 18–23)</button>
+      <button class="fp-tab" onclick="showPlan('corner',this)" role="tab" id="tab-corner" aria-controls="plan-corner" aria-selected="false" tabindex="-1">Corner Units (1, 17, 24)</button>
+      <button class="fp-tab" onclick="showPlan('unit7',this)" role="tab" id="tab-unit7" aria-controls="plan-unit7" aria-selected="false" tabindex="-1">Unit 7</button>
+      <button class="fp-tab" onclick="showPlan('unit89',this)" role="tab" id="tab-unit89" aria-controls="plan-unit89" aria-selected="false" tabindex="-1">Units 8 &amp; 9</button>
+      <button class="fp-tab" onclick="showPlan('unit16',this)" role="tab" id="tab-unit16" aria-controls="plan-unit16" aria-selected="false" tabindex="-1">Unit 16</button>
     </div>
 
-    <div class="fp-panel active r" id="plan-layout" data-d="2">
+    <div class="fp-panel active r" id="plan-layout" data-d="2" role="tabpanel" aria-labelledby="tab-layout">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/palace/layout.webp','Shreedhar Palace — Layout Plan')">
+        onclick="openLightbox('../images/projects/palace/layout.webp','Shreedhar Palace — Layout Plan')" role="button" tabindex="0" aria-label="View larger: Shreedhar Palace — Layout Plan">
         <img src="../images/projects/palace/layout.webp" alt="Layout Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Layout Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1491" height="452">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-standard">
+    <div class="fp-panel" id="plan-standard" role="tabpanel" aria-labelledby="tab-standard">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/palace/plan-standard.webp','Standard Units 2–6, 10–13, 18–23')">
+        onclick="openLightbox('../images/projects/palace/plan-standard.webp','Standard Units 2–6, 10–13, 18–23')" role="button" tabindex="0" aria-label="View larger: Standard Units 2–6, 10–13, 18–23">
         <img src="../images/projects/palace/plan-standard.webp" alt="Standard Unit Plans"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Standard Units</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1161" height="776">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-corner">
+    <div class="fp-panel" id="plan-corner" role="tabpanel" aria-labelledby="tab-corner">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/palace/plan-corner.webp','Corner Units 1, 17, 24')">
+        onclick="openLightbox('../images/projects/palace/plan-corner.webp','Corner Units 1, 17, 24')" role="button" tabindex="0" aria-label="View larger: Corner Units 1, 17, 24">
         <img src="../images/projects/palace/plan-corner.webp" alt="Corner Unit Plans"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Corner Units 1, 17, 24</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1165" height="792">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-unit7">
-      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/palace/plan-unit7.webp','Unit 7 Floor Plans')">
+    <div class="fp-panel" id="plan-unit7" role="tabpanel" aria-labelledby="tab-unit7">
+      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/palace/plan-unit7.webp','Unit 7 Floor Plans')" role="button" tabindex="0" aria-label="View larger: Unit 7 Floor Plans">
         <img src="../images/projects/palace/plan-unit7.webp" alt="Unit 7 Floor Plans"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Unit 7</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1267" height="677">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-unit89">
+    <div class="fp-panel" id="plan-unit89" role="tabpanel" aria-labelledby="tab-unit89">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/palace/plan-unit89.webp','Units 8 &amp; 9 Floor Plans')">
+        onclick="openLightbox('../images/projects/palace/plan-unit89.webp','Units 8 &amp; 9 Floor Plans')" role="button" tabindex="0" aria-label="View larger: Units 8 &amp; 9 Floor Plans">
         <img src="../images/projects/palace/plan-unit89.webp" alt="Units 8 and 9 Floor Plans"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Units 8 &amp; 9</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1197" height="780">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-unit16">
+    <div class="fp-panel" id="plan-unit16" role="tabpanel" aria-labelledby="tab-unit16">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/palace/plan-unit16.webp','Unit 16 Floor Plans')">
+        onclick="openLightbox('../images/projects/palace/plan-unit16.webp','Unit 16 Floor Plans')" role="button" tabindex="0" aria-label="View larger: Unit 16 Floor Plans">
         <img src="../images/projects/palace/plan-unit16.webp" alt="Unit 16 Floor Plans"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Unit 16</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1265" height="815">
         <div class="fp-zoom-hint">Click to enlarge</div>
@@ -1829,7 +1837,7 @@
   </footer>
 
   <!-- LIGHTBOX -->
-  <div class="lb" id="lb" onclick="closeLightbox()">
+  <div class="lb" id="lb" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button class="lb-close" onclick="closeLightbox()" aria-label="Close lightbox">✕</button>
     <img id="lb-img" src="" alt="Project Image" decoding="async">
     <div class="lb-caption" id="lb-caption"></div>
@@ -1858,24 +1866,67 @@
     // Floor plan tabs
     function showPlan(id, btn) {
       document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.fp-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.fp-tab').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+        b.tabIndex = -1;
+      });
       document.getElementById('plan-' + id).classList.add('active');
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      btn.tabIndex = 0;
     }
 
+    document.querySelectorAll('.fp-tabs').forEach(tablist => {
+      tablist.addEventListener('keydown', e => {
+        const tabs = [...tablist.querySelectorAll('.fp-tab')];
+        const currentIndex = tabs.indexOf(document.activeElement);
+        if (currentIndex < 0) return;
+        let nextIndex;
+        if (e.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') nextIndex = 0;
+        else if (e.key === 'End') nextIndex = tabs.length - 1;
+        else return;
+        e.preventDefault();
+        const nextTab = tabs[nextIndex];
+        nextTab.focus();
+        nextTab.click();
+      });
+    });
+
     // Lightbox
+    let lastFocusedElement = null;
     function openLightbox(src, caption) {
+      lastFocusedElement = document.activeElement;
       const lb = document.getElementById('lb');
-      document.getElementById('lb-img').src = src;
+      const lbImage = document.getElementById('lb-img');
+      lbImage.src = src;
+      lbImage.alt = caption;
       document.getElementById('lb-caption').textContent = caption;
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
+      lb.querySelector('.lb-close').focus();
     }
     function closeLightbox() {
       document.getElementById('lb').classList.remove('open');
       document.body.style.overflow = '';
+      const focusTarget = lastFocusedElement;
+      lastFocusedElement = null;
+      if (focusTarget && typeof focusTarget.focus === 'function') focusTarget.focus();
     }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        return;
+      }
+      const tile = e.target instanceof Element
+        ? e.target.closest('.g-cell[role="button"], .fp-img-wrap[role="button"]')
+        : null;
+      if (!tile || (e.key !== 'Enter' && e.key !== ' ')) return;
+      e.preventDefault();
+      tile.click();
+    });
 
     // Smooth anchors
     document.querySelectorAll('a[href^="#"]').forEach(a => {

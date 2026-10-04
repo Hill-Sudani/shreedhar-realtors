@@ -1204,6 +1204,14 @@
       white-space: nowrap;
     }
 
+    .fp-tab:focus-visible,
+    .g-cell:focus-visible,
+    .fp-img-wrap:focus-visible,
+    .lb-close:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 3px;
+    }
+
     @media(max-width:900px) {
       nav {
         padding: 1rem 1.5rem;
@@ -1411,30 +1419,30 @@
     </div>
     <div class="gallery-grid r" data-d="1">
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/royal/hero.webp','Shreedhar Royal — Evening Exterior')">
+        onclick="openLightbox('../images/projects/royal/hero.webp','Shreedhar Royal — Evening Exterior')" role="button" tabindex="0" aria-label="View larger: Shreedhar Royal — Evening Exterior">
         <img src="../images/projects/royal/hero.webp" alt="Shreedhar Royal Evening Exterior"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1110" height="746">
         <div class="g-placeholder" style="display:none"><span>Shreedhar Royal</span></div>
       </div>
-      <div class="g-cell" onclick="openLightbox('../images/projects/royal/aerial.webp','Aerial View — Amenity Podium')">
+      <div class="g-cell" onclick="openLightbox('../images/projects/royal/aerial.webp','Aerial View — Amenity Podium')" role="button" tabindex="0" aria-label="View larger: Aerial View — Amenity Podium">
         <img src="../images/projects/royal/aerial.webp" alt="Aerial amenity view"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1176" height="747">
         <div class="g-placeholder" style="display:none"><span>Aerial View</span></div>
       </div>
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/royal/garden.webp','Central Garden &amp; Pergola Courtyard')">
+        onclick="openLightbox('../images/projects/royal/garden.webp','Central Garden &amp; Pergola Courtyard')" role="button" tabindex="0" aria-label="View larger: Central Garden &amp; Pergola Courtyard">
         <img src="../images/projects/royal/garden.webp" alt="Garden courtyard"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1082" height="745">
         <div class="g-placeholder" style="display:none"><span>Garden View</span></div>
       </div>
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/royal/fountain.webp','Bubbler Fountain &amp; Sunken Seating')">
+        onclick="openLightbox('../images/projects/royal/fountain.webp','Bubbler Fountain &amp; Sunken Seating')" role="button" tabindex="0" aria-label="View larger: Bubbler Fountain &amp; Sunken Seating">
         <img src="../images/projects/royal/fountain.webp" alt="Fountain and seating"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="950" height="743">
         <div class="g-placeholder" style="display:none"><span>Fountain Area</span></div>
       </div>
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/royal/exterior-day.webp','Shreedhar Royal — Daytime Exterior')">
+        onclick="openLightbox('../images/projects/royal/exterior-day.webp','Shreedhar Royal — Daytime Exterior')" role="button" tabindex="0" aria-label="View larger: Shreedhar Royal — Daytime Exterior">
         <img src="../images/projects/royal/exterior-day.webp" alt="Daytime exterior"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1167" height="743">
         <div class="g-placeholder" style="display:none"><span>Daytime View</span></div>
@@ -1652,40 +1660,40 @@
       <p style="font-size:0.85rem;color:var(--txt2);margin-top:0.5rem;">3 &amp; 4 BHK Spacious Living · 3 Towers (A, B,
         C) · 30+ Ground Floor Amenities</p>
     </div>
-    <div class="fp-tabs r" data-d="1">
-      <button class="fp-tab active" onclick="showPlan('ground',this)">Ground Floor Layout</button>
-      <button class="fp-tab" onclick="showPlan('typical',this)">Typical Floor Layout</button>
-      <button class="fp-tab" onclick="showPlan('3bhk',this)">3 BHK — Block A &amp; B · Type 01</button>
-      <button class="fp-tab" onclick="showPlan('4bhk',this)">4 BHK — Block C · Type 01</button>
+    <div class="fp-tabs r" data-d="1" role="tablist" aria-label="Floor plans">
+      <button class="fp-tab active" onclick="showPlan('ground',this)" role="tab" id="tab-ground" aria-controls="plan-ground" aria-selected="true" tabindex="0">Ground Floor Layout</button>
+      <button class="fp-tab" onclick="showPlan('typical',this)" role="tab" id="tab-typical" aria-controls="plan-typical" aria-selected="false" tabindex="-1">Typical Floor Layout</button>
+      <button class="fp-tab" onclick="showPlan('3bhk',this)" role="tab" id="tab-3bhk" aria-controls="plan-3bhk" aria-selected="false" tabindex="-1">3 BHK — Block A &amp; B · Type 01</button>
+      <button class="fp-tab" onclick="showPlan('4bhk',this)" role="tab" id="tab-4bhk" aria-controls="plan-4bhk" aria-selected="false" tabindex="-1">4 BHK — Block C · Type 01</button>
     </div>
 
-    <div class="fp-panel active r" id="plan-ground" data-d="2">
+    <div class="fp-panel active r" id="plan-ground" data-d="2" role="tabpanel" aria-labelledby="tab-ground">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/royal/plan-ground.webp','Ground Floor Layout Plan')">
+        onclick="openLightbox('../images/projects/royal/plan-ground.webp','Ground Floor Layout Plan')" role="button" tabindex="0" aria-label="View larger: Ground Floor Layout Plan">
         <img src="../images/projects/royal/plan-ground.webp" alt="Ground Floor Layout Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Ground Floor Layout Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1152" height="826">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
-    <div class="fp-panel" id="plan-typical">
+    <div class="fp-panel" id="plan-typical" role="tabpanel" aria-labelledby="tab-typical">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/royal/plan-typical.webp','Typical Floor Layout Plan — All 3 Blocks')">
+        onclick="openLightbox('../images/projects/royal/plan-typical.webp','Typical Floor Layout Plan — All 3 Blocks')" role="button" tabindex="0" aria-label="View larger: Typical Floor Layout Plan — All 3 Blocks">
         <img src="../images/projects/royal/plan-typical.webp" alt="Typical Floor Layout Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Typical Floor Layout Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="891" height="877">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
-    <div class="fp-panel" id="plan-3bhk">
+    <div class="fp-panel" id="plan-3bhk" role="tabpanel" aria-labelledby="tab-3bhk">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/royal/plan-unit-3bhk.webp','3 BHK Unit Plan — Block A &amp; B · Type 01')">
+        onclick="openLightbox('../images/projects/royal/plan-unit-3bhk.webp','3 BHK Unit Plan — Block A &amp; B · Type 01')" role="button" tabindex="0" aria-label="View larger: 3 BHK Unit Plan — Block A &amp; B · Type 01">
         <img src="../images/projects/royal/plan-unit-3bhk.webp" alt="3 BHK Unit Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>3 BHK — Block A &amp; B · Type 01</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1107" height="842">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
-    <div class="fp-panel" id="plan-4bhk">
+    <div class="fp-panel" id="plan-4bhk" role="tabpanel" aria-labelledby="tab-4bhk">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/royal/plan-unit-4bhk.webp','4 BHK Unit Plan — Block C · Type 01')">
+        onclick="openLightbox('../images/projects/royal/plan-unit-4bhk.webp','4 BHK Unit Plan — Block C · Type 01')" role="button" tabindex="0" aria-label="View larger: 4 BHK Unit Plan — Block C · Type 01">
         <img src="../images/projects/royal/plan-unit-4bhk.webp" alt="4 BHK Unit Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>4 BHK — Block C · Type 01</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1040" height="845">
         <div class="fp-zoom-hint">Click to enlarge</div>
@@ -1865,7 +1873,7 @@
     <a class="f-back" href="/">&#8592; Back to Homepage</a>
   </footer>
 
-  <div class="lb" id="lb" onclick="closeLightbox()">
+  <div class="lb" id="lb" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button class="lb-close" onclick="closeLightbox()" aria-label="Close lightbox">&#10005;</button>
     <img id="lb-img" src="" alt="Project Image" decoding="async">
     <div class="lb-caption" id="lb-caption"></div>
@@ -1890,23 +1898,67 @@
 
     function showPlan(id, btn) {
       document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.fp-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.fp-tab').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+        b.tabIndex = -1;
+      });
       document.getElementById('plan-' + id).classList.add('active');
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      btn.tabIndex = 0;
     }
 
+    document.querySelectorAll('.fp-tabs').forEach(tablist => {
+      tablist.addEventListener('keydown', e => {
+        const tabs = [...tablist.querySelectorAll('.fp-tab')];
+        const currentIndex = tabs.indexOf(document.activeElement);
+        if (currentIndex < 0) return;
+        let nextIndex;
+        if (e.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') nextIndex = 0;
+        else if (e.key === 'End') nextIndex = tabs.length - 1;
+        else return;
+        e.preventDefault();
+        const nextTab = tabs[nextIndex];
+        nextTab.focus();
+        nextTab.click();
+      });
+    });
+
+    // Lightbox
+    let lastFocusedElement = null;
     function openLightbox(src, caption) {
+      lastFocusedElement = document.activeElement;
       const lb = document.getElementById('lb');
-      document.getElementById('lb-img').src = src;
+      const lbImage = document.getElementById('lb-img');
+      lbImage.src = src;
+      lbImage.alt = caption;
       document.getElementById('lb-caption').textContent = caption;
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
+      lb.querySelector('.lb-close').focus();
     }
     function closeLightbox() {
       document.getElementById('lb').classList.remove('open');
       document.body.style.overflow = '';
+      const focusTarget = lastFocusedElement;
+      lastFocusedElement = null;
+      if (focusTarget && typeof focusTarget.focus === 'function') focusTarget.focus();
     }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        return;
+      }
+      const tile = e.target instanceof Element
+        ? e.target.closest('.g-cell[role="button"], .fp-img-wrap[role="button"]')
+        : null;
+      if (!tile || (e.key !== 'Enter' && e.key !== ' ')) return;
+      e.preventDefault();
+      tile.click();
+    });
 
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {

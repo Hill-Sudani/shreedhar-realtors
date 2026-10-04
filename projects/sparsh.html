@@ -1172,6 +1172,14 @@
     }
 
     /* RESPONSIVE */
+    .fp-tab:focus-visible,
+    .g-cell:focus-visible,
+    .fp-img-wrap:focus-visible,
+    .lb-close:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 3px;
+    }
+
     @media(max-width:900px) {
       nav {
         padding: 1rem 1.5rem;
@@ -1378,31 +1386,31 @@
     <div class="gallery-grid r" data-d="1">
       <!-- Hero image — street elevation (brochure page 4/5) -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/sparsh/hero.webp','Shreedhar Sparsh — Street Elevation')">
+        onclick="openLightbox('../images/projects/sparsh/hero.webp','Shreedhar Sparsh — Street Elevation')" role="button" tabindex="0" aria-label="View larger: Shreedhar Sparsh — Street Elevation">
         <img src="../images/projects/sparsh/hero.webp" alt="Shreedhar Sparsh Elevation"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1667" height="786">
         <div class="g-placeholder" style="display:none"><span>Shreedhar Sparsh</span></div>
       </div>
       <!-- Typical layout plan (brochure page 12) -->
-      <div class="g-cell" onclick="openLightbox('../images/projects/sparsh/plan-layout.webp','Typical Layout Plan')">
+      <div class="g-cell" onclick="openLightbox('../images/projects/sparsh/plan-layout.webp','Typical Layout Plan')" role="button" tabindex="0" aria-label="View larger: Typical Layout Plan">
         <img src="../images/projects/sparsh/plan-layout.webp" alt="Typical Layout Plan"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="712" height="738">
         <div class="g-placeholder" style="display:none"><span>Layout Plan</span></div>
       </div>
       <!-- Amenities aerial view (brochure page 13) -->
-      <div class="g-cell" onclick="openLightbox('../images/projects/sparsh/aerial.webp','Aerial View')">
+      <div class="g-cell" onclick="openLightbox('../images/projects/sparsh/aerial.webp','Aerial View')" role="button" tabindex="0" aria-label="View larger: Aerial View">
         <img src="../images/projects/sparsh/aerial.webp" alt="Aerial View"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="788" height="787">
         <div class="g-placeholder" style="display:none"><span>Aerial View</span></div>
       </div>
       <!-- Night elevation (brochure page 20/21) -->
-      <div class="g-cell" onclick="openLightbox('../images/projects/sparsh/night.webp','Night Elevation')">
+      <div class="g-cell" onclick="openLightbox('../images/projects/sparsh/night.webp','Night Elevation')" role="button" tabindex="0" aria-label="View larger: Night Elevation">
         <img src="../images/projects/sparsh/night.webp" alt="Night Elevation"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1147" height="787">
         <div class="g-placeholder" style="display:none"><span>Night Elevation</span></div>
       </div>
       <!-- Shop layout plan (brochure page 14) -->
-      <div class="g-cell" onclick="openLightbox('../images/projects/sparsh/plan-shops.webp','Shop Layout Plan')">
+      <div class="g-cell" onclick="openLightbox('../images/projects/sparsh/plan-shops.webp','Shop Layout Plan')" role="button" tabindex="0" aria-label="View larger: Shop Layout Plan">
         <img src="../images/projects/sparsh/plan-shops.webp" alt="Shop Layout Plan"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="725" height="741">
         <div class="g-placeholder" style="display:none"><span>Shop Layout Plan</span></div>
@@ -1551,40 +1559,40 @@
       <p style="font-size:0.85rem;color:var(--txt2);margin-top:0.5rem;">2 & 3 BHK Premium Flats · Typical Layout Plan &
         Shop Layout</p>
     </div>
-    <div class="fp-tabs r" data-d="1">
-      <button class="fp-tab active" onclick="showPlan('layout',this)">Typical Layout Plan</button>
-      <button class="fp-tab" onclick="showPlan('shops',this)">Shop Layout Plan</button>
-      <button class="fp-tab" onclick="showPlan('2bhk',this)">2 BHK Floor Plan</button>
-      <button class="fp-tab" onclick="showPlan('3bhk',this)">3 BHK Floor Plan</button>
+    <div class="fp-tabs r" data-d="1" role="tablist" aria-label="Floor plans">
+      <button class="fp-tab active" onclick="showPlan('layout',this)" role="tab" id="tab-layout" aria-controls="plan-layout" aria-selected="true" tabindex="0">Typical Layout Plan</button>
+      <button class="fp-tab" onclick="showPlan('shops',this)" role="tab" id="tab-shops" aria-controls="plan-shops" aria-selected="false" tabindex="-1">Shop Layout Plan</button>
+      <button class="fp-tab" onclick="showPlan('2bhk',this)" role="tab" id="tab-2bhk" aria-controls="plan-2bhk" aria-selected="false" tabindex="-1">2 BHK Floor Plan</button>
+      <button class="fp-tab" onclick="showPlan('3bhk',this)" role="tab" id="tab-3bhk" aria-controls="plan-3bhk" aria-selected="false" tabindex="-1">3 BHK Floor Plan</button>
     </div>
 
-    <div class="fp-panel active r" id="plan-layout" data-d="2">
+    <div class="fp-panel active r" id="plan-layout" data-d="2" role="tabpanel" aria-labelledby="tab-layout">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/sparsh/plan-layout.webp','Typical Layout Plan')">
+        onclick="openLightbox('../images/projects/sparsh/plan-layout.webp','Typical Layout Plan')" role="button" tabindex="0" aria-label="View larger: Typical Layout Plan">
         <img src="../images/projects/sparsh/plan-layout.webp" alt="Typical Layout Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Typical Layout Plan</p><small>Screenshot page 12 of brochure</small></div>'" loading="lazy" decoding="async" width="712" height="738">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-shops">
-      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/sparsh/plan-shops.webp','Shop Layout Plan')">
+    <div class="fp-panel" id="plan-shops" role="tabpanel" aria-labelledby="tab-shops">
+      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/sparsh/plan-shops.webp','Shop Layout Plan')" role="button" tabindex="0" aria-label="View larger: Shop Layout Plan">
         <img src="../images/projects/sparsh/plan-shops.webp" alt="Shop Layout Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Shop Layout Plan</p><small>Screenshot page 14 of brochure</small></div>'" loading="lazy" decoding="async" width="725" height="741">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-2bhk">
-      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/sparsh/plan-2bhk.webp','2 BHK Floor Plan')">
+    <div class="fp-panel" id="plan-2bhk" role="tabpanel" aria-labelledby="tab-2bhk">
+      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/sparsh/plan-2bhk.webp','2 BHK Floor Plan')" role="button" tabindex="0" aria-label="View larger: 2 BHK Floor Plan">
         <img src="../images/projects/sparsh/plan-2bhk.webp" alt="2 BHK Floor Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>2 BHK Floor Plan</p><small>Screenshot from brochure</small></div>'" loading="lazy" decoding="async" width="800" height="618">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-3bhk">
-      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/sparsh/plan-3bhk.webp','3 BHK Floor Plan')">
+    <div class="fp-panel" id="plan-3bhk" role="tabpanel" aria-labelledby="tab-3bhk">
+      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/sparsh/plan-3bhk.webp','3 BHK Floor Plan')" role="button" tabindex="0" aria-label="View larger: 3 BHK Floor Plan">
         <img src="../images/projects/sparsh/plan-3bhk.webp" alt="3 BHK Floor Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>3 BHK Floor Plan</p><small>Screenshot from brochure</small></div>'" loading="lazy" decoding="async" width="851" height="612">
         <div class="fp-zoom-hint">Click to enlarge</div>
@@ -1593,7 +1601,7 @@
   </section>
 
   <!-- LIGHTBOX -->
-  <div class="lb" id="lb" onclick="closeLightbox()">
+  <div class="lb" id="lb" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button class="lb-close" onclick="closeLightbox()" aria-label="Close lightbox">✕</button>
     <img id="lb-img" src="" alt="Floor Plan" decoding="async">
     <div class="lb-caption" id="lb-caption"></div>
@@ -1788,24 +1796,67 @@
     // Floor plan tabs
     function showPlan(id, btn) {
       document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.fp-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.fp-tab').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+        b.tabIndex = -1;
+      });
       document.getElementById('plan-' + id).classList.add('active');
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      btn.tabIndex = 0;
     }
 
+    document.querySelectorAll('.fp-tabs').forEach(tablist => {
+      tablist.addEventListener('keydown', e => {
+        const tabs = [...tablist.querySelectorAll('.fp-tab')];
+        const currentIndex = tabs.indexOf(document.activeElement);
+        if (currentIndex < 0) return;
+        let nextIndex;
+        if (e.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') nextIndex = 0;
+        else if (e.key === 'End') nextIndex = tabs.length - 1;
+        else return;
+        e.preventDefault();
+        const nextTab = tabs[nextIndex];
+        nextTab.focus();
+        nextTab.click();
+      });
+    });
+
     // Lightbox
+    let lastFocusedElement = null;
     function openLightbox(src, caption) {
+      lastFocusedElement = document.activeElement;
       const lb = document.getElementById('lb');
-      document.getElementById('lb-img').src = src;
+      const lbImage = document.getElementById('lb-img');
+      lbImage.src = src;
+      lbImage.alt = caption;
       document.getElementById('lb-caption').textContent = caption;
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
+      lb.querySelector('.lb-close').focus();
     }
     function closeLightbox() {
       document.getElementById('lb').classList.remove('open');
       document.body.style.overflow = '';
+      const focusTarget = lastFocusedElement;
+      lastFocusedElement = null;
+      if (focusTarget && typeof focusTarget.focus === 'function') focusTarget.focus();
     }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        return;
+      }
+      const tile = e.target instanceof Element
+        ? e.target.closest('.g-cell[role="button"], .fp-img-wrap[role="button"]')
+        : null;
+      if (!tile || (e.key !== 'Enter' && e.key !== ' ')) return;
+      e.preventDefault();
+      tile.click();
+    });
 
     // Smooth anchors
     document.querySelectorAll('a[href^="#"]').forEach(a => {

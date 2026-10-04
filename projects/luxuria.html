@@ -1218,6 +1218,14 @@
     }
 
     /* RESPONSIVE */
+    .fp-tab:focus-visible,
+    .g-cell:focus-visible,
+    .fp-img-wrap:focus-visible,
+    .lb-close:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 3px;
+    }
+
     @media(max-width:900px) {
       nav {
         padding: 1rem 1.5rem;
@@ -1433,34 +1441,34 @@
     <div class="gallery-grid r" data-d="1">
       <!-- Main large: page 02-03 exterior -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/luxuria/hero.webp','Shreedhar Luxuria — Exterior View')">
+        onclick="openLightbox('../images/projects/luxuria/hero.webp','Shreedhar Luxuria — Exterior View')" role="button" tabindex="0" aria-label="View larger: Shreedhar Luxuria — Exterior View">
         <img src="../images/projects/luxuria/hero.webp" alt="Shreedhar Luxuria Exterior"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1227" height="882">
         <div class="g-placeholder" style="display:none"><span>Shreedhar Luxuria</span></div>
       </div>
       <!-- Ground floor plan -->
-      <div class="g-cell" onclick="openLightbox('../images/projects/luxuria/plan-ground.webp','Ground Floor Plan')">
+      <div class="g-cell" onclick="openLightbox('../images/projects/luxuria/plan-ground.webp','Ground Floor Plan')" role="button" tabindex="0" aria-label="View larger: Ground Floor Plan">
         <img src="../images/projects/luxuria/plan-ground.webp" alt="Ground Floor Plan"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="585" height="827">
         <div class="g-placeholder" style="display:none"><span>Ground Floor Plan</span></div>
       </div>
       <!-- Typical layout plan -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/luxuria/plan-typical-layout.webp','Typical Layout Plan')">
+        onclick="openLightbox('../images/projects/luxuria/plan-typical-layout.webp','Typical Layout Plan')" role="button" tabindex="0" aria-label="View larger: Typical Layout Plan">
         <img src="../images/projects/luxuria/plan-typical-layout.webp" alt="Typical Layout Plan"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="585" height="837">
         <div class="g-placeholder" style="display:none"><span>Typical Layout</span></div>
       </div>
       <!-- Block A typical floor -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/luxuria/plan-block-a.webp','Typical Floor Plan — Block A')">
+        onclick="openLightbox('../images/projects/luxuria/plan-block-a.webp','Typical Floor Plan — Block A')" role="button" tabindex="0" aria-label="View larger: Typical Floor Plan — Block A">
         <img src="../images/projects/luxuria/plan-block-a.webp" alt="Block A Typical Floor"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1067" height="757">
         <div class="g-placeholder" style="display:none"><span>Block A Floor Plan</span></div>
       </div>
       <!-- Block CD typical floor -->
       <div class="g-cell"
-        onclick="openLightbox('../images/projects/luxuria/plan-block-cd.webp','Typical Floor Plan — Block C &amp; D')">
+        onclick="openLightbox('../images/projects/luxuria/plan-block-cd.webp','Typical Floor Plan — Block C &amp; D')" role="button" tabindex="0" aria-label="View larger: Typical Floor Plan — Block C &amp; D">
         <img src="../images/projects/luxuria/plan-block-cd.webp" alt="Block C D Typical Floor"
           onerror="this.style.display='none';this.parentElement.querySelector('.g-placeholder').style.display='flex'" loading="lazy" decoding="async" width="1438" height="907">
         <div class="g-placeholder" style="display:none"><span>Block C &amp; D Plan</span></div>
@@ -1601,80 +1609,80 @@
       <p style="font-size:0.85rem;color:var(--txt2);margin-top:0.5rem;">3 BHK Premium Living · 4 Blocks (A–D) · 2
         Cellars + Ground + 11 Floors</p>
     </div>
-    <div class="fp-tabs r" data-d="1">
-      <button class="fp-tab active" onclick="showPlan('cellar2',this)">2nd Cellar</button>
-      <button class="fp-tab" onclick="showPlan('cellar1',this)">1st Cellar</button>
-      <button class="fp-tab" onclick="showPlan('ground',this)">Ground Floor</button>
-      <button class="fp-tab" onclick="showPlan('first',this)">1st Floor (Block A, B)</button>
-      <button class="fp-tab" onclick="showPlan('typical-layout',this)">Typical Layout</button>
-      <button class="fp-tab" onclick="showPlan('block-a',this)">Block A — 2nd to 11th</button>
-      <button class="fp-tab" onclick="showPlan('block-b',this)">Block B — 2nd to 11th</button>
-      <button class="fp-tab" onclick="showPlan('block-cd',this)">Block C &amp; D — 1st to 10th</button>
+    <div class="fp-tabs r" data-d="1" role="tablist" aria-label="Floor plans">
+      <button class="fp-tab active" onclick="showPlan('cellar2',this)" role="tab" id="tab-cellar2" aria-controls="plan-cellar2" aria-selected="true" tabindex="0">2nd Cellar</button>
+      <button class="fp-tab" onclick="showPlan('cellar1',this)" role="tab" id="tab-cellar1" aria-controls="plan-cellar1" aria-selected="false" tabindex="-1">1st Cellar</button>
+      <button class="fp-tab" onclick="showPlan('ground',this)" role="tab" id="tab-ground" aria-controls="plan-ground" aria-selected="false" tabindex="-1">Ground Floor</button>
+      <button class="fp-tab" onclick="showPlan('first',this)" role="tab" id="tab-first" aria-controls="plan-first" aria-selected="false" tabindex="-1">1st Floor (Block A, B)</button>
+      <button class="fp-tab" onclick="showPlan('typical-layout',this)" role="tab" id="tab-typical-layout" aria-controls="plan-typical-layout" aria-selected="false" tabindex="-1">Typical Layout</button>
+      <button class="fp-tab" onclick="showPlan('block-a',this)" role="tab" id="tab-block-a" aria-controls="plan-block-a" aria-selected="false" tabindex="-1">Block A — 2nd to 11th</button>
+      <button class="fp-tab" onclick="showPlan('block-b',this)" role="tab" id="tab-block-b" aria-controls="plan-block-b" aria-selected="false" tabindex="-1">Block B — 2nd to 11th</button>
+      <button class="fp-tab" onclick="showPlan('block-cd',this)" role="tab" id="tab-block-cd" aria-controls="plan-block-cd" aria-selected="false" tabindex="-1">Block C &amp; D — 1st to 10th</button>
     </div>
 
-    <div class="fp-panel active r" id="plan-cellar2" data-d="2">
-      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/luxuria/plan-cellar-2.webp','2nd Cellar Plan')">
+    <div class="fp-panel active r" id="plan-cellar2" data-d="2" role="tabpanel" aria-labelledby="tab-cellar2">
+      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/luxuria/plan-cellar-2.webp','2nd Cellar Plan')" role="button" tabindex="0" aria-label="View larger: 2nd Cellar Plan">
         <img src="../images/projects/luxuria/plan-cellar-2.webp" alt="2nd Cellar Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>2nd Cellar Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="587" height="826">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-cellar1">
-      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/luxuria/plan-cellar-1.webp','1st Cellar Plan')">
+    <div class="fp-panel" id="plan-cellar1" role="tabpanel" aria-labelledby="tab-cellar1">
+      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/luxuria/plan-cellar-1.webp','1st Cellar Plan')" role="button" tabindex="0" aria-label="View larger: 1st Cellar Plan">
         <img src="../images/projects/luxuria/plan-cellar-1.webp" alt="1st Cellar Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>1st Cellar Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="595" height="826">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-ground">
-      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/luxuria/plan-ground.webp','Ground Floor Plan')">
+    <div class="fp-panel" id="plan-ground" role="tabpanel" aria-labelledby="tab-ground">
+      <div class="fp-img-wrap" onclick="openLightbox('../images/projects/luxuria/plan-ground.webp','Ground Floor Plan')" role="button" tabindex="0" aria-label="View larger: Ground Floor Plan">
         <img src="../images/projects/luxuria/plan-ground.webp" alt="Ground Floor Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Ground Floor Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="585" height="827">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-first">
+    <div class="fp-panel" id="plan-first" role="tabpanel" aria-labelledby="tab-first">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/luxuria/plan-first-floor.webp','1st Floor Plan — Block A &amp; B')">
+        onclick="openLightbox('../images/projects/luxuria/plan-first-floor.webp','1st Floor Plan — Block A &amp; B')" role="button" tabindex="0" aria-label="View larger: 1st Floor Plan — Block A &amp; B">
         <img src="../images/projects/luxuria/plan-first-floor.webp" alt="1st Floor Plan Block A B"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>1st Floor — Block A &amp; B</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="592" height="832">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-typical-layout">
+    <div class="fp-panel" id="plan-typical-layout" role="tabpanel" aria-labelledby="tab-typical-layout">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/luxuria/plan-typical-layout.webp','Typical Layout Plan')">
+        onclick="openLightbox('../images/projects/luxuria/plan-typical-layout.webp','Typical Layout Plan')" role="button" tabindex="0" aria-label="View larger: Typical Layout Plan">
         <img src="../images/projects/luxuria/plan-typical-layout.webp" alt="Typical Layout Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Typical Layout Plan</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="585" height="837">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-block-a">
+    <div class="fp-panel" id="plan-block-a" role="tabpanel" aria-labelledby="tab-block-a">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/luxuria/plan-block-a.webp','Typical Floor Plan — Block A (2nd to 11th)')">
+        onclick="openLightbox('../images/projects/luxuria/plan-block-a.webp','Typical Floor Plan — Block A (2nd to 11th)')" role="button" tabindex="0" aria-label="View larger: Typical Floor Plan — Block A (2nd to 11th)">
         <img src="../images/projects/luxuria/plan-block-a.webp" alt="Block A Typical Floor Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Block A · 2nd to 11th Floor</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1067" height="757">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-block-b">
+    <div class="fp-panel" id="plan-block-b" role="tabpanel" aria-labelledby="tab-block-b">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/luxuria/plan-block-b.webp','Typical Floor Plan — Block B (2nd to 11th)')">
+        onclick="openLightbox('../images/projects/luxuria/plan-block-b.webp','Typical Floor Plan — Block B (2nd to 11th)')" role="button" tabindex="0" aria-label="View larger: Typical Floor Plan — Block B (2nd to 11th)">
         <img src="../images/projects/luxuria/plan-block-b.webp" alt="Block B Typical Floor Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Block B · 2nd to 11th Floor</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1045" height="757">
         <div class="fp-zoom-hint">Click to enlarge</div>
       </div>
     </div>
 
-    <div class="fp-panel" id="plan-block-cd">
+    <div class="fp-panel" id="plan-block-cd" role="tabpanel" aria-labelledby="tab-block-cd">
       <div class="fp-img-wrap"
-        onclick="openLightbox('../images/projects/luxuria/plan-block-cd.webp','Typical Floor Plan — Block C &amp; D (1st to 10th)')">
+        onclick="openLightbox('../images/projects/luxuria/plan-block-cd.webp','Typical Floor Plan — Block C &amp; D (1st to 10th)')" role="button" tabindex="0" aria-label="View larger: Typical Floor Plan — Block C &amp; D (1st to 10th)">
         <img src="../images/projects/luxuria/plan-block-cd.webp" alt="Block C D Typical Floor Plan"
           onerror="this.parentElement.innerHTML='<div class=\'fp-placeholder\'><p>Block C &amp; D · 1st to 10th Floor</p><small>Image coming soon</small></div>'" loading="lazy" decoding="async" width="1438" height="907">
         <div class="fp-zoom-hint">Click to enlarge</div>
@@ -1859,7 +1867,7 @@
   </footer>
 
   <!-- LIGHTBOX -->
-  <div class="lb" id="lb" onclick="closeLightbox()">
+  <div class="lb" id="lb" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button class="lb-close" onclick="closeLightbox()" aria-label="Close lightbox">✕</button>
     <img id="lb-img" src="" alt="Project Image" decoding="async">
     <div class="lb-caption" id="lb-caption"></div>
@@ -1888,24 +1896,67 @@
     // Floor plan tabs
     function showPlan(id, btn) {
       document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.fp-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.fp-tab').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+        b.tabIndex = -1;
+      });
       document.getElementById('plan-' + id).classList.add('active');
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      btn.tabIndex = 0;
     }
 
+    document.querySelectorAll('.fp-tabs').forEach(tablist => {
+      tablist.addEventListener('keydown', e => {
+        const tabs = [...tablist.querySelectorAll('.fp-tab')];
+        const currentIndex = tabs.indexOf(document.activeElement);
+        if (currentIndex < 0) return;
+        let nextIndex;
+        if (e.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') nextIndex = 0;
+        else if (e.key === 'End') nextIndex = tabs.length - 1;
+        else return;
+        e.preventDefault();
+        const nextTab = tabs[nextIndex];
+        nextTab.focus();
+        nextTab.click();
+      });
+    });
+
     // Lightbox
+    let lastFocusedElement = null;
     function openLightbox(src, caption) {
+      lastFocusedElement = document.activeElement;
       const lb = document.getElementById('lb');
-      document.getElementById('lb-img').src = src;
+      const lbImage = document.getElementById('lb-img');
+      lbImage.src = src;
+      lbImage.alt = caption;
       document.getElementById('lb-caption').textContent = caption;
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
+      lb.querySelector('.lb-close').focus();
     }
     function closeLightbox() {
       document.getElementById('lb').classList.remove('open');
       document.body.style.overflow = '';
+      const focusTarget = lastFocusedElement;
+      lastFocusedElement = null;
+      if (focusTarget && typeof focusTarget.focus === 'function') focusTarget.focus();
     }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        return;
+      }
+      const tile = e.target instanceof Element
+        ? e.target.closest('.g-cell[role="button"], .fp-img-wrap[role="button"]')
+        : null;
+      if (!tile || (e.key !== 'Enter' && e.key !== ' ')) return;
+      e.preventDefault();
+      tile.click();
+    });
 
     // Smooth anchors
     document.querySelectorAll('a[href^="#"]').forEach(a => {
