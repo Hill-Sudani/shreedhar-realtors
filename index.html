@@ -2798,6 +2798,11 @@
         </div>
         <div class="contact-right reveal reveal-d2">
           <form class="contact-form" onsubmit="submitForm(event)">
+            <div aria-hidden="true"
+              style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+              <label for="cf-website">Website</label>
+              <input type="text" name="website" id="cf-website" tabindex="-1" autocomplete="off">
+            </div>
             <div class="cf-group">
               <label class="cf-label" for="cf-name">Full Name</label>
               <input class="cf-input" type="text" id="cf-name" name="from_name" placeholder="Your name" required>
@@ -3081,6 +3086,13 @@
       e.preventDefault();
       const btn = document.getElementById('cfBtn');
       const form = e.target;
+
+      if (document.getElementById('cf-website').value) {
+        btn.textContent = 'Request Sent ✓'; btn.style.background = '#27ae60'; btn.disabled = true;
+        setTimeout(() => { btn.textContent = 'Book a Site Visit →'; btn.style.background = ''; btn.disabled = false; form.reset(); }, 3500);
+        return;
+      }
+
       btn.textContent = 'Sending…'; btn.disabled = true;
 
       if (!window.emailjs) {
@@ -3180,7 +3192,11 @@
   <script>
     (function () {
       if (window.emailjs) {
-        emailjs.init({ publicKey: EMAIL_CONFIG.publicKey });
+        emailjs.init({
+          publicKey: EMAIL_CONFIG.publicKey,
+          blockHeadless: true,
+          limitRate: { id: "contact-form", throttle: 10000 }
+        });
       }
     })();
   </script>
